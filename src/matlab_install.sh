@@ -19,7 +19,7 @@ fi
 # That simplifies things
 
 function check_disk_space () {
-  if [ $(df -Hl --output=avail /dev/*da1 |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "20" ]; then
+  if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "20" ]; then
     printf "%s\n" "Not enough free disk space. Exiting." >&2
     exit 1
 fi
@@ -55,7 +55,7 @@ function remove_matlab_tar () {
   rm --recursive --force matlab.tgz
 }
 
-# Do we need to check/modify permissions? 
+# Do we need to check/modify permissions?
 
 # Create symlink for Matlab
 
