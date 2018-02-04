@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Matlab installer V.1.0 for Debian-based OSs.###
+### Matlab installer V.1.0 for OS X.###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.3.tgz"
 
@@ -16,18 +16,24 @@ fi
 # Is there adequate disk space in install directory? If not, exit.
 
 function check_disk_space () {
-  if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "20" ]; then
+  if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 20 ]; then
     printf "%s\n" "Not enough free disk space. Exiting." >&2
     exit 1
 fi
 }
-
 # Is curl installed? If not, install it.
 
 function curl_check () {
   if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
     printf "%s\n" "Installing curl..."
     apt-get install curl
+fi
+}
+
+function curl_check () {
+if ! [ -x "$(command -v pv)" ]; then
+  printf "%s\n" "Error: pv is not installed.  Please install it."  >&2
+  exit 1
 fi
 }
 
