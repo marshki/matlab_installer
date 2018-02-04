@@ -13,10 +13,7 @@ function root_check () {
 fi
 }
 
-# Is there adequate disk space? If not, exit.
-
-# Should we just check that there's enough free space in /usr/local ?
-# That simplifies things
+# Is there adequate disk space in install directory? If not, exit.
 
 function check_disk_space () {
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "20" ]; then
