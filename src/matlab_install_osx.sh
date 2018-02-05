@@ -31,7 +31,7 @@ fi
 }
 
 function curl_check () {
-if ! [ -x "$(command -v pv)" ]; then
+if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
   printf "%s\n" "Error: pv is not installed.  Please install it."  >&2
   exit 1
 fi
