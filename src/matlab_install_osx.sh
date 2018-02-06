@@ -13,7 +13,7 @@ function root_check () {
 fi
 }
 
-# Is there adequate disk space in install directory? If not, exit.
+# Is there adequate disk space in Applications directory? If not, exit.
 
 function check_disk_space () {
   if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 20 ]; then
@@ -21,11 +21,12 @@ function check_disk_space () {
     exit 1
 fi
 }
-# Is curl installed? If not, exit.
+
+# Is curl installed? If not, exit. (Curl ships with OS X, but just being safe).
 
 function curl_check () {
 if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-  printf "%s\n" "Error: pv is not installed.  Please install it."  >&2
+  printf "%s\n" "Error: curl is not installed.  Please install it."  >&2
   exit 1
 fi
 }
@@ -34,24 +35,30 @@ fi
 
 function get_matlab () {
   printf "%s\n" "Retrieving Matlab insaller..."
-  curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output matlab.tgz
+  curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output matlab.app.tgz
+}
+
+# Delete given attribute
+
+function lift_quarrantine (){
+  printf "%s\n" "Removing quattantine..."
+  xattr -d com.apple.quarantine matlab.app.tgz
 }
 
 # Unpack tarball to /usr/local
 
 function untar_matlab () {
-  printf "%s\n" "Untarring package to /usr/local..."
-  tar --extract --gzip --file=matlab.tgz --directory=/Applications
+  printf "%s\n" "Untarring package to /Applications..."
+  tar --extract --gzip --file=matlab.app.tgz --directory=/Applications
 }
 
 # Remove tarball
 
 function remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
-  rm --recursive --force matlab.tgz
+  rm --recursive --force matlab.app.tgz
 }
 
-# Do we need to remove xattribute? 
 # Do we need to check/modify permissions?
 
 # Create symlink for Matlab
@@ -75,6 +82,7 @@ main () {
 	check_disk_space
 	curl_check
 	get_matlab
+  lift_quarrantine
 	untar_matlab
 	remove_matlab_tar
 	symlink_matlab
