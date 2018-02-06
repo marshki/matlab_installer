@@ -13,7 +13,7 @@ function root_check () {
 fi
 }
 
-# Is there adequate disk space in Applications directory? If not, exit.
+# Is there adequate disk space in "Applications" directory? If not, exit.
 
 function check_disk_space () {
   if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 20 ]; then
@@ -22,7 +22,7 @@ function check_disk_space () {
 fi
 }
 
-# Is curl installed? If not, exit. (Curl ships with OS X, but just being safe).
+# Is curl installed? If not, exit. (Curl ships with OS X, but let's check).
 
 function curl_check () {
 if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
@@ -45,7 +45,7 @@ function lift_quarrantine (){
   xattr -d com.apple.quarantine matlab.app.tgz
 }
 
-# Unpack tarball to /usr/local
+# Unpack tarball to /Applications
 
 function untar_matlab () {
   printf "%s\n" "Untarring package to /Applications..."
@@ -65,7 +65,7 @@ function remove_matlab_tar () {
 
 function symlink_matlab () {
   printf "%s\n" "Creating symlink..."
-  ln --symbolic /Applications/MATLAB9.3/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/MATLAB9.3.app/bin/matlab /usr/local/bin/matlab
 }
 
 # Launch Matlab from terminal
