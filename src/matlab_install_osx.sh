@@ -56,7 +56,7 @@ function untar_matlab () {
 
 function remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
-  rm --recursive --force matlab.app.tgz
+  rm -rf matlab.app.tgz
 }
 
 # Do we need to check/modify permissions?
