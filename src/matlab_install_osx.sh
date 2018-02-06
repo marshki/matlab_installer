@@ -2,7 +2,7 @@
 
 ### Matlab installer V.1.0 for OS X.###
 
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.3.tgz"
+MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
 # Is user root? If not, exit.
 
@@ -21,14 +21,7 @@ function check_disk_space () {
     exit 1
 fi
 }
-# Is curl installed? If not, install it.
-
-function curl_check () {
-  if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
-    printf "%s\n" "Installing curl..."
-    apt-get install curl
-fi
-}
+# Is curl installed? If not, exit.
 
 function curl_check () {
 if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
@@ -48,7 +41,7 @@ function get_matlab () {
 
 function untar_matlab () {
   printf "%s\n" "Untarring package to /usr/local..."
-  tar --extract --gzip --file=matlab.tgz --directory=/usr/local
+  tar --extract --gzip --file=matlab.tgz --directory=/Applications
 }
 
 # Remove tarball
@@ -58,13 +51,14 @@ function remove_matlab_tar () {
   rm --recursive --force matlab.tgz
 }
 
+# Do we need to remove xattribute? 
 # Do we need to check/modify permissions?
 
 # Create symlink for Matlab
 
 function symlink_matlab () {
   printf "%s\n" "Creating symlink..."
-  ln --symbolic /usr/local/matlab9.3/bin/matlab /usr/local/bin/matlab
+  ln --symbolic /Applications/MATLAB9.3/bin/matlab /usr/local/bin/matlab
 }
 
 # Launch Matlab from terminal
