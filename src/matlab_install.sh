@@ -22,13 +22,6 @@ function check_disk_space () {
 fi
 }
 
-# Change to user home directory
-
-function go_home_dir () {
-  cd
-  printf "%s\n" "Changed dir to $PWD"
-}
-
 # Is curl installed? If not, install it.
 
 function curl_check () {
@@ -36,6 +29,13 @@ function curl_check () {
     printf "%s\n" "Installing curl..."
     apt-get install curl
 fi
+}
+
+# Change to user home directory
+
+function go_home_dir () {
+  cd
+  printf "%s\n" "Changed dir to $PWD"
 }
 
 # Download tarball
@@ -58,8 +58,6 @@ function remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
   rm --recursive --force matlab.tgz
 }
-
-# Do we need to check/modify permissions?
 
 # Create symlink for Matlab
 

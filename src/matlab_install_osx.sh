@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Matlab installer V.1.0 for OS X.###
+### Matlab installer V.1.0 for OS X. ###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
@@ -65,8 +65,6 @@ function remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
   rm -rf matlab.app.tgz
 }
-
-# Do we need to check/modify permissions?
 
 # Create symlink for Matlab
 
