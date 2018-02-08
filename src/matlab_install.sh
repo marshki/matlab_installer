@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Matlab installer V.1.0 for Debian-based OSs.###
+### Matlab installer V.1.0 for Debian-based OSs. ###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.3.tgz"
 
@@ -16,10 +16,17 @@ fi
 # Is there adequate disk space in install directory? If not, exit.
 
 function check_disk_space () {
-  if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "20" ]; then
+  if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
     printf "%s\n" "Not enough free disk space. Exiting." >&2
     exit 1
 fi
+}
+
+# Change to user home directory
+
+function go_home_dir () {
+  cd
+  printf "%s\n" "Changed dir to $PWD"
 }
 
 # Is curl installed? If not, install it.
@@ -74,6 +81,7 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
+  go_home_dir
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
