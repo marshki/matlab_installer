@@ -38,7 +38,7 @@ function get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output matlab.app.tgz
 }
 
-# Delete given attribute
+# Delete quarrantine attribute
 
 function lift_quarrantine (){
   printf "%s\n" "Removing quattantine..."
