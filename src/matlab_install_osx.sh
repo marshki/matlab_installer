@@ -31,6 +31,13 @@ if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
 fi
 }
 
+# Change to user home directory
+
+function go_home_dir () {
+  cd
+  printf "%s\n" "Changed dir to $PWD"
+}
+
 # Download tarball
 
 function get_matlab () {
