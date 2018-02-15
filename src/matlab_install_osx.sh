@@ -88,7 +88,7 @@ main () {
 	curl_check
   	go_home_dir
   	get_matlab
-  l	ift_quarrantine
+  	lift_quarrantine
 	untar_matlab
 	remove_matlab_tar
 	symlink_matlab
