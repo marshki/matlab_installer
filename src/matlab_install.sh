@@ -1,10 +1,11 @@
 #!/bin/bash
+# 2017.02.10
 
 ### Matlab installer V.1.0 for Debian-based OSs. ###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.3.tgz"
 
-# Is user root? If not, exit.
+# Is current UID 0? If not, exit.
 
 function root_check () {
   if [ "$EUID" -ne "0" ] ; then
@@ -13,7 +14,7 @@ function root_check () {
 fi
 }
 
-# Is there adequate disk space in install directory? If not, exit.
+# Is there 30 GBs free in install directory? If not, exit.
 
 function check_disk_space () {
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
@@ -31,13 +32,6 @@ function curl_check () {
 fi
 }
 
-# Change to user home directory
-
-function go_home_dir () {
-  cd
-  printf "%s\n" "Changed dir to $PWD"
-}
-
 # Download tarball
 
 function get_matlab () {
@@ -49,7 +43,7 @@ function get_matlab () {
 
 function untar_matlab () {
   printf "%s\n" "Untarring package to /usr/local..."
-  tar --extract --gzip --file=matlab.tgz --directory=/usr/local
+  tar --extract --gzip --verbose --file=matlab.tgz --directory=/usr/local
 }
 
 # Remove tarball
@@ -79,7 +73,6 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  go_home_dir
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
