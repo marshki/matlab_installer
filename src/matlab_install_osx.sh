@@ -4,7 +4,7 @@
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
-# Is user root? If not, exit.
+# Is current UID 0? If not, exit.
 
 function root_check () {
   if [ "$EUID" -ne "0" ] ; then
@@ -79,9 +79,8 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  	go_home_dir
-  	get_matlab
-  	lift_quarrantine
+  get_matlab
+  lift_quarrantine
 	untar_matlab
 	remove_matlab_tar
 	symlink_matlab
