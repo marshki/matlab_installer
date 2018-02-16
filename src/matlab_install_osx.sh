@@ -16,7 +16,7 @@ fi
 # Is there adequate disk space in ""/Applications"? If not, exit.
 
 function check_disk_space () {
-  if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 20 ]; then
+  if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 30 ]; then
     printf "%s\n" "Not enough free disk space. Exiting." >&2
     exit 1
 fi
@@ -29,13 +29,6 @@ if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
   printf "%s\n" "Error: curl is not installed.  Please install it."  >&2
   exit 1
 fi
-}
-
-# Change to user home directory
-
-function go_home_dir () {
-  cd
-  printf "%s\n" "Changed dir to $PWD"
 }
 
 # Download tarball
@@ -56,7 +49,7 @@ function lift_quarrantine (){
 
 function untar_matlab () {
   printf "%s\n" "Untarring package to /Applications..."
-  tar --extract --gzip --file=matlab.app.tgz --directory=/Applications
+  tar --extract --gzip -v --file=matlab.app.tgz --directory=/Applications
 }
 
 # Remove tarball
