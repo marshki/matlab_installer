@@ -79,8 +79,8 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  get_matlab
-  lift_quarrantine
+  	get_matlab
+  	lift_quarrantine
 	untar_matlab
 	remove_matlab_tar
 	symlink_matlab
