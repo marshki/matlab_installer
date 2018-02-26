@@ -39,11 +39,11 @@ function get_matlab () {
 }
 
 # Delete quarrantine attribute
-
-function lift_quarrantine (){
-  printf "%s\n" "Removing quattantine..."
-  xattr -d com.apple.quarantine matlab.app.tgz
-}
+# NOTE: Probably don't need this, so commented out. Will test to confirm. 
+#function lift_quarrantine (){
+#  printf "%s\n" "Removing quattantine..."
+#  xattr -d com.apple.quarantine matlab.app.tgz
+#}
 
 # Unpack tarball to /Applications
 
@@ -60,18 +60,18 @@ function remove_matlab_tar () {
 }
 
 # Create symlink for Matlab
-
-function symlink_matlab () {
-  printf "%s\n" "Creating symlink..."
-  ln -s /Applications/MATLAB9.3.app/bin/matlab /usr/local/bin/matlab
-}
+# NOTE: Check syntax 
+#function symlink_matlab () {
+#  printf "%s\n" "Creating symlink..."
+#  ln -s /Applications/MATLAB9.3.app/bin/matlab /usr/local/bin/matlab
+#}
 
 # Launch Matlab from terminal
-
-function launch_matlab () {
-  printf "%s\n" "Launching Matlab..."
-  matlab -nodesktop
-}
+# NOTE: Check syntax above. Once confirmed, use this as a test of your install. 
+#function launch_matlab () {
+#  printf "%s\n" "Launching Matlab..."
+#  matlab -nodesktop
+#}
 
 # Main function
 
@@ -80,11 +80,11 @@ main () {
 	check_disk_space
 	curl_check
   	get_matlab
-  	lift_quarrantine
+  	#lift_quarrantine
 	untar_matlab
 	remove_matlab_tar
-	symlink_matlab
-	launch_matlab
+	#symlink_matlab
+	#launch_matlab
 }
 
 main "$@"
