@@ -31,25 +31,34 @@ if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
 fi
 }
 
-# Download tarball
+# Download tarball.
 
 function get_matlab () {
   printf "%s\n" "Retrieving Matlab insaller..."
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output matlab.app.tgz
 }
 
-# Unpack tarball to /Applications
+# Unpack tarball to /Applications .
 
 function untar_matlab () {
   printf "%s\n" "Untarring package to /Applications..."
   tar --extract --gzip -v --file=matlab.app.tgz --directory=/Applications
 }
 
-# Remove tarball
+# Remove tarball.
 
 function remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
   rm -rf matlab.app.tgz
+}
+
+# Does /usr/local/bin exist? If not, add it
+
+function local_bin_check () {
+  if [ ! -d "/usr/local/bin" ] ; then
+    printf "%s\n" "/usr/local/bin does NOT exist; let's add it..."
+    mkdir -pv /usr/local/bin
+fi
 }
 
 # Create symlink for Matlab
@@ -75,6 +84,7 @@ main () {
   get_matlab
 	untar_matlab
 	remove_matlab_tar
+  local_bin_check
 	symlink_matlab
 	launch_matlab
 }
