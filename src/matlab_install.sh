@@ -14,7 +14,7 @@ function root_check () {
 fi
 }
 
-# Is there 30 GBs free in install directory? If not, exit.
+# Is there adequate disk space in install directory? If not, exit.
 
 function check_disk_space () {
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
@@ -53,6 +53,15 @@ function remove_matlab_tar () {
   rm --recursive --force matlab.tgz
 }
 
+# Does /usr/local/bin exist? If not, add it
+
+function local_bin_check () {
+  if [ ! -d "/usr/local/bin" ] ; then
+    printf "%s\n" "/usr/local/bin does NOT exist; let's add it..."
+    mkdir -pv /usr/local/bin
+fi
+}
+
 # Create symlink for Matlab
 
 function symlink_matlab () {
@@ -76,6 +85,7 @@ main () {
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
+  local_bin_check
 	symlink_matlab
 	launch_matlab
 }
