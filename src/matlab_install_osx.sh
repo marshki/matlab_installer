@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Matlab installer V.1.0 for OS X. ###
+### Matlab installer V.0.1 for OS X. ###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
@@ -65,7 +65,7 @@ fi
 
 function symlink_matlab () {
   printf "%s\n" "Creating symlink..."
-  ln -s /Applications/MATLAB9.3.app/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/MATLAB9.4.app/bin/matlab /usr/local/bin/matlab
 }
 
 # Launch Matlab from terminal
@@ -81,10 +81,10 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  	get_matlab
+  get_matlab
 	untar_matlab
 	remove_matlab_tar
-  	local_bin_check
+  local_bin_check
 	symlink_matlab
 	launch_matlab
 }
