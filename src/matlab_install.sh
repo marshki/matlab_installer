@@ -3,7 +3,7 @@
 
 ### Matlab installer V.1.0 for Debian-based OSs. ###
 
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.3.tgz"
+MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 
 # Is current UID 0? If not, exit.
 
@@ -66,7 +66,7 @@ fi
 
 function symlink_matlab () {
   printf "%s\n" "Creating symlink..."
-  ln --symbolic /usr/local/matlab9.3/bin/matlab /usr/local/bin/matlab
+  ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
 }
 
 # Launch Matlab from terminal
