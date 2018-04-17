@@ -85,7 +85,7 @@ main () {
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
-  local_bin_check
+        local_bin_check
 	symlink_matlab
 	launch_matlab
 }
