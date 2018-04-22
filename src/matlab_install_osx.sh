@@ -82,10 +82,10 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  get_matlab
+  	get_matlab
 	untar_matlab
 	remove_matlab_tar
-  local_bin_check
+  	local_bin_check
 	symlink_matlab
 	launch_matlab
 }
