@@ -1,4 +1,5 @@
 #!/bin/bash
+# mjk235 [at] nyu [dot] edu
 
 ### Matlab installer V.0.1 for OS X. ###
 
