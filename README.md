@@ -15,6 +15,7 @@ As ROOT, call the script:
 `bash matlab_install_osx.sh` (OS X).  
 
 ## History 
+v.0.0.1 20180211
 
 ## License 
 [License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
