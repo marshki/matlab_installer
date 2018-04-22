@@ -1,5 +1,7 @@
 #!/bin/bash
 # 2017.02.10
+# mjk235 [at] nyu [dot] edu
+ 
 
 ### Matlab installer V.0.0 for Debian-based OSs. ###
 
