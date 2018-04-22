@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu
+# mjk235 [at] nyu [dot] edu --20170210
 
 ### Matlab installer V.0.1 for OS X. ###
 
