@@ -35,9 +35,7 @@ fi
 # Is local web pingable? If not, exit. 
 
 function ping_local_web () {
-
 printf "%s\n" "Pinging local web..."
-
 if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
   printf "%s\n" "1; reachable. Continuing..."
 else
