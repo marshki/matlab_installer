@@ -1,6 +1,6 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --20170210
- 
+
 ### Matlab installer V.0.0 for Debian-based OSs. ###
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
@@ -30,6 +30,19 @@ function curl_check () {
     printf "%s\n" "Installing curl..."
     apt-get install curl
 fi
+}
+
+# Is CNS local web available? If not, exit.
+
+function ping_local_web () {
+  printf "%s\n" "Pinging CNS local web..."
+
+  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
+    printf "%s\n" "CNS local web IS reachable. Continuing..."
+  else
+    printf "%s\n" "CNS local web IS NOT reachable. Exiting." >&2
+    exit 1
+ fi
 }
 
 # Download tarball
@@ -82,10 +95,11 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
+  ping_local_web
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
-        local_bin_check
+  local_bin_check
 	symlink_matlab
 	launch_matlab
 }
