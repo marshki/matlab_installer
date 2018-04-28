@@ -39,7 +39,7 @@ fi
 function ping_local_web() {
   printf "%s\n" "Pinging CNS local web..."
 
-  if ping -c 1 "$LOCAL_WEB" & > /dev/null; then
+  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
     printf "%s\n" "CNS local web IS reachable. Continuing..."
   else
     printf "%s\n" "CNS local web IS NOT reachable. Exiting." >&2
