@@ -95,11 +95,11 @@ main () {
 	root_check
 	check_disk_space
 	curl_check
-  ping_local_web
+  	ping_local_web
 	get_matlab
 	untar_matlab
 	remove_matlab_tar
-  local_bin_check
+  	local_bin_check
 	symlink_matlab
 	launch_matlab
 }
