@@ -5,6 +5,8 @@
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 
+LOCAL_WEB="128.122.112.23"
+
 # Is current UID 0? If not, exit.
 
 function root_check () {
