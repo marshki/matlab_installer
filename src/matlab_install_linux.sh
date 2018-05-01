@@ -11,7 +11,7 @@ LOCAL_WEB="128.122.112.23"
 
 function root_check () {
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\n" "ROOT privileges are required to continue. Exiting." >&2
+    printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
     exit 1
 fi
 }
@@ -20,7 +20,7 @@ fi
 
 function check_disk_space () {
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
-    printf "%s\n" "Not enough free disk space. Exiting." >&2
+    printf "%s\n" "Error: not enough free disk space. Exiting." >&2
     exit 1
 fi
 }
@@ -42,7 +42,7 @@ function ping_local_web () {
   if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
     printf "%s\n" "CNS local web IS reachable. Continuing..."
   else
-    printf "%s\n" "CNS local web IS NOT reachable. Exiting." >&2
+    printf "%s\n" "Error: CNS local web IS NOT reachable. Exiting." >&2
     exit 1
  fi
 }
