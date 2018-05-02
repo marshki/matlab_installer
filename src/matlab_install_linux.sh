@@ -1,7 +1,7 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
 
-#### Matlab installer V.0.0 for Debian-based OSs. ####
+#### Matlab installer V.0.1 for Debian-based OSs. ####
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 
