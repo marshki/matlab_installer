@@ -2,12 +2,13 @@
 # mjk235 [at] nyu [dot] edu --2017.02.10
 # V.0.1 
 
-####################################################################
-### Auto install Matlab on OS X. Open to members of 		 ###
-### NYU's Center for Neural Science and Department of Psychology ### 
-### Requirements: Root privileges, access to NYU's Meyer network,### 
-### and adequate free disk space 				 ###   
-####################################################################
+###########################################################
+### Auto install Matlab on OS X. 		        ###
+### Open to members of NYU's Center for Neural Science  ###
+### and Department of Psychology 		        ### 
+### Requires: Root privileges; access to Meyer network; ### 
+### and adequate free disk space.  		        ###   
+###########################################################
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
@@ -21,7 +22,6 @@ root_check () {
     printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
     exit 1
 fi
-
 }
 
 # Is there adequate disk space in "/Applications"? If not, exit.
@@ -32,7 +32,6 @@ check_disk_space () {
     printf "%s\n" "Error: not enough free disk space. Exiting." >&2
     exit 1
 fi
-
 }
 
 # Is curl installed? If not, exit. (Curl ships with OS X, but let's check).
@@ -40,10 +39,9 @@ fi
 curl_check () {
 
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\n" "Error: curl is not installed.  Please install it."  >&2
+    printf "%s\n" "Error: curl is not installed. Exiting."  >&2
     exit 1
 fi
-
 }
 
 # Is CNS local web available? If not, exit.
@@ -58,10 +56,9 @@ ping_local_web() {
     printf "%s\n" "Error: CNS local web IS NOT reachable. Exiting." >&2
     exit 1
 fi
-
 }
 
-# Download tarball.
+# Download tarball to /Applications
 
 get_matlab () {
 
@@ -76,16 +73,14 @@ untar_matlab () {
 
   printf "%s\n" "Untarring package to /Applications..."
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
-
 }
 
 # Remove tarball.
 
 remove_matlab_tar () {
 
-  printf "%s\n" "Removing Matlab Installer..."
-  rm -rf matlab.app.tgz
-
+  printf "%s\n" "Removing Matlab tarball..."
+  rm -r /Applications/matlab.app.tgz
 }
 
 # Does /usr/local/bin exist? If not, add it
@@ -96,7 +91,6 @@ local_bin_check () {
     printf "%s\n" "/usr/local/bin does NOT exist; let's add it..."
     mkdir -pv /usr/local/bin
 fi
-
 }
 
 # Create symlink for Matlab
@@ -105,7 +99,6 @@ symlink_matlab () {
 
   printf "%s\n" "Creating symlink..."
   ln -s /Applications/MATLAB9.4.app/bin/matlab /usr/local/bin/matlab
-
 }
 
 # Launch Matlab from terminal
@@ -114,7 +107,6 @@ launch_matlab () {
 
   printf "%s\n" "Launching Matlab..."
   matlab -nodesktop
-
 }
 
 # Main 
