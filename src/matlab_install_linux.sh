@@ -1,7 +1,14 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
+# v.0.1 
 
-#### Matlab installer V.0.1 for Debian-based OSs. ####
+###########################################################
+### Auto install Matlab in Linux (Debian-based)         ###
+### Open to members of NYU's Center for Neural Science  ###
+### and Department of Psychology                        ### 
+### Requires: Root privileges; access to Meyer network; ### 
+### and adequate free disk space.                       ###   
+###########################################################
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 
@@ -15,7 +22,6 @@ root_check () {
     printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
     exit 1
 fi
-
 }
 
 # Is there adequate disk space in install directory? If not, exit.
@@ -26,7 +32,6 @@ check_disk_space () {
     printf "%s\n" "Error: not enough free disk space. Exiting." >&2
     exit 1
 fi
-
 }
 
 # Is curl installed? If not, install it.
@@ -34,10 +39,9 @@ fi
 curl_check () {
 
   if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
-    printf "%s\n" "Installing curl..."
+    printf "%s\n" "Curl is NOT installed. Let's install it..."
     apt-get install curl
 fi
-
 }
 
 # Is CNS local web available? If not, exit.
@@ -51,18 +55,16 @@ ping_local_web () {
   else
     printf "%s\n" "Error: CNS local web is NOT reachable. Exiting." >&2
     exit 1
- fi
-
+fi
 }
 
-# Download tarball
+# Download tarball to /usr/local
 
 get_matlab () {
 
   printf "%s\n" "Retrieving Matlab insaller..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output matlab.tgz
-
+  curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /usr/local/matlab.tgz
 }
 
 # Unpack tarball to /usr/local
