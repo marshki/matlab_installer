@@ -58,7 +58,7 @@ ping_local_web () {
 fi
 }
 
-# Download tarball to /usr/local
+# Download tarball to /usr/local. 
 
 get_matlab () {
 
@@ -67,7 +67,7 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /usr/local/matlab.tgz
 }
 
-# Unpack tarball to /usr/local
+# Unpack tarball to /usr/local. 
 
 untar_matlab () {
 
@@ -77,17 +77,17 @@ untar_matlab () {
 
 }
 
-# Remove tarball
+# Remove tarball. 
 
 remove_matlab_tar () {
 
   printf "%s\n" "Removing Matlab Installer..."
 
-  rm --recursive --force matlab.tgz
+  rm --recursive --verbose /usr/local/matlab.tgz
 
 }
 
-# Does /usr/local/bin exist? If not, add it
+# Does /usr/local/bin exist? If not, add it. 
 
 local_bin_check () {
 
@@ -100,7 +100,7 @@ fi
 
 }
 
-# Create symlink for Matlab
+# Create symlink for Matlab. 
 
 symlink_matlab () {
 
@@ -110,7 +110,7 @@ symlink_matlab () {
 
 }
 
-# Launch Matlab from terminal
+# Launch Matlab from terminal. 
 
 launch_matlab () {
 
@@ -134,7 +134,6 @@ main () {
   	local_bin_check
 	symlink_matlab
 	launch_matlab
-
 }
 
 main "$@"
