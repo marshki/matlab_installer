@@ -1,6 +1,6 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
-# V.0.1 
+# v.0.1 
 
 ###########################################################
 ### Auto install Matlab on OS X. 		        ###
@@ -64,7 +64,6 @@ get_matlab () {
 
   printf "%s\n" "Retrieving Matlab insaller..."
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /Applications/matlab.app.tgz
-
 }
 
 # Unpack tarball to /Applications .
@@ -80,7 +79,7 @@ untar_matlab () {
 remove_matlab_tar () {
 
   printf "%s\n" "Removing Matlab tarball..."
-  rm -r /Applications/matlab.app.tgz
+  rm -rv /Applications/matlab.app.tgz
 }
 
 # Does /usr/local/bin exist? If not, add it
