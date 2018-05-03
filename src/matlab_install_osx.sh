@@ -122,7 +122,6 @@ main () {
   	local_bin_check
 	symlink_matlab
 	launch_matlab
-
 }
 
 main "$@"
