@@ -74,7 +74,6 @@ untar_matlab () {
   printf "%s\n" "Untarring package to /usr/local..."
 
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
-
 }
 
 # Remove tarball. 
@@ -84,7 +83,6 @@ remove_matlab_tar () {
   printf "%s\n" "Removing Matlab Installer..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
-
 }
 
 # Does /usr/local/bin exist? If not, add it. 
@@ -97,7 +95,6 @@ local_bin_check () {
 
     mkdir -pv /usr/local/bin
 fi
-
 }
 
 # Create symlink for Matlab. 
@@ -107,7 +104,6 @@ symlink_matlab () {
   printf "%s\n" "Creating symlink..."
 
   ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
-
 }
 
 # Launch Matlab from terminal. 
@@ -117,7 +113,6 @@ launch_matlab () {
   printf "%s\n" "Launching Matlab..."
 
   matlab -nodesktop
-
 }
 
 # Main 
