@@ -73,7 +73,7 @@ untar_matlab () {
 
   printf "%s\n" "Untarring package to /usr/local..."
 
-  tar --extract --gzip --verbose --file=matlab.tgz --directory=/usr/local
+  tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
 
 }
 
