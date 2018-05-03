@@ -66,7 +66,7 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /Applications/matlab.app.tgz
 }
 
-# Unpack tarball to /Applications .
+# Unpack tarball to /Applications.
 
 untar_matlab () {
 
@@ -74,7 +74,7 @@ untar_matlab () {
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
 
-# Remove tarball.
+# Remove tarball from /Applications.
 
 remove_matlab_tar () {
 
