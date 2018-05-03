@@ -9,7 +9,7 @@ LOCAL_WEB="128.122.112.23"
 
 # Is current UID 0? If not, exit.
 
-function root_check () {
+root_check () {
 
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
@@ -20,7 +20,7 @@ fi
 
 # Is there adequate disk space in install directory? If not, exit.
 
-function check_disk_space () {
+check_disk_space () {
 
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
     printf "%s\n" "Error: not enough free disk space. Exiting." >&2
@@ -31,7 +31,7 @@ fi
 
 # Is curl installed? If not, install it.
 
-function curl_check () {
+curl_check () {
 
   if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
     printf "%s\n" "Installing curl..."
@@ -42,7 +42,7 @@ fi
 
 # Is CNS local web available? If not, exit.
 
-function ping_local_web () {
+ping_local_web () {
 
   printf "%s\n" "Pinging CNS local web..."
 
@@ -57,7 +57,7 @@ function ping_local_web () {
 
 # Download tarball
 
-function get_matlab () {
+get_matlab () {
 
   printf "%s\n" "Retrieving Matlab insaller..."
 
@@ -67,7 +67,7 @@ function get_matlab () {
 
 # Unpack tarball to /usr/local
 
-function untar_matlab () {
+untar_matlab () {
 
   printf "%s\n" "Untarring package to /usr/local..."
 
@@ -77,7 +77,7 @@ function untar_matlab () {
 
 # Remove tarball
 
-function remove_matlab_tar () {
+remove_matlab_tar () {
 
   printf "%s\n" "Removing Matlab Installer..."
 
@@ -87,7 +87,7 @@ function remove_matlab_tar () {
 
 # Does /usr/local/bin exist? If not, add it
 
-function local_bin_check () {
+local_bin_check () {
 
   if [ ! -d "/usr/local/bin" ] ; then
 
@@ -100,7 +100,7 @@ fi
 
 # Create symlink for Matlab
 
-function symlink_matlab () {
+symlink_matlab () {
 
   printf "%s\n" "Creating symlink..."
 
@@ -110,7 +110,7 @@ function symlink_matlab () {
 
 # Launch Matlab from terminal
 
-function launch_matlab () {
+launch_matlab () {
 
   printf "%s\n" "Launching Matlab..."
 
@@ -118,7 +118,7 @@ function launch_matlab () {
 
 }
 
-# Main function
+# Main 
 
 main () {
 
