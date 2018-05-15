@@ -129,11 +129,11 @@ launch_matlab () {
 main () {
   sanity_checks
   get_matlab
-  untar_matlab
-  remove_matlab_tar
-  local_bin_check
-  symlink_matlab
-  launch_matlab
+  #untar_matlab
+  #remove_matlab_tar
+  #local_bin_check
+  #symlink_matlab
+  #launch_matlab
 }
 
 main "$@"
