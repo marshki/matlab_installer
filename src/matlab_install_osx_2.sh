@@ -8,9 +8,13 @@
 #### Requires: root privileges; access to Meyer network; and adequate free disk space.  ####   
 ############################################################################################
 
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
-
 LOCAL_WEB="128.122.112.23"
+
+MATLAB=(
+Matlab9.4
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+MATLAB9.4.app
+)
 
 # Is current UID 0? If not, exit.
 
