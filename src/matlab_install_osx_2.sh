@@ -109,8 +109,18 @@ fi
 symlink_matlab () {
   printf "%s\n" "Creating symlink for ${MATLAB[0]}..."
 
-  ln -s /Applications/MATLAB9.4.app/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/${MATLAB[3]}/bin/matlab /usr/local/bin/matlab
 }
+
+matlab_installer () {
+  get_matlab
+  untar_matlab
+  remove_matlab_tar 
+  local_bin_check
+  symlink_matlab 
+} 
+
+
 
 ###################
 #### Launch-r ####
@@ -128,12 +138,8 @@ launch_matlab () {
 
 main () {
   sanity_checks
-  get_matlab
-  #untar_matlab
-  #remove_matlab_tar
-  #local_bin_check
-  #symlink_matlab
-  #launch_matlab
+  matlab_installer  
+  launch_matlab
 }
 
 main "$@"
