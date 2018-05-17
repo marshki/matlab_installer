@@ -5,7 +5,7 @@
 ############################################################################################
 #### Auto install latest version of Matlab on OS X. 		                       	####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology    #### 
-#### Requires: root privileges; access to Meyer network; and adequate free disk space.  ####   
+#### Requires: root privileges; access to Meyer network; adequate free disk space.      ####   
 ############################################################################################
 
 LOCAL_WEB="128.122.112.23"
@@ -50,7 +50,7 @@ fi
 # Is CNS local web available? If not, exit.
 
 ping_local_web() {
- printf "%s\n" "PINGING CNS LOCAL WEB..."
+  printf "%s\n" "PINGING CNS LOCAL WEB..."
 
   if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
     printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
@@ -104,7 +104,7 @@ local_bin_check () {
 fi
 }
 
-# Create symlink for Matlab
+# Create symbolic link for Matlab
 
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
