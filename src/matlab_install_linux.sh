@@ -49,7 +49,7 @@ curl_check () {
 fi
 }
 
-# Is CNS local web available? If not, exit.
+# Is CNS local web available? If not, exit. 
 
 ping_local_web () {
   printf "%s\n" "PINGING CNS LOCAL WEB..."
@@ -61,6 +61,17 @@ ping_local_web () {
     exit 1
 fi
 }
+
+sanity_checks () {
+  root_check 
+  check_disk_space
+  curl_check 
+  ping_local_web
+} 
+
+##########################
+#### Matlab Install-r ####
+##########################
 
 # Download tarball to /usr/local. 
 
@@ -104,6 +115,10 @@ symlink_matlab () {
 
   ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
 }
+
+###################
+#### Launch-r ####
+###################
 
 # Launch Matlab from terminal. 
 
