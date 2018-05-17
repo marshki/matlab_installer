@@ -1,11 +1,11 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
-# v.0.2 
+# v.0.2
 
 ############################################################################################
-#### Auto install latest version of Matlab on OS X. 		                       	####
-#### Open to members of NYU's Center for Neural Science and Department of Psychology    #### 
-#### Requires: root privileges; access to Meyer network; adequate free disk space.      ####   
+#### Auto install latest version of Matlab on OS X. 		                       	        ####
+#### Open to members of NYU's Center for Neural Science and Department of Psychology    ####
+#### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
 ############################################################################################
 
 LOCAL_WEB="128.122.112.23"
@@ -75,15 +75,15 @@ sanity_checks() {
 
 get_matlab () {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
-  
+
   curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
 
-# Unpack tarball to /Applications.
+# Unpack tarball to /Applications, which installs Matlab
 
 untar_matlab () {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
-  
+
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
 
@@ -115,10 +115,10 @@ symlink_matlab () {
 matlab_installer () {
   get_matlab
   untar_matlab
-  remove_matlab_tar 
+  remove_matlab_tar
   local_bin_check
-  symlink_matlab 
-} 
+  symlink_matlab
+}
 
 ###################
 #### Launch-r ####
@@ -132,11 +132,11 @@ launch_matlab () {
   matlab -nodesktop
 }
 
-# Main 
+# Main
 
 main () {
   sanity_checks
-  matlab_installer  
+  matlab_installer
   launch_matlab
 }
 
