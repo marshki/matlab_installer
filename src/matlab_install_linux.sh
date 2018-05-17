@@ -78,7 +78,7 @@ sanity_checks () {
 get_matlab () {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /usr/local/matlab.tgz
+  curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /usr/local/matlab.tgz
 }
 
 # Unpack tarball to /usr/local which installs Matlab 
@@ -113,7 +113,7 @@ fi
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
-  ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
+  ln --symbolic /usr/local/${MATLAB[3]}/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
