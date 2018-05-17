@@ -24,7 +24,7 @@ MATLAB9.4.app
 
 root_check () {
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
+    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
@@ -33,7 +33,7 @@ fi
 
 check_disk_space () {
   if [ $(df -Hl /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le 30 ]; then
-    printf "%s\n" "Error: not enough free disk space. Exiting." >&2
+    printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
 }
@@ -42,7 +42,7 @@ fi
 
 curl_check () {
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\n" "Error: curl is not installed. Exiting."  >&2
+    printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
     exit 1
 fi
 }
@@ -50,12 +50,12 @@ fi
 # Is CNS local web available? If not, exit.
 
 ping_local_web() {
- printf "%s\n" "Pinging CNS local web..."
+ printf "%s\n" "PINGING CNS LOCAL WEB..."
 
   if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    printf "%s\n" "CNS local web IS reachable. Continuing..."
+    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
   else
-    printf "%s\n" "Error: CNS local web IS NOT reachable. Exiting." >&2
+    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1
 fi
 }
@@ -74,7 +74,7 @@ sanity_checks() {
 # Download tarball to /Applications
 
 get_matlab () {
-  printf "%s\n" "Retrieving ${MATLAB[0]} insaller..."
+  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
   
   curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
@@ -82,7 +82,7 @@ get_matlab () {
 # Unpack tarball to /Applications.
 
 untar_matlab () {
-  printf "%s\n" "Untarring ${MATLAB[0]} package to /Applications..."
+  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
   
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
@@ -90,7 +90,7 @@ untar_matlab () {
 # Remove tarball from /Applications.
 
 remove_matlab_tar () {
-  printf "%s\n" "Removing ${MATLAB[0]} tarball..."
+  printf "%s\n" "REMOVING ${MATLAB[0]} TARBALL..."
 
   rm -rv /Applications/matlab.app.tgz
 }
@@ -99,7 +99,7 @@ remove_matlab_tar () {
 
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
-    printf "%s\n" "/usr/local/bin does NOT exist; let's add it..."
+    printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
     mkdir -pv /usr/local/bin
 fi
 }
@@ -107,7 +107,7 @@ fi
 # Create symlink for Matlab
 
 symlink_matlab () {
-  printf "%s\n" "Creating symlink for ${MATLAB[0]}..."
+  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln -s /Applications/${MATLAB[3]}/bin/matlab /usr/local/bin/matlab
 }
@@ -120,8 +120,6 @@ matlab_installer () {
   symlink_matlab 
 } 
 
-
-
 ###################
 #### Launch-r ####
 ###################
@@ -129,7 +127,7 @@ matlab_installer () {
 # Launch Matlab from terminal
 
 launch_matlab () {
-  printf "%s\n" "Launching ${MATLAB[0]}..."
+  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
   matlab -nodesktop
 }
