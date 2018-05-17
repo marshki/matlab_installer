@@ -1,16 +1,26 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
-# v.0.1 
+# v.0.2 
 
+#########################################################################################
+#### Auto install Matlab on Linux (Debian-based). 		                     ####
+#### Open to members of NYU's Center for Neural Science and Department of Psychology #### 
+#### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
 ##########################################################################################
-### Auto install Matlab on Linux (Debian-based). 		                       ###
-### Open to members of NYU's Center for Neural Science and Department of Psychology    ### 
-### Requires: root privileges; access to Meyer network; and adequate free disk space.  ###   
-##########################################################################################
+
+LOCAL_WEB="128.122.112.23"
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 
-LOCAL_WEB="128.122.112.23"
+MATLAB=(
+Matlab9.4
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
+matlab9.4
+)
+
+#######################
+#### Sanity checks ####
+#######################
 
 # Is current UID 0? If not, exit.
 
