@@ -116,6 +116,15 @@ symlink_matlab () {
   ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
 }
 
+matlab_installer () {
+  get_matlab 
+  untar_matlab
+  remove_matlab_tar
+  local_bin_check
+  symlink_matlab
+} 
+
+
 ###################
 #### Launch-r ####
 ###################
@@ -131,16 +140,9 @@ launch_matlab () {
 # Main 
 
 main () {
-	root_check
-	check_disk_space
-	curl_check
-  	ping_local_web
-	get_matlab
-	untar_matlab
-	remove_matlab_tar
-  	local_bin_check
-	symlink_matlab
-	launch_matlab
+  sanity_checks
+  matlab_installer
+  launch_matlab
 }
 
 main "$@"
