@@ -26,12 +26,12 @@ matlab9.4
 
 root_check () {
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\n" "Error: root privileges are required to continue. Exiting." >&2
+    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
 
-# Is there adequate disk space in install directory? If not, exit.
+# Is there adequate disk space in /usr/local directory? If not, exit.
 
 check_disk_space () {
   if [ $(df -Hl --output=avail /usr/local |awk 'FNR == 2 {print $1}' |sed 's/G//') -le "30" ]; then
