@@ -76,7 +76,7 @@ sanity_checks () {
 # Download tarball to /usr/local. 
 
 get_matlab () {
-  printf "%s\n" "RETRIEVING MATLAB INSTALLER..."
+  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
   curl --progress-bar --retry 3 --retry-delay 5 "$MATLAB_INSTALLER" --output /usr/local/matlab.tgz
 }
@@ -84,7 +84,7 @@ get_matlab () {
 # Unpack tarball to /usr/local which installs Matlab 
 
 untar_matlab () {
-  printf "%s\n" "UNTARRING PACKAGE TO /usr/local..."
+  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
 
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
 }
@@ -92,7 +92,7 @@ untar_matlab () {
 # Remove tarball. 
 
 remove_matlab_tar () {
-  printf "%s\n" "REMOVING MATLAB INSTALLER..."
+  printf "%s\n" "REMOVING $MATLAB[0]} INSTALLER..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
 }
@@ -111,7 +111,7 @@ fi
 # Create symbolic link for Matlab. 
 
 symlink_matlab () {
-  printf "%s\n" "CREATING SYMLINK.."
+  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln --symbolic /usr/local/matlab9.4/bin/matlab /usr/local/bin/matlab
 }
@@ -124,7 +124,6 @@ matlab_installer () {
   symlink_matlab
 } 
 
-
 ###################
 #### Launch-r ####
 ###################
@@ -132,7 +131,7 @@ matlab_installer () {
 # Launch Matlab from terminal. 
 
 launch_matlab () {
-  printf "%s\n" "LAUNCHING MATLAB..."
+  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
   matlab -nodesktop
 }
