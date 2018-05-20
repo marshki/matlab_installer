@@ -164,15 +164,15 @@ function show_menu() {
 # Download tarball to /Applications
 
 get_matlab () {
-  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "RETRIEVING $1 INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /Applications/matlab.app.tgz
+  curl --progress-bar --retry 3 --retry-delay 5 $2 --output /Applications/matlab.app.tgz
 }
 
 # Unpack tarball to /Applications, which installs Matlab
 
 untar_matlab () {
-  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
+  printf "%s\n" "UNTARRING $1 PACKAGE TO /Applications..."
 
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
@@ -180,7 +180,7 @@ untar_matlab () {
 # Remove tarball from /Applications.
 
 remove_matlab_tar () {
-  printf "%s\n" "REMOVING ${MATLAB[0]} TARBALL..."
+  printf "%s\n" "REMOVING $1 TARBALL..."
 
   rm -rv /Applications/matlab.app.tgz
 }
@@ -199,7 +199,7 @@ fi
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
-  ln -s /Applications/${MATLAB[3]}/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/$4/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
