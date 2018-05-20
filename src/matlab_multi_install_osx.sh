@@ -3,15 +3,15 @@
 # v.0.2
 
 ############################################################################################
-#### Menu-based installer for various versions of Matlab on OS X. 		        ####
+#### Menu-based installer for various versions of MATLAB on OS X. 		        ####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology    ####
 #### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
 ############################################################################################
 
 LOCAL_WEB="128.122.112.23"
 
-# Arrays follow this structure: 
-# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app)
+#### Arrays follow this structure: 		####
+#### MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) ####
 
 MATLAB_7.5=(
 Matlab7.5
@@ -144,16 +144,16 @@ function show_menu() {
     printf "%s\n" "------------------------------"
     printf "%s\n" "  MATLAB INSTALLER MAIN MENU  "
     printf "%s\n" "------------------------------"
-        printf "%s\n" "  1. INSTALL Matlab "
-        printf "%s\n" "  2. INSTALL Matlab"
-        printf "%s\n" "  3. INSTALL Matlab"
-        printf "%s\n" "  4. INSTALL MATLAB" 
-	printf "%s\n" "  5. INSTALL MATLAB"
-	printf "%s\n" "  6. INSTALL MATLAB"
-	printf "%s\n" "  7. INSTALL MATLAB"
-	printf "%s\n" "  8. INSTALL MATLAB"
-	printf "%s\n" "  9. INSTALL MATLAB"
-	printf "%s\n" "  10. INSTALL MATLAB"
+        printf "%s\n" "  1.  INSTALL MATLAB 7.5"
+        printf "%s\n" "  2.  INSTALL MATLAB 8.0"
+        printf "%s\n" "  3.  INSTALL MATLAB 8.3"
+        printf "%s\n" "  4.  INSTALL MATLAB 8.5" 
+	printf "%s\n" "  5.  INSTALL MATLAB 8.6"
+	printf "%s\n" "  6.  INSTALL MATLAB 9.0"
+	printf "%s\n" "  7.  INSTALL MATLAB 9.1"
+	printf "%s\n" "  8.  INSTALL MATLAB 9.2"
+	printf "%s\n" "  9.  INSTALL MATLAB 9.3"
+	printf "%s\n" "  10. INSTALL MATLAB 9.4"
 	printf "%s\n" "  11. EXIT"
 }
 
