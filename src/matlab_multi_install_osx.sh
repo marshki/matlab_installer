@@ -124,7 +124,38 @@ sanity_checks() {
   ping_local_web
 }
 
+######################
+#### Display Menu ####
+######################
 
+# Display pause prompt.
+# Suspend processing of script; display message prompting user to press [Enter] key to continue.
+# $1-> Message (optional).
+
+function pause() {
+    local message="$@"
+    [ -z $message ] && message="INSTALL DONE. PRESS [Enter] KEY TO CONTINUE:  "
+    read -p "$message" readEnterKey
+}
+
+# Display on-screen menu
+
+function show_menu() {
+    printf "%s\n" "------------------------------"
+    printf "%s\n" "  MATLAB INSTALLER MAIN MENU  "
+    printf "%s\n" "------------------------------"
+        printf "%s\n" "  1. INSTALL Matlab "
+        printf "%s\n" "  2. INSTALL Matlab"
+        printf "%s\n" "  3. INSTALL Matlab"
+        printf "%s\n" "  4. INSTALL MATLAB" 
+	printf "%s\n" "  5. INSTALL MATLAB"
+	printf "%s\n" "  6. INSTALL MATLAB"
+	printf "%s\n" "  7. INSTALL MATLAB"
+	printf "%s\n" "  8. INSTALL MATLAB"
+	printf "%s\n" "  9. INSTALL MATLAB"
+	printf "%s\n" "  10. INSTALL MATLAB"
+	printf "%s\n" "  11. EXIT"
+}
 
 ##########################
 #### Matlab Install-r ####
