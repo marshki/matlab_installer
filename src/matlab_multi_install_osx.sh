@@ -13,61 +13,61 @@ LOCAL_WEB="128.122.112.23"
 # Arrays follow this structure: 		
 # MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
 
-MATLAB_7.5=(
+MATLAB_7_5=(
 Matlab7.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB7.5.app.tgz"
 MATLAB7.5.app
 )
 
-MATLAB_8.0=(
+MATLAB_8_0=(
 Matlab8.0
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.0.app.tgz"
 MATLAB8.0.app
 )
 
-MATLAB_8.3=(
+MATLAB_8_3=(
 Matlab8.3
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.3.app.tgz"
 MATLAB8.3.app
 )
 
-MATLAB_8.5=(
+MATLAB_8_5=(
 Matlab8.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.5.app.tgz"
 MATLAB8.5.app
 )
 
-MATLAB_8.6=(
+MATLAB_8_6=(
 Matlab8.6
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.6.app.tgz"
 MATLAB8.6.app
 )
 
-MATLAB_9.0=(
+MATLAB_9_0=(
 Matlab9.0
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.0.app.tgz"
 MATLAB9.0.app
 )
 
-MATLAB_9.1=(
+MATLAB_9_1=(
 Matlab9.1
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.1.app.tgz"
 MATLAB9.1.app
 )
 
-MATLAB_9.2=(
+MATLAB_9_2=(
 Matlab9.2
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.2.app.tgz"
 MATLAB9.2.app
 )
 
-MATLAB_9.3=(
+MATLAB_9_3=(
 Matlab9.3
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.3.app.tgz"
 MATLAB9.3.app
 )
 
-MATLAB_9.4=(
+MATLAB_9_4=(
 Matlab9.4
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-13-2014/macos/MATLAB9.4.app.tgz"
 MATLAB9.4.app
@@ -218,18 +218,18 @@ matlab_installer () {
 
 read_input() {
     local c
-    read -p "ENTER YOUR CHOICE [ 1-4 ]:  " c
+    read -p "ENTER YOUR CHOICE [ 1-11 ]:  " c
     case $c in
-        1) matlab_installer "${MATLAB_7.5[@]}"  ;;
-	2) matlab_installer "${MATLAB_8.0[@]}"  ;;
-	3) matlab_installer "${MATLAB_8.3[@]}"  ;;
-	4) matlab_installer "${MATLAB_8.5[@]}"  ;;
-	5) matlab_installer "${MATLAB_8.6[@]}"  ;;
-	6) matlab_installer "${MATLAB_9.0[@]}"  ;;
-	7) matlab_installer "${MATLAB_9.1[@]}"  ;;
-	8) matlab_installer "${MATLAB_9.2[@]}"  ;;
-	9) matlab_installer "${MATLAB_9.3[@]}"  ;;
-	10) matlab_installer "${MATLAB_9.4[@]}" ;;
+        1) matlab_installer "${MATLAB_7_5[@]}" ;;
+	2) matlab_installer "${MATLAB_8_0[@]}" ;;
+	3) matlab_installer "${MATLAB_8_3[@]}" ;;
+	4) matlab_installer "${MATLAB_8_5[@]}" ;;
+	5) matlab_installer "${MATLAB_8_6[@]}" ;;
+	6) matlab_installer "${MATLAB_9_0[@]}" ;;
+	7) matlab_installer "${MATLAB_9_1[@]}" ;;
+	8) matlab_installer "${MATLAB_9_2[@]}" ;;
+	9) matlab_installer "${MATLAB_9_3[@]}" ;;
+	10) matlab_installer "${MATLAB_9_4[@]}" ;;
         11) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\n" "SELECT AN OPTION (1 to 11):  "
@@ -260,7 +260,7 @@ main () {
 
 sanity_checks
 
-  while_true
+  while true
   do
     clear
     show_menu 
@@ -268,5 +268,4 @@ sanity_checks
     #launch_matlab
   done
 }
-
 main "$@"
