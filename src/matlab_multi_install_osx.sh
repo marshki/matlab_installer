@@ -197,17 +197,17 @@ fi
 # Create symbolic link for Matlab
 
 symlink_matlab () {
-  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
+  printf "%s\n" "CREATING SYMLINK FOR $1..."
 
   ln -s /Applications/$4/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
-  get_matlab
-  untar_matlab
-  remove_matlab_tar
-  local_bin_check
-  symlink_matlab
+  get_matlab "$@"
+  untar_matlab "$@"
+  remove_matlab_tar "$@"
+  local_bin_check "$@"
+  symlink_matlab "$@"
 }
 
 ###################
@@ -217,7 +217,7 @@ matlab_installer () {
 # Launch Matlab from terminal
 
 launch_matlab () {
-  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
+  printf "%s\n" "LAUNCHING $1..."
 
   matlab -nodesktop
 }
