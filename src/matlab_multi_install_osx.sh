@@ -220,19 +220,19 @@ read_input() {
     local c
     read -p "ENTER YOUR CHOICE [ 1-4 ]:  " c
     case $c in
-        1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-	1) matlab_installer "${MATLAB[@]}";;
-        4) printf "%s\n" "CIAO!"; exit 0 ;;
+        1) matlab_installer "${MATLAB_7.5[@]}"  ;;
+	2) matlab_installer "${MATLAB_8.0[@]}"  ;;
+	3) matlab_installer "${MATLAB_8.3[@]}"  ;;
+	4) matlab_installer "${MATLAB_8.5[@]}"  ;;
+	5) matlab_installer "${MATLAB_8.6[@]}"  ;;
+	6) matlab_installer "${MATLAB_9.0[@]}"  ;;
+	7) matlab_installer "${MATLAB_9.1[@]}"  ;;
+	8) matlab_installer "${MATLAB_9.2[@]}"  ;;
+	9) matlab_installer "${MATLAB_9.3[@]}"  ;;
+	10) matlab_installer "${MATLAB_9.4[@]}" ;;
+        11) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\n" "SELECT AN OPTION (1 to 4):  "
+           printf "%s\n" "SELECT AN OPTION (1 to 11):  "
 
            pause
     esac
@@ -257,9 +257,16 @@ launch_matlab () {
 # Main
 
 main () {
-  sanity_checks
-  matlab_installer
-  launch_matlab
+
+sanity_checks
+
+  while_true
+  do
+    clear
+    show_menu 
+    read_input
+    #launch_matlab
+  done
 }
 
 main "$@"
