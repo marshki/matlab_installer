@@ -10,8 +10,8 @@
 
 LOCAL_WEB="128.122.112.23"
 
-#### Arrays follow this structure: 		####
-#### MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) ####
+# Arrays follow this structure: 		
+# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
 
 MATLAB_7.5=(
 Matlab7.5
@@ -209,6 +209,38 @@ matlab_installer () {
   local_bin_check "$@"
   symlink_matlab "$@"
 }
+
+####################
+#### User Input ####
+####################
+
+#### Get input via the keyboard and make a decision using case...esac ####
+
+read_input() {
+    local c
+    read -p "ENTER YOUR CHOICE [ 1-4 ]:  " c
+    case $c in
+        1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+	1) matlab_installer "${MATLAB[@]}";;
+        4) printf "%s\n" "CIAO!"; exit 0 ;;
+        *)
+           printf "%s\n" "SELECT AN OPTION (1 to 4):  "
+
+           pause
+    esac
+}
+
+# Ignore CTRL+C, CTRL+Z and quit signals using the trap
+
+trap '' SIGINT SIGQUIT SIGTSTP
 
 ###################
 #### Launch-r ####
