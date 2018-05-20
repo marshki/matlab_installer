@@ -69,7 +69,7 @@ MATLAB9.3.app
 
 MATLAB_9_4=(
 Matlab9.4
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-13-2014/macos/MATLAB9.4.app.tgz"
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.4.app.tgz"
 MATLAB9.4.app
 )
 
