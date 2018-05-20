@@ -12,6 +12,12 @@ LOCAL_WEB="128.122.112.23"
 
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB7.5.app.tgz"
 
+MATLAB_7.5=(
+Matlab7.5
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB7.5.app.tgz"
+MATLAB7.5.app
+)
+
 MATLAB_8.0=(
 Matlab8.0
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.0.app.tgz"
@@ -27,7 +33,6 @@ Matlab8.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.5.app.tgz"
 MATLAB8.5.app
 )
-
 
 MATLAB_8.6=(
 Matlab8.6
