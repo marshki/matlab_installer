@@ -199,7 +199,7 @@ fi
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR $1..."
 
-  ln -s /Applications/$4/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/$3/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
@@ -208,6 +208,7 @@ matlab_installer () {
   remove_matlab_tar "$@"
   local_bin_check "$@"
   symlink_matlab "$@"
+  pause
 }
 
 ####################
