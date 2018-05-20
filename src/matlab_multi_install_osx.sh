@@ -3,14 +3,15 @@
 # v.0.2
 
 ############################################################################################
-#### Auto install latest version of Matlab on OS X. 		                       	####
+#### Menu-based installer for various versions of Matlab on OS X. 		        ####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology    ####
 #### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
 ############################################################################################
 
 LOCAL_WEB="128.122.112.23"
 
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB7.5.app.tgz"
+# Arrays follow this structure: 
+# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app)
 
 MATLAB_7.5=(
 Matlab7.5
@@ -23,11 +24,13 @@ Matlab8.0
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.0.app.tgz"
 MATLAB8.0.app
 )
+
 MATLAB_8.3=(
 Matlab8.3
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.3.app.tgz"
 MATLAB8.3.app
 )
+
 MATLAB_8.5=(
 Matlab8.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.5.app.tgz"
@@ -120,6 +123,8 @@ sanity_checks() {
   curl_check
   ping_local_web
 }
+
+
 
 ##########################
 #### Matlab Install-r ####
