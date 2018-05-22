@@ -15,7 +15,7 @@ fi
 # OS X
 
 check_disk_space_osx () {
-  if [ $(df -l /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le "31457280000" ]; then
+  if [ $(df -l /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le "31457280" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
