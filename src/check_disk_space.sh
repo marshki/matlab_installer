@@ -21,4 +21,5 @@ check_disk_space_osx () {
 fi
 }
 
+#check_disk_space_linux
 check_disk_space_osx
