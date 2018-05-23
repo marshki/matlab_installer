@@ -3,7 +3,7 @@
 # v.0.2 
 
 #########################################################################################
-#### Auto install Matlab on Linux (Debian-based). 		                     ####
+#### Auto install latest version of Matlab on Linux (Debian-based). 		     ####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
 ##########################################################################################
@@ -113,7 +113,7 @@ fi
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
-  ln --symbolic /usr/local/${MATLAB[3]}/bin/matlab /usr/local/bin/matlab
+  ln --symbolic /usr/local/${MATLAB[2]}/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
