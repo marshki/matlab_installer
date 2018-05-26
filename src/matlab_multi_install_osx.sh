@@ -209,7 +209,7 @@ fi
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR $1..."
 
-  ln -s /Applications/$3/bin/matlab /usr/local/bin/matlab$5
+  ln -s /Applications/$3/bin/matlab /usr/local/bin/matlab$4
 }
 
 matlab_installer () {
@@ -262,7 +262,7 @@ trap '' SIGINT SIGQUIT SIGTSTP
 launch_matlab () {
   printf "%s\n" "LAUNCHING $1..."
 
-  matlab -nodesktop
+  matlab$4 -nodesktop
 }
 
 # Main
@@ -276,7 +276,7 @@ sanity_checks
     clear
     show_menu 
     read_input
-    #launch_matlab
+    launch_matlab
   done
 }
 main "$@"
