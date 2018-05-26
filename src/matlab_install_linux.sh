@@ -6,7 +6,8 @@
 #### Auto install latest version of Matlab on Linux (Debian-based). 		     ####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
-##########################################################################################
+#### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
+#########################################################################################
 
 LOCAL_WEB="128.122.112.23"
 
