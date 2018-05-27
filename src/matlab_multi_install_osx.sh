@@ -132,7 +132,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  ping_local_web
+  #ping_local_web
 }
 
 ######################
@@ -152,20 +152,20 @@ function pause() {
 # Display on-screen menu
 
 function show_menu() {
-    printf "%s\n" "------------------------------"
-    printf "%s\n" "  MATLAB INSTALLER MAIN MENU  "
-    printf "%s\n" "------------------------------"
-        printf "%s\n" "  1.  INSTALL MATLAB 7.5"
-        printf "%s\n" "  2.  INSTALL MATLAB 8.0"
-        printf "%s\n" "  3.  INSTALL MATLAB 8.3"
-        printf "%s\n" "  4.  INSTALL MATLAB 8.5" 
-	printf "%s\n" "  5.  INSTALL MATLAB 8.6"
-	printf "%s\n" "  6.  INSTALL MATLAB 9.0"
-	printf "%s\n" "  7.  INSTALL MATLAB 9.1"
-	printf "%s\n" "  8.  INSTALL MATLAB 9.2"
-	printf "%s\n" "  9.  INSTALL MATLAB 9.3"
-	printf "%s\n" "  10. INSTALL MATLAB 9.4"
-	printf "%s\n" "  11. EXIT"
+    printf "%s\n" "---------------------------------"
+    printf "%s\n" "   MATLAB INSTALLER MAIN MENU    "
+    printf "%s\n" "---------------------------------"
+    printf "%s\n" "  1.  INSTALL MATLAB 7.5 (R2007b)"
+    printf "%s\n" "  2.  INSTALL MATLAB 8.0 (R2012b)"
+    printf "%s\n" "  3.  INSTALL MATLAB 8.3 (R2014a)"
+    printf "%s\n" "  4.  INSTALL MATLAB 8.5 (R2015a)" 
+    printf "%s\n" "  5.  INSTALL MATLAB 8.6 (R2015b)"
+    printf "%s\n" "  6.  INSTALL MATLAB 9.0 (R2016a)"
+    printf "%s\n" "  7.  INSTALL MATLAB 9.1 (R2016b)"
+    printf "%s\n" "  8.  INSTALL MATLAB 9.2 (R2017a)"
+    printf "%s\n" "  9.  INSTALL MATLAB 9.3 (R2017b)"
+    printf "%s\n" "  10. INSTALL MATLAB 9.4 (R2018a)"
+    printf "%s\n" "  11. EXIT"
 }
 
 ##########################
