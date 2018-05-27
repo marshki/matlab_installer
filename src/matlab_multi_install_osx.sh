@@ -132,7 +132,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  #ping_local_web
+  ping_local_web
 }
 
 ######################
