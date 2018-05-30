@@ -8,6 +8,9 @@ Open to members of New York University's [Center for Neural Science](http://www.
 
 Written and tested to run on Linux ([Debain-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
 
+## TODO 
+[ ] Add TUI to Linux installer using `dialog`, and work to integrate progress bar with `ping`, `curl`, etc. 
+
 ## Usage 
 
 As ROOT, call the script: 
