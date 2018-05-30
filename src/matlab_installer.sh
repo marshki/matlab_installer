@@ -9,6 +9,9 @@
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
 
+# dialog_box="dialog --backtitle "$script" --title "$program" --msgbox"
+# dialog_dimension"10 40" 
+
 script=`basename "$0"`
 program="MATLAB INSTALLER"
 
