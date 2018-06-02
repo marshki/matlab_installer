@@ -72,7 +72,7 @@ sanity_checks() {
 #### Matlab Install-r ####
 ##########################
 
-# Download tarball to /Applications
+# Download tarball to /Applications. 
 
 get_matlab () {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
@@ -80,7 +80,7 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
 
-# Unpack tarball to /Applications, which installs Matlab
+# Unpack tarball to /Applications, which installs Matlab. 
 
 untar_matlab () {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
@@ -96,7 +96,7 @@ remove_matlab_tar () {
   rm -rv /Applications/matlab.app.tgz
 }
 
-# Does /usr/local/bin exist? If not, add it
+# Does /usr/local/bin exist? If not, add it. 
 
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
@@ -105,7 +105,7 @@ local_bin_check () {
 fi
 }
 
-# Create symbolic link for Matlab
+# Create symbolic link for Matlab. 
 
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
