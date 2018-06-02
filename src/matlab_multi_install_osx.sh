@@ -149,7 +149,7 @@ function pause() {
     read -p "$message" readEnterKey
 }
 
-# Display on-screen menu
+# Display on-screen menu. 
 
 function show_menu() {
     printf "%s\n" "---------------------------------"
@@ -172,7 +172,7 @@ function show_menu() {
 #### Matlab Install-r ####
 ##########################
 
-# Download tarball to /Applications
+# Download tarball to /Applications. 
 
 get_matlab () {
   printf "%s\n" "RETRIEVING $1 INSTALLER..."
@@ -180,7 +180,7 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 $2 --output /Applications/matlab.app.tgz
 }
 
-# Unpack tarball to /Applications, which installs Matlab
+# Unpack tarball to /Applications, which installs Matlab. 
 
 untar_matlab () {
   printf "%s\n" "UNTARRING $1 PACKAGE TO /Applications..."
@@ -257,7 +257,7 @@ trap '' SIGINT SIGQUIT SIGTSTP
 #### Launch-r ####
 ###################
 
-# Launch Matlab from terminal
+# Launch Matlab from terminal. 
 
 launch_matlab () {
   printf "%s\n" "LAUNCHING $1..."
@@ -265,7 +265,7 @@ launch_matlab () {
   matlab$4 -nodesktop
 }
 
-# Main
+# Main. 
 
 main () {
 
