@@ -82,7 +82,7 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 "${MATLAB[1]}" --output /usr/local/matlab.tgz
 }
 
-# Unpack tarball to /usr/local which installs Matlab 
+# Unpack tarball to /usr/local, which installs Matlab.  
 
 untar_matlab () {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
