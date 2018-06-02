@@ -16,6 +16,10 @@ As ROOT, call the script:
 
 `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts.    
 
+# TODO
+[ ] accurate progress bars in dialog for `ping`, `curl/w-get`, and `tar`
+[ ] code review; refactor as needed 
+
 ## History 
 v.0.2 20180211
 
