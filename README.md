@@ -8,17 +8,16 @@ Open to members of New York University's [Center for Neural Science](http://www.
 
 Written and tested to run on Linux ([Debain-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
 
-## TODO 
-[ ] Add TUI to Linux installer using `dialog`, and work to integrate progress bar with `ping`, `curl`, etc. 
-
 ## Usage 
 
 As ROOT, call the script: 
-`bash matlab_install.sh (Linux)`, or: 
-`bash matlab_install_osx.sh` (OS X).  
+
+`bash matlab_install.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) for auto installation of the most recent version of Matlab. 
+
+`bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts.    
 
 ## History 
-v.0.0.1 20180211
+v.0.2 20180211
 
 ## License 
 [License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
