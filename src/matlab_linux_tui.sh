@@ -10,7 +10,6 @@
 #########################################################################################
 
 # TODO: 
-# check compressed/uncompressed file sizes to see if 30GB is accurate 
 # add dialog and pv package check
 # add untar progress meter   
 # code review/refactor as needed 
