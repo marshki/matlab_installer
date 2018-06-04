@@ -10,8 +10,9 @@
 #########################################################################################
 
 # TODO: 
-# add dialog package check  
 # check compressed/uncompressed file sizes to see if 30GB is accurate 
+# add dialog and pv package check
+# add untar progress meter   
 # code review/refactor as needed 
 
 script=`basename "$0"`
@@ -28,6 +29,11 @@ Matlab9.4
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
 matlab9.4
 )
+
+###########################
+#### Pre-flight checks ####
+###########################
+# Add checks for dialog and pv 
 
 ########################
 #### Progress meter ####
@@ -55,6 +61,8 @@ fi
 
 # Is there adequate disk space in /usr/local directory? If not, exit.
 
+# Is 30 GB actually needed? 
+
 check_disk_space () {
   if [ $(df -l --output=avail /usr/local |awk 'FNR == 2 {print $1}') -le "31457280" ]; then 
     dialog --backtitle "$script" --title "$program" --msgbox "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2 10 40
@@ -62,7 +70,7 @@ check_disk_space () {
 fi
 }
 
-# Is curl installed? If not, install it.
+# Is wget installed? If not, install it.
 
 wget_check () {
   if [ $(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
@@ -105,8 +113,9 @@ get_matlab () {
     dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40 
 }
 
-
 # Unpack tarball to /usr/local which installs Matlab 
+
+# Add progress bar to reflect accurate percentage 
 
 untar_matlab () {
   dialog --backtitle "$script" --title "$program" --infobox "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..." 10 40
