@@ -9,6 +9,10 @@
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
 
+# TODO: 
+# add dialog package check  
+# code review/refactor as needed 
+
 script=`basename "$0"`
 program="MATLAB INSTALLER"
 
