@@ -98,9 +98,10 @@ sanity_checks () {
 # Download tarball to /usr/local. 
 get_matlab () {
 
-  wget --directory-prefix=/usr/local/matlab.tgz --tries=3 --continue ${MATLAB[1]} 2>&1 | \
-    stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
-    dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40
+  wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue $MATLAB_INSTALLER 2>&1 | \
+    grep "%" |\
+    sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" |
+    dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40 
 }
 
 
@@ -147,11 +148,11 @@ install_complete () {
 
 matlab_installer () {
   get_matlab 
-  #untar_matlab
-  #remove_matlab_tar
-  #local_bin_check
-  #symlink_matlab
-  #install_complete
+  untar_matlab
+  remove_matlab_tar
+  local_bin_check
+  symlink_matlab
+  install_complete
 } 
 
 # Main 
