@@ -11,6 +11,7 @@
 
 # TODO: 
 # add dialog package check  
+# check compressed/uncompressed file sizes to see if 30GB is accurate 
 # code review/refactor as needed 
 
 script=`basename "$0"`
