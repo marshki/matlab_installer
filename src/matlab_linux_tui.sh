@@ -59,10 +59,10 @@ fi
 
 # Is curl installed? If not, install it.
 
-curl_check () {
-  if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
-    dialog --backtitle "$script" --title "$program" --infobox "CURL IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
-    apt-get install curl --yes
+wget_check () {
+  if [ $(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
+    dialog --backtitle "$script" --title "$program" --infobox "WGET IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
+    apt-get install wget --yes
 fi
 }
 
@@ -82,8 +82,8 @@ fi
 
 sanity_checks () {
   root_check 
-  #check_disk_space
-  curl_check 
+  check_disk_space
+  wget_check 
   ping_local_web
 } 
 
@@ -94,7 +94,7 @@ sanity_checks () {
 # Download tarball to /usr/local. 
 get_matlab () {
 
-  wget --directory-prefix="/usr/local/matlab.tgz" --tries=3 --continue ${MATLAB[1]} 2>&1 | \
+  wget --directory-prefix=/usr/local/matlab.tgz --tries=3 --continue ${MATLAB[1]} 2>&1 | \
     stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | \
     dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40
 }
