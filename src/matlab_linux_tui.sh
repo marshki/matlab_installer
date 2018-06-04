@@ -12,6 +12,7 @@
 # TODO: 
 # add dialog package check  
 # check compressed/uncompressed file sizes to see if 30GB is accurate 
+# silence apt-gets and matlab untat (or another progress bar?)
 # code review/refactor as needed 
 
 script=`basename "$0"`
