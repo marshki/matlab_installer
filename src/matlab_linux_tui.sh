@@ -120,7 +120,7 @@ untar_matlab () {
 # Remove tarball. 
 
 remove_matlab_tar () {
-  dialog --backtitle "$script" --title "$program" --infobox "REMOVING $MATLAB[0]} INSTALLER..." 10 40 ; sleep 2 
+  dialog --backtitle "$script" --title "$program" --infobox "REMOVING $MATLAB{[0]} INSTALLER..." 10 40 ; sleep 2 
  
   rm --recursive --verbose /usr/local/matlab.tgz
 }
@@ -132,7 +132,7 @@ local_bin_check () {
 
     dialog --backtitle "$script" --title "$program" --infobox "/usr/local/bin DOES NOT exist; LET'S ADD IT..." 10 40 ; sleep 2 
     
-    mkdir -pv /usr/local/bin
+    #mkdir -pv /usr/local/bin
 fi
 }
 
