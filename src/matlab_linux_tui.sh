@@ -112,10 +112,14 @@ get_matlab () {
     dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40 
 }
 
-# Unpack tarball to /usr/local which installs Matlab 
-
+# Add this progress bar to reflect accurate percentage after fixing  
+#untar_matlab () {
+#  (pv --numeric /usr/local/rando.tgz | tar --extract --gzip --directory=/usr/local) 2>&1|
+#  dialog --backtitle "$script" --title "bleh" --gauge "UNTARRING rando PACKAGE TO /usr/local..." 10 40
+#}
 # Add progress bar to reflect accurate percentage 
 
+# Unpack tarball to /usr/local which installs Matlab 
 untar_matlab () {
   dialog --backtitle "$script" --title "$program" --infobox "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..." 10 40
 
