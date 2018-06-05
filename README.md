@@ -20,6 +20,8 @@ As ROOT, call the script:
 
 [ ] Add dialog and pv package check (Linux).  
 
+[ ] 13461903360 (tar) + 1879048192 (untar) = 15340951552  
+
 [ ] Revisit ping progress bar (All). 
 
 [ ] Accurate progress bars in dialog for `tar` (Linux). 
