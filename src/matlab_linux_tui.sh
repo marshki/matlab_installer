@@ -3,7 +3,7 @@
 # v.0.2 
 
 #########################################################################################
-#### Install latest version of Matlab on Linux (Debian-based). 		             ####
+#### Install latest version of Matlab on Linux (Debian-based) via TUI. 		     ####
 #### Open to members of NYU's Center for Neural Science and Department of Psychology #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
@@ -11,7 +11,7 @@
 
 # TODO: 
 # add dialog and pv package check
-# add untar progress meter   
+# Change disk-space free space requirement
 # code review/refactor as needed 
 
 script=`basename "$0"`
@@ -60,10 +60,8 @@ fi
 
 # Is there adequate disk space in /usr/local directory? If not, exit.
 
-# Is 30 GB actually needed? 
-
 check_disk_space () {
-  if [ $(df -l --output=avail /usr/local |awk 'FNR == 2 {print $1}') -le "31457280" ]; then 
+  if [ $(df -l --output=avail /usr/local |awk 'FNR == 2 {print $1}') -le "14680064" ]; then 
     dialog --backtitle "$script" --title "$program" --msgbox "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2 10 40
     exit 1
 fi
@@ -85,7 +83,7 @@ ping_local_web () {
   progress_meter | dialog --backtitle "$script" --title "$program" --gauge "PINGING CNS LOCAL WEB..." 10 40 
 
   if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    dialog --backtitle "$script" --title "$program" --msgbox "CNS LOCAL WEB IS REACHABLE. CONTINUING..." 10 40 
+    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING..." 10 40 
   else
     dialog --backtitle "$script" --title "$program" --msgbox "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2 10 40
     exit 1
@@ -109,7 +107,7 @@ get_matlab () {
   wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue $MATLAB_INSTALLER 2>&1 | \
     grep "%" |\
     sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" |
-    dialog --gauge "RETRIEVING MATLAB INSTALLER..." 10 40 
+    dialog --backtitle "$script" --title "$program" --gauge "RETRIEVING ${MATLAB[0]} INSTALLER..." 10 40 
 }
 
 # Unpack tarball to /usr/local, which installs Matlab. 
@@ -118,13 +116,6 @@ untar_matlab () {
   (pv --numeric /usr/local/matlab.tgz | tar --extract --gzip --directory=/usr/local) 2>&1|
   dialog --backtitle "$script" --title "$program" --gauge "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..." 10 40
 }
-
-# Unpack tarball to /usr/local which installs Matlab 
-#
-#untar_matlab () {
-#  dialog --backtitle "$script" --title "$program" --infobox "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..." 10 40
-#  tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
-#}
 
 # Remove tarball. 
 
