@@ -12,11 +12,11 @@ Written and tested to run on Linux ([Debain-based OSs](https://www.debian.org/de
 
 As ROOT, call the script: 
 
-`bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) for auto installation of the most recent version of Matlab. 
+* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) for auto installation of the most recent version of Matlab. 
 
-`bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts.
+* `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts.
 
-`bash matlab_linux_tui.sh` will launch a text-based user interface and do the driving for you: 
+* `bash matlab_linux_tui.sh` will launch a text-based user interface and do the driving for you: 
 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/ping_cns.png "ping") | ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/retrieve_matlab.png "retrieve")     
 ## TODO
