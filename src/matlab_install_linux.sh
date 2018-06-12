@@ -36,7 +36,7 @@ fi
 # Is there adequate disk space in /usr/local directory? If not, exit.
 
 check_disk_space () {
-  if [ $(df -l --output=avail /usr/local |awk 'FNR == 2 {print $1}') -le "31457280" ]; then
+  if [ $(df -l --output=avail /usr/local |awk 'FNR == 2 {print $1}') -le "14680064" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
