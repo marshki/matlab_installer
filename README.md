@@ -18,7 +18,11 @@ As ROOT, call the script:
 
 * `bash matlab_linux_tui.sh` will launch a text-based user interface and do the driving for you: 
 
-![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/ping_cns.png "ping") | ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/retrieve_matlab.png "retrieve")     
+![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/ping_cns.png "ping") |\
+![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/retrieve_matlab.png "retrieve") |\     
+![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/matlab_multi.pngi "multi-install")
+
+
 ## TODO
 
 [ ] Add dialog and pv package check (Linux tui).  
