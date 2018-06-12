@@ -4,7 +4,8 @@
 
 ############################################################################################
 #### Menu-based installer for various versions of MATLAB on OS X. 		        ####
-#### Open to members of NYU's Center for Neural Science and Department of Psychology    ####
+#### Open to members of NYU's: Center for Brain Imagin, Center for Neural Science,      ####
+#### and Department of Psychology.                                                      ####
 #### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
 #### Note: Use on machines WITH at least one previous version of MATLAB installed.      ####
 ############################################################################################
@@ -100,7 +101,7 @@ fi
 # Is there adequate disk space in "/Applications"? If not, exit.
 
 check_disk_space () {
-  if [ $(df -l /Applications |awk 'FNR == 2 {print $4}') -le "31457280" ]; then
+  if [ $(df -l /Applications |awk 'FNR == 2 {print $4}') -le "14680064" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
@@ -257,7 +258,7 @@ trap '' SIGINT SIGQUIT SIGTSTP
 #### Launch-r ####
 ###################
 
-# Launch Matlab from terminal. 
+# Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main. 
 
 launch_matlab () {
   printf "%s\n" "LAUNCHING $1..."
