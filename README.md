@@ -23,7 +23,7 @@ __Pre-flight checklist__ (the script will check for these conditions to be met):
 
   * access to the Meyer network.  
 
-__Take-off:__
+__Liftoff:__
 
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
 
