@@ -13,7 +13,7 @@ Tested to run on currently-supported versions of Linux ([Debain-based OSs](https
 
 ## Getting Started
 
-__Pre-flight checklist:__
+__Pre-flight checklist (the script will check for these conditions to be met):__
  
   * root privileges  
 
