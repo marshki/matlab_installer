@@ -25,7 +25,7 @@ Pre-flight checklist:
 
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
 
-* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto install the most recent version of Matlab. 
+* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
 
 * `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts:
 
