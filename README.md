@@ -39,11 +39,11 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 
 ## TODO
 
-[ ] Add dialog and pv package check (TUI).  
+- [ ] Add dialog and pv package check (TUI).  
 
-[ ] Revisit ping progress bar (TUI). 
+- [ ] Revisit ping progress bar (TUI). 
 
-[ ] Code review; refactor as needed (all). 
+- [ ] Code review (all). 
 
 ## History 
 v.0.2 20180211
