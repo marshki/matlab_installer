@@ -6,15 +6,26 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html).   
-Open to members of New York University's [Center for Neural Science](http://www.cns.nyu.edu/) and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-Written and tested to run on Linux ([Debain-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
+Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-## Getting Started 
+Tested to run on currently-supported versions of Linux ([Debain-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
 
-As ROOT, call the script: 
+## Getting Started
 
-* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) for auto installation of the most recent version of Matlab. 
+Pre-flight checklist:
+ 
+  * root privileges  
+
+  * adeqaute free disk space
+
+  * [curl](https://curl.haxx.se/docs/manpage.html) 
+
+  * access to the Meyer network.  
+
+Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
+
+* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto install the most recent version of Matlab. 
 
 * `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts:
 
@@ -26,7 +37,7 @@ As ROOT, call the script:
 
 ## TODO
 
-[ ] Add dialog and pv package check (Linux tui).  
+[ ] Add dialog and pv package check (Linux TUI).  
 
 [ ] Revisit ping progress bar (All). 
 
