@@ -13,7 +13,7 @@ Tested to run on currently-supported versions of Linux ([Debain-based OSs](https
 
 ## Getting Started
 
-Pre-flight checklist:
+__Pre-flight checklist:__
  
   * root privileges  
 
@@ -22,6 +22,8 @@ Pre-flight checklist:
   * [curl](https://curl.haxx.se/docs/manpage.html) 
 
   * access to the Meyer network.  
+
+__Take-off:__
 
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
 
@@ -37,9 +39,9 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 
 ## TODO
 
-[ ] Add dialog and pv package check (Linux TUI).  
+[ ] Add dialog and pv package check (TUI).  
 
-[ ] Revisit ping progress bar (All). 
+[ ] Revisit ping progress bar (TUI). 
 
 [ ] Code review; refactor as needed (all). 
 
