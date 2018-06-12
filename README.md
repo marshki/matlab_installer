@@ -20,7 +20,7 @@ As ROOT, call the script:
 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/ping_cns.png "ping") |\
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/retrieve_matlab.png "retrieve") |\     
-![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/matlab_multi.pngi "multi-install")
+![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/matlab_multi.png "multi-install")
 
 
 ## TODO
