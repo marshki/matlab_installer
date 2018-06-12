@@ -2,12 +2,13 @@
 # mjk235 [at] nyu [dot] edu --2017.02.10
 # v.0.2
 
-############################################################################################
-#### Auto install latest version of Matlab on OS X. 		                       	####
-#### Open to members of NYU's Center for Neural Science and Department of Psychology    ####
-#### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
-#### Note: Use on machines WITHOUT previous version of MATLAB installed on them.        ####
-############################################################################################
+#########################################################################################
+#### Auto-install latest version of Matlab on OS X. 		                     ####
+#### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  ####
+#### and Department of Psychology.                                                   ####
+#### Requires: root privileges; access to Meyer network; adequate free disk space.   ####
+#### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
+#########################################################################################
 
 LOCAL_WEB="128.122.112.23"
 
@@ -125,7 +126,7 @@ matlab_installer () {
 #### Launch-r ####
 ###################
 
-# Launch Matlab from terminal
+# Launch Matlab from terminal. This is for visual confirmation, you may comment this function in main. 
 
 launch_matlab () {
   printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
