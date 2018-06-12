@@ -4,14 +4,11 @@
 
 #########################################################################################
 #### Install latest version of Matlab on Linux (Debian-based) via TUI. 		     ####
-#### Open to members of NYU's Center for Neural Science and Department of Psychology #### 
+#### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  ####
+#### and Department of Psychology                                                    #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
-
-# TODO: 
-# add dialog and pv package check
-# code review/refactor as needed 
 
 script=`basename "$0"`
 program="MATLAB INSTALLER"
