@@ -10,7 +10,7 @@
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
 
-script=`basename "$0"`
+script=$(basename "$0")
 program="MATLAB INSTALLER"
 
 PCT=100
