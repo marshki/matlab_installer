@@ -23,6 +23,11 @@ __Pre-flight checklist__ (the script will check for these conditions to be met):
 
   * access to the Meyer network.  
 
+**__NOTE:__** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via Apt with: 
+
+`apt-get install --yes dialog pv` prior to executing the script. 
+
+
 __Liftoff:__
 
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
@@ -39,8 +44,6 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 
 ## TODO
 
-- [ ] Add dialog and pv package check (TUI).  
-
 - [ ] Revisit ping progress bar (TUI). 
 
 - [ ] Code review (all). 
@@ -51,4 +54,4 @@ v.0.2 20180211
 ## License 
 [MIT License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
 
-## Acknowledgements 
+## Acknowledgments 
