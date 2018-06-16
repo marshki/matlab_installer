@@ -10,6 +10,9 @@
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
 
+#### Script requires dialog and pv to run ####
+#### YOU may install them with: sudo apt-get install --yes dialog pv ####
+
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
