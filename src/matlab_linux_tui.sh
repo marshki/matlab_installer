@@ -102,6 +102,8 @@ sanity_checks () {
 ##########################
 
 # Download tarball to /usr/local. 
+# Progress bar built off of gist from: https://gist.github.com/Gregsen/7822421
+
 get_matlab () {
 
   wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue $MATLAB_INSTALLER 2>&1 | \
