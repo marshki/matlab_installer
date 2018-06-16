@@ -13,11 +13,11 @@ Tested to run on currently-supported versions of Linux ([Debain-based OSs](https
 
 ## Getting Started
 
-__Pre-flight checklist__ (the script will check for these conditions to be met):
+__Pre-flight checklist__ (the script will check for the following conditions to be met):
  
   * root privileges  
 
-  * adeqaute free disk space
+  * adeqaute free disk space (14 GBs)
 
   * [curl](https://curl.haxx.se/docs/manpage.html) 
 
@@ -26,7 +26,6 @@ __Pre-flight checklist__ (the script will check for these conditions to be met):
 **_NOTE:_** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via [Apt](https://wiki.debian.org/Apt) with: 
 
 `apt-get install --yes dialog pv` prior to executing the script. 
-
 
 __Liftoff:__
 
@@ -46,7 +45,7 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 
 - [ ] Revisit ping progress bar (TUI). 
 
-- [ ] Code review (all). 
+- [ ] Code review, comments (all). 
 
 ## History 
 v.0.2 20180211
@@ -54,4 +53,6 @@ v.0.2 20180211
 ## License 
 [MIT License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
 
-## Acknowledgments 
+## Acknowledgments
+`wget` + `dialog` progress bar built off of gist from [here](https://gist.github.com/Gregsen/7822421). 
+ 
