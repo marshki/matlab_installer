@@ -49,4 +49,6 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 v.0.2 20180211
 
 ## License 
-[License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
+[MIT License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
+
+## Acknowledgements 
