@@ -23,7 +23,7 @@ __Pre-flight checklist__ (the script will check for these conditions to be met):
 
   * access to the Meyer network.  
 
-**__NOTE:__** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via Apt with: 
+**_NOTE:_** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via Apt with: 
 
 `apt-get install --yes dialog pv` prior to executing the script. 
 
