@@ -19,7 +19,7 @@ __Pre-flight checklist__ (the script will check for the following conditions to 
 
   * adeqaute free disk space (14 GBs)
 
-  * [curl](https://curl.haxx.se/docs/manpage.html) 
+  * [curl](https://curl.haxx.se/docs/manpage.html)
 
   * access to the Meyer network.  
 
