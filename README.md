@@ -54,7 +54,7 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 v.0.2 20180211
 
 ## License 
-[License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
+[LICENSE](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
 
 ## Acknowledgments
 `wget` + `dialog` progress bar built off of gist from [here](https://gist.github.com/Gregsen/7822421). 
