@@ -9,11 +9,11 @@ Bash script to retrieve, install, and symlink various versions of [Matlab](https
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-Tested to run on currently-supported versions of Linux ([Debain-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
+Tested to run on currently-supported versions of Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
 
 ## Getting Started
 
-__Pre-flight checklist__ (the script will check for the following conditions to be met):
+__Pre-flight checklist__ (the script will check for the following conditions):
  
   * root privileges  
 
@@ -32,6 +32,8 @@ __Liftoff:__
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
 
 * `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
+**_YOU PROBABLY WANT ONE OF THESE INSTALLERS_**
+
 
 * `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts:
 
