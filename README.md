@@ -32,7 +32,8 @@ __Liftoff:__
 Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
 
 * `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
-**_YOU PROBABLY WANT ONE OF THESE INSTALLERS_**
+
+**_(YOU PROBABLY WANT ONE OF THESE INSTALLERS)_**
 
 
 * `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts:
@@ -53,7 +54,7 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 v.0.2 20180211
 
 ## License 
-[MIT License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
+[License](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
 
 ## Acknowledgments
 `wget` + `dialog` progress bar built off of gist from [here](https://gist.github.com/Gregsen/7822421). 
