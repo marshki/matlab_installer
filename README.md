@@ -29,11 +29,10 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 __Liftoff:__
 
-Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
+Grab the script **_(YOU PROBABLY WANT ONE OF THESE)_** for your OS from `/src` in this repository, then, as root, call the script:  
 
 * `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
 
-**_(YOU PROBABLY WANT ONE OF THESE INSTALLERS)_**
 
 
 * `bash matlab_mult_install_osx.sh` will launch a text-based menu. From there, follow on-screen prompts:
