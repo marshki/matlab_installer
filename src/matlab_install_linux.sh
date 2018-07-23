@@ -125,7 +125,7 @@ matlab_installer () {
 } 
 
 ###################
-#### Launch-r ####
+#### Launch-r  ####
 ###################
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.  
