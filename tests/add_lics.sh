@@ -50,8 +50,11 @@ ping_local_web() {
 matlab_check() { 
   # Is MATLAB.app installed in /Applications?  
 
-  if [ ! -d "/Applications/MATLAB.app" ]; then 
-    printf "%s\\n" "ERROR: MATLAB DOES NOT EXIST."  
+  if [ -d "/Applications/MATLAB.app" ]; then 
+    printf "%s\\n" "MATLAB EXIST"       
+  else 
+    printf "%s\\n" "MATLAB DOES NOT EXIST" 
+    exit 1 
 fi 
 }
  
