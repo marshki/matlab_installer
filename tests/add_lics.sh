@@ -57,19 +57,19 @@ make_nyu_lic() {
   SERVER its429-wap-v.cfs.its.nyu.edu 27000
   SERVER its430-wap-v.cfs.its.nyu.edu 27000 
   USE_SERVER
-  EOF
+EOF
 } 
 
 make_cns_lic() { 
   # create 1CNS_NET.lic in /Applications/MATLAB9.3.app/licenses 
  
-  printf "%s\\n" "ADDING 1CNS_NET.lic" to /Applications/MATLAB9.3.app/licenses" 
+  printf "%s\\n" "ADDING 1CNS_NET.lic to /Applications/MATLAB9.3.app/licenses" 
  
-  cat > /Applications/MATLAB/licneses/1CNS_NET.lic << EOF 
+  cat > /Applications/MATLAB9.3.app/licneses/1CNS_NET.lic << EOF 
   # CNS license server - 08.01.2018
   SERVER matlic1.cns.nyu.edu 27000
   USE_SERVER
-  EOF 
+EOF 
 } 
  
 main() { 
