@@ -65,11 +65,11 @@ make_cns_lic() {
  
   printf "%s\\n" "ADDING 1CNS_NET.lic to /Applications/MATLAB9.3.app/licenses" 
  
-  cat > /Applications/MATLAB9.3.app/licneses/1CNS_NET.lic << EOF 
+  cat > /Applications/MATLAB9.3.app/licenses/1CNS_NET.lic << EOF 
   # CNS license server - 08.01.2018
   SERVER matlic1.cns.nyu.edu 27000
   USE_SERVER
-EOF 
+EOF
 } 
  
 main() { 
