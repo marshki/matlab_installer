@@ -1,6 +1,8 @@
 #!/usr/bin/env bash 
 # add current network .lic files to /Applications/MATLAB/licenses dir in OS X
 
+# associative array --> will iterate through  <--
+
 MATLAB_APP=(
 MATLAB.app 
 MATLAB7.5.app 
@@ -29,38 +31,48 @@ root_check() {
 fi
 }
 
-ping_local_web() {
+matlab_check() { 
+  # is MATLAB installed in /Applications?  
 
-# Is CNS local web available? If not, exit.
-
-  printf "%s\\n" "PINGING CNS LOCAL WEB..."
-
-  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
-  else
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1
- fi
+  if [ -d "/Applications/MATLAB9.3.app" ]; then 
+    printf "%s\\n" "MATLAB EXISTS, CONTINUING..."       
+  else 
+    printf "%s\\n" "MATLAB DOES NOT EXIST in /Applications. EXITING." 
+    exit 1 
+fi 
 }
 
 #########################
 #### Meat & Potatoes ####
 #########################
 
-matlab_check() { 
-  # Is MATLAB.app installed in /Applications?  
+make_nyu_lic() { 
+  # create 1NYU_NET.lic in /Applications/MATLAB/licenses
+ 
+  cat > /Applications/MATLAB9.3.app/licenses/1NYU_NET.lic << EOF
+  # NYU ITS matlab license servers - 08.01.2018
+  SERVER its428-wap-v.cfs.its.nyu.edu 27000
+  SERVER its429-wap-v.cfs.its.nyu.edu 27000
+  SERVER its430-wap-v.cfs.its.nyu.edu 27000 
+  USE_SERVER
+  EOF
+} 
 
-  if [ -d "/Applications/MATLAB.app" ]; then 
-    printf "%s\\n" "MATLAB EXIST"       
-  else 
-    printf "%s\\n" "MATLAB DOES NOT EXIST" 
-    exit 1 
-fi 
-}
+make_cns_lic() { 
+  # create 1CNS_NET.lic in /Applications/MATLAB9.3.app/licenses 
+  
+  cat > /Applications/MATLAB/licneses/1CNS_NET.lic << EOF 
+  # CNS license server - 08.01.2018
+  SERVER matlic1.cns.nyu.edu 27000
+  USE_SERVER
+  EOF 
+} 
  
 main() { 
   root_check 
   matlab_check 
+  make_nyu_lic 
+  make_cns_lic 
 }
 
 main "$@" 
