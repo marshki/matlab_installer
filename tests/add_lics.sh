@@ -22,14 +22,16 @@ MATLAB9.4.app
 ########################
 
 root_check() {
-
-# Is current UID 0? If not, exit.
+  # is current UID 0? If not, exit.
 
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
+
+# --> should check for /MATLAB.app/licenses 
+# --> conceivably you could have MATLAB installed but the license dir not in the correct place 
 
 matlab_check() { 
   # is MATLAB installed in /Applications?  
