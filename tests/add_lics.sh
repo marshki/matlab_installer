@@ -37,7 +37,7 @@ matlab_check() {
   if [ -d "/Applications/MATLAB9.3.app" ]; then 
     printf "%s\\n" "MATLAB EXISTS, CONTINUING..."       
   else 
-    printf "%s\\n" "MATLAB DOES NOT EXIST in /Applications. EXITING." 
+    printf "%s\\n" "MATLAB9.3.app DOES NOT EXIST in /Applications. EXITING." 
     exit 1 
 fi 
 }
@@ -48,6 +48,8 @@ fi
 
 make_nyu_lic() { 
   # create 1NYU_NET.lic in /Applications/MATLAB/licenses
+
+  printf "%s\\n" "ADDING 1NYU_NET.lic TO /Applications/MATLAB9.3.app/licenses" 
  
   cat > /Applications/MATLAB9.3.app/licenses/1NYU_NET.lic << EOF
   # NYU ITS matlab license servers - 08.01.2018
@@ -60,7 +62,9 @@ make_nyu_lic() {
 
 make_cns_lic() { 
   # create 1CNS_NET.lic in /Applications/MATLAB9.3.app/licenses 
-  
+ 
+  printf "%s\\n" "ADDING 1CNS_NET.lic" to /Applications/MATLAB9.3.app/licenses" 
+ 
   cat > /Applications/MATLAB/licneses/1CNS_NET.lic << EOF 
   # CNS license server - 08.01.2018
   SERVER matlic1.cns.nyu.edu 27000
