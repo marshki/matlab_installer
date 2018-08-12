@@ -3,7 +3,7 @@
 # tell me what you find (match/no-match) 
 
 # Array 
-MATLAB_APP=(
+MATLAB_VERSION=(
 MATLAB.app 
 MATLAB7.5.app 
 MATLAB8.0.app 
@@ -21,7 +21,7 @@ matlab_check() {
   # is MATLAB*.*.app installed in /Applications?  
   # iterate through array & tell me what you find 
 
-  for MATLAB in "${MATLAB_APP[@]}"; 
+  for MATLAB in "${MATLAB_VERSION[@]}"; 
   do  
     if [ -d "/Applications/$MATLAB" ]; then 
       printf "%s\\n" "$MATLAB EXISTS" 
