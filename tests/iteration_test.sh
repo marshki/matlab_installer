@@ -1,20 +1,20 @@
 #!/usr/bin/env bash 
-# Iterate through array; 
-# tell me what you find (match/no-match) 
+# iterate through array; 
+# continue if you find at least one match  
 
 # Array 
 MATLAB_VERSION=(
-MATLAB.app 
-MATLAB7.5.app 
-MATLAB8.0.app 
-MATLAB8.3.app 
-MATLAB8.5.app
-MATLAB8.6.app
-MATLAB9.0.app
-MATLAB9.1.app
-MATLAB9.2.app
-MATLAB9.3.app
 MATLAB9.4.app
+MATLAB9.3.app
+MATLAB9.2.app
+MATLAB9.1.app
+MATLAB9.0.app
+MATLAB8.6.app
+MATLAB8.5.app
+MATLAB8.3.app 
+MATLAB8.0.app 
+MATLAB7.5.app 
+MATLAB.app 
 )
 
 matlab_check() { 
@@ -24,10 +24,11 @@ matlab_check() {
   for MATLAB in "${MATLAB_VERSION[@]}"; 
   do  
     if [ -d "/Applications/$MATLAB" ]; then 
-      printf "%s\\n" "$MATLAB EXISTS" 
+      printf "%s\\n" "FOUND $MATLAB IN /Applications, CONTINUING..."
+      break 
     else 
-      printf "%s\\n" "$MATLAB DOES NOT EXIST in /Applications."  
-fi   
+      printf "%s\\n" "SEARCHING for $MATLAB in /Applications..." 
+    fi 
 done 
 } 
 
