@@ -1,6 +1,8 @@
 #!/usr/bin/env bash 
 # iterate through array; 
-# continue if you find at least one match  
+# continue if you find at least one match;   
+# exit if no matches are found 
+
 
 # Array 
 MATLAB_VERSION=(
