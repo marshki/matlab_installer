@@ -1,6 +1,4 @@
 #!/usr/bin/env bash 
-# You might not care for this declaration of the array contents,
-# but it does the same thing, and keeps my example nice and short
 # MATLAB_VERSION=( MATLAB{9.{4..0},8.{6,5,3,0},{7.5,}}.app )
 
 MATLAB_VERSION=(
@@ -24,13 +22,14 @@ MATLAB_VERSION=(
 matlab_check() {
     for MATLAB in "${MATLAB_VERSION[@]}"; do
         if [ -d "/Applications/${MATLAB}" ]; then
-            echo "Found in ${MATLAB}"
+            printf "%s\\n" "Found ${MATLAB}, continuing..."
             return 0
         fi
     done
-
+    
+    printf "%s\\n" "DID NOT FIND ANY VERSIONS OF MATLAB INSTALLED. EXITING." 
     return 1
 }
 
 matlab_check
-echo rc is $?
+#echo rc is $? 
