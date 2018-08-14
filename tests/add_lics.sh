@@ -1,20 +1,22 @@
 #!/usr/bin/env bash 
 # add current network .lic files to /Applications/MATLAB/licenses dir in OS X
 
-# associative array --> will iterate through  <--
+################
+# MATLAB ARRAY #
+################
 
-MATLAB_APP=(
-MATLAB.app 
-MATLAB7.5.app 
-MATLAB8.0.app 
-MATLAB8.3.app 
-MATLAB8.5.app
-MATLAB8.6.app
-MATLAB9.0.app
-MATLAB9.1.app
-MATLAB9.2.app
-MATLAB9.3.app
-MATLAB9.4.app
+MATLAB_VERSION=(
+  MATLAB9.4.app
+  MATLAB9.3.app
+  MATLAB9.2.app
+  MATLAB9.1.app
+  MATLAB9.0.app
+  MATLAB8.6.app
+  MATLAB8.5.app
+  MATLAB8.3.app 
+  MATLAB8.0.app 
+  MATLAB7.5.app 
+  MATLAB.app 
 )
 
 ########################
@@ -22,26 +24,27 @@ MATLAB9.4.app
 ########################
 
 root_check() {
-  # is current UID 0? If not, exit.
+  # is current UID 0? if not, exit
 
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
-    exit 1
-fi
+    exit 1 
+  fi
 }
 
-# --> should check for /MATLAB.app/licenses 
-# --> conceivably you could have MATLAB installed but the license dir not in the correct place 
+matlab_check() {
+  # is there at least 1 occurrence of `/Applications/MATLAB*.*.app/licenses` dir? 
+  # if yes, continue; if not, exit  
 
-matlab_check() { 
-  # is MATLAB installed in /Applications?  
-
-  if [ -d "/Applications/MATLAB9.3.app" ]; then 
-    printf "%s\\n" "MATLAB EXISTS, CONTINUING..."       
-  else 
-    printf "%s\\n" "MATLAB9.3.app DOES NOT EXIST in /Applications. EXITING." 
-    exit 1 
-fi 
+  for MATLAB in "${MATLAB_VERSION[@]}"; do
+      if [ -d "/Applications/${MATLAB}/licenses" ]; then
+          printf "%s\\n" "FOUND AT LEAST ONE VERSION OF MATLAB (${MATLAB}), CONTINUING..."
+          return 0
+      fi
+  done
+    
+  printf "%s\\n" "DID NOT FIND ANY VERSIONS OF MATLAB. EXITING." 
+  return 1
 }
 
 #########################
@@ -77,8 +80,8 @@ EOF
 main() { 
   root_check 
   matlab_check 
-  make_nyu_lic 
-  make_cns_lic 
+  #make_nyu_lic 
+  #make_cns_lic 
 }
 
 main "$@" 
