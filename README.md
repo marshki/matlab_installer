@@ -6,7 +6,7 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
-Also scripted the adding of updated strings to `.lic` files.     
+Also, update netowrk license strings via `add_lics.sh`.     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
@@ -44,7 +44,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-[ ] Script network license file updater script for Linux and OS X.  
+- [ ] Script network license file updater script for Linux and OS X.  
 
 ## History 
 v.0.2 20180211
