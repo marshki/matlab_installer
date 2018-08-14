@@ -5,11 +5,12 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html).   
+Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
+Also scripted the adding of updated strings to `.lic` files.     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-Tested to run on currently-supported versions of Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and Mac OS X.  
+Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of Mac OS X.  
 
 ## Getting Started
 
@@ -29,11 +30,11 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 __Liftoff:__
 
-Grab the script for your OS from `/src` in this repository, then, as root, call the script:  
+Grab the script for your OS from `/src` in this repository, then, with elevated privileges, call the script:  
 
-* `bash matlab_install_linux.sh (Linux)`, or: `bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
+* `sudo bash matlab_install_linux.sh (Linux)`, or: `sudo bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
 
-* `bash matlab_mult_install_osx.sh` (OS X) will launch a text-based menu. From there, follow on-screen prompts:
+* `sudo bash matlab_mult_install_osx.sh` (OS X) will launch a text-based menu. From there, follow on-screen prompts:
 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/matlab_multi.png "multi-install")
 
@@ -43,9 +44,7 @@ Grab the script for your OS from `/src` in this repository, then, as root, call 
 
 ## TODO
 
-- [ ] Revisit ping progress bar (TUI). 
-
-- [ ] Code review, comments (all). 
+[ ] Script network license file updater script for Linux and OS X.  
 
 ## History 
 v.0.2 20180211
