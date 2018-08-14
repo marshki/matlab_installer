@@ -1,5 +1,8 @@
 #!/usr/bin/env bash 
-# add current network .lic files to /Applications/MATLAB*.*.app/licenses dir in OS X
+# add current network .lic files to /usr/local/MATLAB*.*.app/licenses dir in Debian-based OSs.
+
+# --> Work in Progress <-- #
+# --> Need to modify this to Linux environment <-- # 
 
 ################
 # MATLAB ARRAY #
