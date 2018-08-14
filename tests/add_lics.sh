@@ -38,7 +38,7 @@ matlab_check() {
 
   for MATLAB in "${MATLAB_VERSION[@]}"; do
       if [ -d "/Applications/${MATLAB}/licenses" ]; then
-          printf "%s\\n" "FOUND ONE VERSION OF MATLAB (${MATLAB}), CONTINUING..."
+          printf "%s\\n" "FOUND A VERSION OF MATLAB (${MATLAB}), CONTINUING..."
           return 0
       fi
   done
