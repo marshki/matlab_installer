@@ -38,7 +38,7 @@ matlab_check() {
 
   for MATLAB in "${MATLAB_VERSION[@]}"; do
       if [ -d "/Applications/${MATLAB}/licenses" ]; then
-          printf "%s\\n" "FOUND AT LEAST ONE VERSION OF MATLAB (${MATLAB}), CONTINUING..."
+          printf "%s\\n" "FOUND ONE VERSION OF MATLAB (${MATLAB}), CONTINUING..."
           return 0
       fi
   done
@@ -52,7 +52,7 @@ matlab_check() {
 #########################
 
 make_nyu_lic() { 
-  # create 1NYU_NET.lic in /Applications/MATLAB/licenses
+  # create 1NYU_NET.lic in /Applications/MATLAB*.*.app/licenses
 
   printf "%s\\n" "ADDING 1NYU_NET.lic TO /Applications/MATLAB9.3.app/licenses" 
  
@@ -66,7 +66,7 @@ EOF
 } 
 
 make_cns_lic() { 
-  # create 1CNS_NET.lic in /Applications/MATLAB9.3.app/licenses 
+  # create 1CNS_NET.lic in /Applications/MATLAB*.*.app/licenses 
  
   printf "%s\\n" "ADDING 1CNS_NET.lic to /Applications/MATLAB9.3.app/licenses" 
  
