@@ -4,6 +4,7 @@
 ################
 # MATLAB ARRAY #
 ################
+
 MATLAB_VERSION=( MATLAB{9.{4..0},8.{6,5,3,0},{7.5,}}.app )
 
 ########################
@@ -37,6 +38,7 @@ matlab_check() {
 #########################
 #### Meat & Potatoes ####
 #########################
+
 make_cns_lic() { 
   # create 1CNS_NET.lic in /Applications/MATLAB*.*.app/licenses 
  
