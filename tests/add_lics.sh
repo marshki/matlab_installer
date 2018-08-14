@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
-# add current network .lic files to /Applications/MATLAB/licenses dir in OS X
+# add current network .lic files to /Applications/MATLAB*.*.app/licenses dir in OS X
 
 ################
 # MATLAB ARRAY #
@@ -76,12 +76,23 @@ SERVER matlic1.cns.nyu.edu 27000
 USE_SERVER
 EOF
 } 
- 
+
+# pseudo code
+# add_licks () {  
+# for i in MATLAB_VERISONS; do 
+#   if /Applications/MATLAB_VERSION/licenses exits; then 
+#     "ADDING LICENSES" 
+#     make_nyu_lic
+#     make_cns_lic
+#   else  
+#     continue 
+#fi
+# } 
+
 main() { 
   root_check 
-  matlab_check 
-  #make_nyu_lic 
-  #make_cns_lic 
+  matlab_check
+  add_licks
 }
 
 main "$@" 
