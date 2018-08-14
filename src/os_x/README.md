@@ -1,4 +1,4 @@
-This directory contains installers for MATLAB on currently-supported versions of OS X. 
+This directory contains installers for MATLAB on OS X. 
 
 matlab_install_osx.sh --> a text based installer for the most recent version of MATLAB
 
