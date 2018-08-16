@@ -44,7 +44,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-- [ ] Script network license file updater script for Linux and OS X.  
+- [x] Script network license file updater script for Linux and OS X.  
 
 ## History 
 v.0.2 20180211
