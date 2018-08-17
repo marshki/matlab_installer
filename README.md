@@ -45,6 +45,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 ## TODO
 
 - [x] Script network license file updater script for Linux and OS X.  
+- [ ] add `pv` and `dialog` checks in Linux tui installer 
 
 ## History 
 v.0.2 20180211
