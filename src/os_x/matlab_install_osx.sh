@@ -34,7 +34,7 @@ fi
 # Is there adequate disk space in "/Applications"? If not, exit.
 
 check_disk_space () {
-  if [ $(df -lk /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//') -le "14680064" ]; then
+  if [ "$(df -lk /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//')" -le "14680064" ]; then
     printf "%s\\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
@@ -111,7 +111,7 @@ fi
 symlink_matlab () {
   printf "%s\\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
-  ln -s /Applications/${MATLAB[2]}/bin/matlab /usr/local/bin/matlab
+  ln -s /Applications/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
