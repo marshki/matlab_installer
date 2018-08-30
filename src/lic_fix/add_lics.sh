@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
-# add current network .lic files to /Applications/MATLAB*.*.app/licenses dir in OS X
+# add current network .lic files to `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` dir in OS X
 
 ################
 # MATLAB ARRAY #
@@ -21,7 +21,7 @@ root_check() {
 }
 
 matlab_check() {
-  # is there at least 1 occurrence of `/Applications/MATLAB*.*.app/licenses` dir? 
+  # is there at least 1 occurrence of `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` dir? 
   # if yes, continue; if not, exit  
 
   for MATLAB in "${MATLAB_VERSION[@]}"; do
@@ -40,7 +40,7 @@ matlab_check() {
 #########################
 
 make_cns_lic() { 
-  # create 1CNS_NET.lic in /Applications/MATLAB*.*.app/licenses 
+  # create 1CNS_NET.lic in `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` 
  
   printf "%s\\n" "ADDING 1CNS_NET.lic TO /Applications/${MATLAB}/licenses" 
  
@@ -52,7 +52,7 @@ EOF
 } 
 
 make_nyu_lic() { 
-  # create 1NYU_NET.lic in /Applications/MATLAB*.*.app/licenses
+  # create 1NYU_NET.lic in `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` 
 
   printf "%s\\n" "ADDING 1NYU_NET.lic TO /Applications/${MATLAB}/licenses" 
  
