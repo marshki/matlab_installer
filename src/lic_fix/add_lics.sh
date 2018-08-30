@@ -5,7 +5,7 @@
 # MATLAB ARRAY #
 ################
 
-MATLAB_VERSION=( MATLAB{9.{4..0},8.{6,5,3,0},{7.5,}}.app )
+MATLAB_VERSION=( MATLAB{9.{4..0},8.{6,5,3,0},{7.5,}}.app MATLAB_R201{0..8}{a,b}.app )
 
 ########################
 #### Sanity checks  ####
