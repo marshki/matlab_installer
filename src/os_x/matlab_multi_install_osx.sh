@@ -273,7 +273,7 @@ sanity_checks
     clear
     show_menu 
     read_input "$@"
-    launch_matlab
+    launch_matlab "$@"
     pause
   done
 }
