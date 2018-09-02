@@ -143,7 +143,7 @@ fi
 symlink_matlab () {
   dialog --backtitle "$script" --title "$program" --infobox "CREATING SYMLINK FOR ${MATLAB[0]}..." 10 40 ; sleep 2 
 
-  ln --symbolic /usr/local/${MATLAB[2]}/bin/matlab /usr/local/bin/matlab
+  ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
 
 # Install complete message.  
