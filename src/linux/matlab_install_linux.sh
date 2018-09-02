@@ -92,7 +92,7 @@ untar_matlab () {
 # Remove tarball. 
 
 remove_matlab_tar () {
-  printf "%s\\n" "REMOVING $MATLAB[0]} INSTALLER..."
+  printf "%s\\n" "REMOVING ${MATLAB[0]} INSTALLER..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
 }
