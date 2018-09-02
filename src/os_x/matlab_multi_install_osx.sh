@@ -145,7 +145,7 @@ sanity_checks() {
 # $1-> Message (optional).
 
 function pause() {
-    local message="$@"
+    local message="$*"
     [ -z "$message" ] && message="INSTALL DONE. PRESS [Enter] KEY TO CONTINUE:  "
     read -rp "$message" readEnterKey
 }
