@@ -178,7 +178,7 @@ function show_menu() {
 get_matlab () {
   printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - $2 --output /Applications/matlab.app.tgz
+  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
 
 # Unpack tarball to /Applications, which installs Matlab. 
