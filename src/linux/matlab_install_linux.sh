@@ -43,7 +43,7 @@ fi
 # Is curl installed? If not, install it.
 
 curl_check () {
-  if [ $(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
+  if [ "$(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     printf "%s\\n" "CURL IS NOT INSTALLED. LET'S INSTALL IT..."
     apt-get install curl
 fi
