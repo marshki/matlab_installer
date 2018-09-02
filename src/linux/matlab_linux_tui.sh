@@ -70,7 +70,7 @@ fi
 # add silent install so it doesn't break the dialog box 
 
 wget_check () {
-  if [ $(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed") -eq "0" ]; then
+  if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "WGET IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
     apt-get install wget --yes
 fi
