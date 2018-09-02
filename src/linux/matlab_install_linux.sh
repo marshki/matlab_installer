@@ -113,7 +113,7 @@ fi
 symlink_matlab () {
   printf "%s\\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
-  ln --symbolic /usr/local/"${MATLAB[2]}/bin/matlab" /usr/local/bin/matlab
+  ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer () {
