@@ -259,7 +259,7 @@ read_input() {
 launch_matlab () {
   printf "%s\\n" "LAUNCHING $1..."
 
-  matlab$4 -nodesktop
+  matlab"$4" -nodesktop
 }
 
 # Main. 
