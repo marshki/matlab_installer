@@ -246,7 +246,7 @@ read_input() {
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 11):  "
 
-           pause
+           pause "$@"
     esac
 }
 
