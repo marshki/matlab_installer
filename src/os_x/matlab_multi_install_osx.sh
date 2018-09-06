@@ -133,7 +133,7 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  ping_local_web
+  #ping_local_web --> comment out b/c local web had ping response turned off; need a new test
 }
 
 ######################
@@ -254,7 +254,7 @@ read_input() {
 #### Launch-r ####
 ###################
 
-# Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main. 
+# Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
 
 launch_matlab () {
   printf "%s\\n" "LAUNCHING $1..."
