@@ -20,12 +20,12 @@ PCT=100
 
 LOCAL_WEB="128.122.112.23"
 
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
+MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
 
 MATLAB=(
-Matlab9.4
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.4.tgz"
-matlab9.4
+Matlab9.5
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+matlab9.5
 )
 
 ###########################
