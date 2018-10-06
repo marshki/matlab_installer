@@ -173,7 +173,8 @@ function show_menu() {
     printf "%s\\n" "  8.  INSTALL MATLAB 9.2 (R2017a)"
     printf "%s\\n" "  9.  INSTALL MATLAB 9.3 (R2017b)"
     printf "%s\\n" "  10. INSTALL MATLAB 9.4 (R2018a)"
-    printf "%s\\n" "  11. EXIT"
+    printf "%s\\n" "  11. INSTALL MATLAB 9.5 (R2018b)"
+    printf "%s\\n" "  12. EXIT"
 }
 
 ##########################
@@ -249,9 +250,10 @@ read_input() {
 	8) matlab_installer "${MATLAB_9_2[@]}" ;;
 	9) matlab_installer "${MATLAB_9_3[@]}" ;;
 	10) matlab_installer "${MATLAB_9_4[@]}" ;;
-        11) printf "%s\\n" "CIAO!"; exit 0 ;;
+        11) matlab_installer "${MATLAB_9_4[@]}" ;;
+        12) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\\n" "SELECT AN OPTION (1 to 11):  "
+           printf "%s\\n" "SELECT AN OPTION (1 to 12):  "
 
            pause "$@"
     esac
