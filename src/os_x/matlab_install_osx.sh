@@ -13,9 +13,9 @@
 LOCAL_WEB="128.122.112.23"
 
 MATLAB=(
-Matlab9.4
+Matlab9.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
-MATLAB9.4.app
+MATLAB9.5.app
 )
 
 #######################
