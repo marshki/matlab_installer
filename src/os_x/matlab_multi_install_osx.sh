@@ -85,6 +85,13 @@ MATLAB9.4.app
 _9.4
 )
 
+MATLAB_9_5=(
+Matlab9.5
+"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.5.app.tgz"
+MATLAB9.5.app
+_9.5
+)
+
 #######################
 #### Sanity Checks ####
 #######################
