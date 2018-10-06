@@ -1,4 +1,4 @@
-**This directory contains scripts to auto-add the latest license files to MATLAB  
+**This directory contains scripts to auto-add the latest license files to MATLAB**  
 
 *add_lics.sh* : for OS X 
 
