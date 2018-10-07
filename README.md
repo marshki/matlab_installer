@@ -36,13 +36,13 @@ If needed, modify the installer script(s) to reflect your institution's environm
 
 __Pre-flight checklist__ (the script will check for the following conditions):
  
-  * root privileges  
+- [ ] root privileges;   
 
-  * adeqaute free disk space (14 GBs)
+- [ ] adeqaute free disk space (14 GBs); 
 
-  * [curl](https://curl.haxx.se/docs/manpage.html)
+- [ ] [curl](https://curl.haxx.se/docs/manpage.html); 
 
-  * access to the Meyer network.  
+- [ ]  access to the the appropriate local network.  
 
 **_NOTE:_** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via [Apt](https://wiki.debian.org/Apt) with: 
 
