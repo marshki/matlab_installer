@@ -16,13 +16,13 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 ~~For sysadmins~~, we assume that you: 
 
--- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
+-[ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
 
--- [ ] may access a network license server to validate local MATLAB installs;  
+-[ ] may access a network license server to validate local MATLAB installs;  
 
--- [ ] can access a networked file server; and   
+-[ ] can access a networked file server; and   
 
--- [ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
+-[ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
 
 After you've deployed MATLAB on a local client, tar it with, e.g.: 
 
