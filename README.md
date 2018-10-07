@@ -6,13 +6,31 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
-Also, update stale network license strings via `add_lics.sh`.     
+Also incldued script to update stale network license strings (`add_lics.sh`).     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
 Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of Mac OS X.  
 
 ## Getting Started
+
+~~For sysadmins~~, we assume that you: 
+
+-- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
+
+-- [ ] may access a network license server to validate local MATLAB installs;  
+
+-- [ ] can access a networked file server; and   
+
+-- [ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
+
+After you've deployed MATLAB on a local client, tar it with, e.g.: 
+
+`tar czf matlab9.5.tgz matlab9.5` 
+ 
+and place the tar on your web server. Then modify the installer scripts to reflect your institution's environment. 
+
+~~For sysadmins~~ AND ~~end users~~: 
 
 __Pre-flight checklist__ (the script will check for the following conditions):
  
