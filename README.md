@@ -6,7 +6,7 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
-Also incldued script to update stale network license strings (`add_lics.sh`).     
+Also includes script to update stale network license strings (`add_lics.sh`).     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
@@ -28,7 +28,7 @@ On your local client, tar up the MATLAB install with, e.g.:
 
 `tar czf matlab9.5.tgz matlab9.5` 
  
-and place the file on your web server.  
+and place the file on your web server for distribution.  
 
 If needed, modify the installer script(s) to reflect your institution's environment. 
 
