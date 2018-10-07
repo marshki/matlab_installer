@@ -24,7 +24,7 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 - [ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
 
-On your local client, tar up your MATLAB install with, e.g.: 
+On your local client, tar up the MATLAB install with, e.g.: 
 
 `tar czf matlab9.5.tgz matlab9.5` 
  
@@ -32,7 +32,7 @@ and place the file on your web server.
 
 If needed, modify the installer script(s) to reflect your institution's environment. 
 
-**For sysadmins AND end users**: 
+**For sysadmins** AND **end users**: 
 
 __Pre-flight checklist__ (the script will check for the following conditions):
  
