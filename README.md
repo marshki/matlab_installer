@@ -14,7 +14,7 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 ## Getting Started
 
-~~For sysadmins~~, we assume that you: 
+**For sysadmins**, we assume that you: 
 
 - [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
 
@@ -24,13 +24,15 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 - [ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
 
-After you've deployed MATLAB on a local client, tar it with, e.g.: 
+On your local client, tar up your MATLAB install with, e.g.: 
 
 `tar czf matlab9.5.tgz matlab9.5` 
  
-and place the tar on your web server. Then modify the installer scripts to reflect your institution's environment. 
+and place the file on your web server.  
 
-~~For sysadmins~~ AND ~~end users~~: 
+If needed, modify the installer script(s) to reflect your institution's environment. 
+
+**For sysadmins AND end users**: 
 
 __Pre-flight checklist__ (the script will check for the following conditions):
  
@@ -62,10 +64,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-- [x] Script network license file updater script for Linux and OS X.  
 - [ ] add `pv` and `dialog` checks in Linux tui installer 
-- [ ] disk space function check 
-- [ ] inclue FYI on how to set up MATLAB out of the box 
 
 ## History 
 v.0.2 20180211
