@@ -241,15 +241,15 @@ read_input() {
     read -rp "ENTER YOUR CHOICE [ 1-12 ]:  " c
     case $c in
         1) matlab_installer "${MATLAB_7_5[@]}" ;;
-	2) matlab_installer "${MATLAB_8_0[@]}" ;;
-	3) matlab_installer "${MATLAB_8_3[@]}" ;;
-	4) matlab_installer "${MATLAB_8_5[@]}" ;;
-	5) matlab_installer "${MATLAB_8_6[@]}" ;;
-	6) matlab_installer "${MATLAB_9_0[@]}" ;;
-	7) matlab_installer "${MATLAB_9_1[@]}" ;;
-	8) matlab_installer "${MATLAB_9_2[@]}" ;;
-	9) matlab_installer "${MATLAB_9_3[@]}" ;;
-	10) matlab_installer "${MATLAB_9_4[@]}" ;;
+        2) matlab_installer "${MATLAB_8_0[@]}" ;;
+        3) matlab_installer "${MATLAB_8_3[@]}" ;;
+        4) matlab_installer "${MATLAB_8_5[@]}" ;;
+        5) matlab_installer "${MATLAB_8_6[@]}" ;;
+        6) matlab_installer "${MATLAB_9_0[@]}" ;;
+        7) matlab_installer "${MATLAB_9_1[@]}" ;;
+        8) matlab_installer "${MATLAB_9_2[@]}" ;;
+        9) matlab_installer "${MATLAB_9_3[@]}" ;;
+        10) matlab_installer "${MATLAB_9_4[@]}" ;;
         11) matlab_installer "${MATLAB_9_5[@]}" ;;
         12) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
