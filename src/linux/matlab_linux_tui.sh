@@ -3,7 +3,7 @@
 # v.0.2 
 
 #########################################################################################
-#### Install latest version of Matlab on Linux (Debian-based) via TUI. 		     ####
+#### Install latest version of Matlab on Linux (Debian-based) via TUI.               ####
 #### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  ####
 #### and Department of Psychology                                                    #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
