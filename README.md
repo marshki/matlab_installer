@@ -64,7 +64,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-- [ ] add `pv` and `dialog` checks in Linux tui installer 
+- [ ] add `pv` and `dialog` checks in Linux TUI installer 
 
 ## History 
 v.0.2 20180211
