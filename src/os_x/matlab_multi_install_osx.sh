@@ -250,7 +250,7 @@ read_input() {
 	8) matlab_installer "${MATLAB_9_2[@]}" ;;
 	9) matlab_installer "${MATLAB_9_3[@]}" ;;
 	10) matlab_installer "${MATLAB_9_4[@]}" ;;
-        11) matlab_installer "${MATLAB_9_4[@]}" ;;
+        11) matlab_installer "${MATLAB_9_5[@]}" ;;
         12) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
            printf "%s\\n" "SELECT AN OPTION (1 to 12):  "
