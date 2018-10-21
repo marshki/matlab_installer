@@ -59,7 +59,7 @@ local_web_check(){
     exit 1 
 
   else
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING."
+    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
 fi
 }
 
