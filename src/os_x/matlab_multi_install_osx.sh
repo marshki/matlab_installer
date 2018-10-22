@@ -10,7 +10,7 @@
 #### Note: Use on machines WITH at least one previous version of MATLAB installed.      ####
 ############################################################################################
 
-LOCAL_WEB="128.122.112.23"
+LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
 # Arrays follow this structure: 		
 # MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
@@ -125,22 +125,10 @@ fi
 
 # Is CNS local web available? If not, exit.
 
-ping_local_web() {
-  printf "%s\\n" "PINGING CNS LOCAL WEB..."
-
-  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
-  else
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1
-fi
-}
-
 sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  #ping_local_web --> comment out b/c local web had ping response turned off; need a new test
 }
 
 ######################
