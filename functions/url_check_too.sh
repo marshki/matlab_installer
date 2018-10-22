@@ -1,7 +1,5 @@
 #!/usr/bin/env bash 
 # quick and dirty HTTP status code of URL  
-# TODO: Write for w-get 
-
 
 #### Test around header response code, e.g.: #### 
 
@@ -28,7 +26,7 @@ wget_check() {
 
 wget_check
 
-#url_check(){ 
+#curl_check(){ 
   # curl to check HTTP status code; error message if it fails  
 
   #status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' $url)
@@ -40,4 +38,4 @@ wget_check
 #fi 
 #} 
 
-#url_check 
+#curl_check 
