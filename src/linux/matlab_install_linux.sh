@@ -10,7 +10,7 @@
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
 #########################################################################################
 
-LOCAL_WEB="128.122.112.23"
+LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
 
 MATLAB=(
 Matlab9.5
@@ -51,11 +51,23 @@ fi
 
 # Is CNS local web available? If not, exit. 
 
+local_web_check(){
+  local status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' "$LOCAL_WEB")
+
+  if [ $status_code -ne "200" ] ; then
+    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    exit 1 
+
+  else
+    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+fi
+}
 
 sanity_checks () {
   root_check 
   check_disk_space
   curl_check 
+  local_web_check
 } 
 
 ##########################
