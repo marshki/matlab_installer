@@ -51,22 +51,11 @@ fi
 
 # Is CNS local web available? If not, exit. 
 
-ping_local_web () {
-  printf "%s\\n" "PINGING CNS LOCAL WEB..."
-
-  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
-  else
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1
-fi
-}
 
 sanity_checks () {
   root_check 
   check_disk_space
   curl_check 
-  #ping_local_web -->local web won't respond to ping; need a new test
 } 
 
 ##########################
