@@ -66,6 +66,10 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 - [ ] add `pv` and `dialog` checks in Linux TUI installer 
 
+- [ ] add `wget` URL check for Linux similar to `local_web_check` funstion  
+
+- [ ] unit tests? 
+
 ## History 
 v.0.2 20180211
 
