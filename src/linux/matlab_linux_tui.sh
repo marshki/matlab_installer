@@ -32,6 +32,7 @@ matlab9.5
 #### Pre-flight checks ####
 ###########################
 # Add checks for dialog and pv 
+# Add wget http code check to replace ping test 
 
 ########################
 #### Progress meter ####
