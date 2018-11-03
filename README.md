@@ -14,7 +14,7 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 ## Getting Started
 
-**For sysadmins**, we assume that you: 
+**For sysadmins who want to replicate this process**, we assume that you: 
 
 - [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
 
