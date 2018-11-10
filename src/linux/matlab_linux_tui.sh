@@ -28,6 +28,14 @@ matlab9.5
 
 #### Pre-flight checks ####
 
+# Is dialog installed? If not, let's add it. 
+
+dialog_check () {
+  if [ "$(dpkg-query --show --showformat='${Status}' dialog 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
+    printf "%s\\n" "DIALOG IS NOT INSTALLED. EXITING." 
+    exit 1
+fi
+}
 
 #### Progress meter ####
 
@@ -96,7 +104,7 @@ fi
 
 sanity_checks () {
   root_check 
-  #check_disk_space
+  check_disk_space
   pv_check
   wget_check 
   ping_local_web
@@ -167,6 +175,7 @@ matlab_installer () {
 # Main 
 
 main () {
+  dialog_check 
   sanity_checks
   matlab_installer
 }
