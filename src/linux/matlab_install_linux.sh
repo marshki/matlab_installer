@@ -55,7 +55,7 @@ local_web_check(){
   local status_code
   status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' "$LOCAL_WEB")
 
-  if [ $status_code -ne "200" ] ; then
+  if [ "$status_code" -ne "200" ] ; then
     printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1 
 
