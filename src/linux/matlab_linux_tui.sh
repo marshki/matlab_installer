@@ -31,21 +31,7 @@ matlab9.5
 ###########################
 #### Pre-flight checks ####
 ###########################
-# Add checks for dialog and pv 
 
-#function pv_check(){
-#  if ! which pv &> /dev/null; then 
-#  printf "%s\n" "ERROR: Please install pv or make sure it is in your path." 
-#  exit 1
-#fi 
-#} 
-
-pv_check 
-
-
-
-
-# Add wget http code check to replace ping test 
 
 ########################
 #### Progress meter ####
@@ -80,8 +66,8 @@ check_disk_space () {
 fi
 }
 
-# Is wget installed? It should be, but if not, install it
-# add silent install so it doesn't break the dialog box 
+# Is wget installed? It should be, but if not, install it.
+# --> add silent install so it doesn't break the dialog box 
 
 wget_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
@@ -89,6 +75,18 @@ wget_check () {
     apt-get install wget --yes
 fi
 }
+
+# Is pv installed? If not, install it.
+# --> add silent install so it doesn't break the dialog box 
+
+pv_check () {
+  if [ "$(dpkg-query --show --showformat='${Status}' pv 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
+    dialog --backtitle "$script" --title "$program" --infobox "PV IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
+    apt-get install pv --yes 
+fi
+}
+
+# --> Add wget http code check to replace ping test 
 
 # Is CNS local web available? If not, exit. 
 
