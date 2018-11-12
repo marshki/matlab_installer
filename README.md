@@ -44,9 +44,9 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 - [ ]  access to the the appropriate local network.  
 
-**_NOTE:_** If you want the TUI version, you'll need to add the `dialog` and `pv` packages via [Apt](https://wiki.debian.org/Apt) with: 
+**_NOTE:_** If you want the TUI version, you'll need to add the `dialog` package via [Apt](https://wiki.debian.org/Apt) with: 
 
-`apt-get install --yes dialog pv` prior to executing the script. 
+`apt-get install --yes dialog` prior to executing the script. 
 
 __Liftoff:__
 
@@ -66,7 +66,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 - [ ] add `wget` URL check for Linux similar to `local_web_check` function for `matlab_linux_tui.sh`  
 
-- [ ] software checks using `dialog` should have silent `apt-get` 
+- [ ] software checks in Linux scripts should do silent `apt-get` 
 
 - [ ] unit tests? 
 
