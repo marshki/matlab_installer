@@ -67,7 +67,7 @@ fi
 }
 
 # Is wget installed? It should be, but if not, install it.
-# --> add silent install so it doesn't break the dialog box 
+# --> add silent install so it doesn't break the dialog box <--
 
 wget_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
