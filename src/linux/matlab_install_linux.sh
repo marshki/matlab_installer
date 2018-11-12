@@ -2,13 +2,11 @@
 # mjk235 [at] nyu [dot] edu --2017.02.10
 # v.0.2 
 
-#########################################################################################
 #### Auto-install latest version of Matlab on Linux (Debian-based). 		     ####
 #### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  #### 
 #### and Department of Psychology                                                    #### 
 #### Requires: root privileges; access to Meyer network; adequate free disk space.   ####   
 #### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
-#########################################################################################
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
 
@@ -18,9 +16,7 @@ Matlab9.5
 matlab9.5
 )
 
-#######################
 #### Sanity checks ####
-#######################
 
 # Is current UID 0? If not, exit.
 
@@ -71,9 +67,7 @@ sanity_checks () {
   local_web_check
 } 
 
-##########################
 #### Matlab Install-r ####
-##########################
 
 # Download tarball to /usr/local. 
 
@@ -126,9 +120,7 @@ matlab_installer () {
   symlink_matlab
 } 
 
-###################
 #### Launch-r  ####
-###################
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.  
 
