@@ -77,7 +77,7 @@ fi
 }
 
 # Is pv installed? If not, install it.
-# --> add silent install so it doesn't break the dialog box 
+# --> add silent install so it doesn't break the dialog box? <-- 
 
 pv_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' pv 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
@@ -86,7 +86,7 @@ pv_check () {
 fi
 }
 
-# --> Add wget http code check to replace ping test 
+# --> Add wget http code check to replace ping test <-- 
 
 # Is CNS local web available? If not, exit. 
 
