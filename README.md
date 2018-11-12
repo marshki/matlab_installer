@@ -64,9 +64,9 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-- [ ] add `pv` and `dialog` checks in Linux TUI installer 
-
 - [ ] add `wget` URL check for Linux similar to `local_web_check` function for `matlab_linux_tui.sh`  
+
+- [ ] software checks using `dialog` should have silent `apt-get` 
 
 - [ ] unit tests? 
 
