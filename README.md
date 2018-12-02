@@ -50,11 +50,11 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 __Liftoff:__
 
-Grab the script for your OS from `/src` in this repository, then, with elevated privileges, call the script:  
+Grab the script for your OS from `/src` in this repository, then, with elevated privileges, call the script (*[caffeinate](https://ss64.com/osx/caffeinate.html) will prevent OS X from going to sleep during the installation)*:  
 
-* `sudo bash matlab_install_linux.sh (Linux)`, or: `sudo bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
+* `sudo bash matlab_install_linux.sh (Linux)`, or: `caffeinate -i sudo bash matlab_install_osx.sh` (OS X) to auto-install the most recent version of Matlab. 
 
-* `sudo bash matlab_mult_install_osx.sh` (OS X) will launch a text-based menu. From there, follow on-screen prompts:
+* `caffeinate -i sudo bash matlab_mult_install_osx.sh` (OS X) will launch a text-based menu. From there, follow on-screen prompts:
 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/matlab_multi.png "multi-install")
 
