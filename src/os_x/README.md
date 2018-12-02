@@ -6,4 +6,6 @@
 
 Run either from a terminal with: 
 
-`sudo bash scriptname.sh`
+`caffeinate -i sudo bash scriptname.sh`
+
+*[Caffeinate](https://ss64.com/osx/caffeinate.html) will keep your computer awake during the installation.*  
