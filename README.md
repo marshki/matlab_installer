@@ -12,6 +12,12 @@ Open to members of New York University's [Center for Brain Imaging](http://cbi.n
 
 Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of Mac OS X.  
 
+## E-Z Install
+
+**OS X:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/os_x/matlab_install_osx.sh |caffeinate sudo bash`
+
+**LINUX:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/matlab_install_linux.sh |sudo bash`
+
 ## Getting Started
 
 **For sysadmins who want to replicate this process**, we assume that you: 
@@ -78,4 +84,3 @@ v.0.2 20180211
 
 ## Acknowledgments
 `wget` + `dialog` progress bar built off of gist from [here](https://gist.github.com/Gregsen/7822421). 
- 
