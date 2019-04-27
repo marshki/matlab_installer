@@ -7,7 +7,9 @@
 
 MATLAB_VERSION=( MATLAB{9.{5..0},8.{6,5,3,0},{7.5,}}.app MATLAB_R201{0..8}{a,b}.app )
 
+#================
 # Sanity checks  
+#================
 
 root_check() {
   # is current UID 0? if not, exit
