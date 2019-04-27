@@ -1,15 +1,15 @@
 #!/usr/bin/env bash 
 # add current network .lic files to /usr/local/MATLAB*.*/licenses dir in Debian-based OSs.
 
-################
+#=================
 # MATLAB ARRAY #
-################
+#=================
 
 MATLAB_VERSION=( matlab{9.{5..0},8.{6,5,3,0},{7.5,}} )
 
-########################
-#### Sanity checks  ####
-########################
+#=================
+# Sanity checks  
+#=================
 
 root_check() {
   # is current UID 0? if not, exit
@@ -35,9 +35,9 @@ matlab_check() {
   return 1
 }
 
-#########################
-#### Meat & Potatoes ####
-#########################
+#=================
+# Meat & Potatoes 
+#=================
 
 make_cns_lic() { 
   # create 1CNS_NET.lic in /usr/local/matlab*.*/licenses 
