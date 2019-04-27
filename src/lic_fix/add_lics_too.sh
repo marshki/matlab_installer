@@ -2,7 +2,7 @@
 # add current network .lic files to /usr/local/MATLAB*.*/licenses dir in Debian-based OSs.
 
 #=================
-# MATLAB ARRAY #
+# MATLAB ARRAY 
 #=================
 
 MATLAB_VERSION=( matlab{9.{5..0},8.{6,5,3,0},{7.5,}} )
