@@ -1,15 +1,13 @@
 #!/usr/bin/env bash 
 # add current network .lic files to `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` dir in OS X
 
-################
-# MATLAB ARRAY #
-################
+#================
+# MATLAB ARRAY 
+#================
 
 MATLAB_VERSION=( MATLAB{9.{5..0},8.{6,5,3,0},{7.5,}}.app MATLAB_R201{0..8}{a,b}.app )
 
-########################
-#### Sanity checks  ####
-########################
+# Sanity checks  
 
 root_check() {
   # is current UID 0? if not, exit
@@ -35,9 +33,9 @@ matlab_check() {
   return 1
 }
 
-#########################
-#### Meat & Potatoes ####
-#########################
+#================
+# Meat & Potatoes 
+#================
 
 make_cns_lic() { 
   # create 1CNS_NET.lic in `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` 
