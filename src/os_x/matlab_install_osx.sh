@@ -1,14 +1,13 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
-# v.0.2
 
-#########################################################################################
-#### Auto-install latest version of Matlab on OS X. 		                     ####
-#### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  ####
-#### and Department of Psychology.                                                   ####
-#### Requires: root privileges; access to Meyer network; adequate free disk space.   ####
-#### Note: Use on machines WITHOUT previous version of MATLAB installed on them.     ####
-#########################################################################################
+#===============================================================================
+# Auto-install latest version of Matlab on OS X. 		                    
+# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  
+# and Department of Psychology.                                                   
+# Requires: root privileges; access to Meyer network; adequate free disk space.   
+# Note: Use on machines WITHOUT previous version of MATLAB installed on them.     
+#===============================================================================
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
@@ -18,9 +17,9 @@ Matlab9.5
 MATLAB9.5.app
 )
 
-#######################
-#### Sanity Checks ####
-#######################
+#==============
+# Sanity Checks 
+#==============
 
 # Is current UID 0? If not, exit.
 
@@ -71,9 +70,9 @@ sanity_checks() {
   local_web_check  
 }
 
-##########################
-#### Matlab Install-r ####
-##########################
+#=================
+# Matlab Install-r 
+#=================
 
 # Download tarball to /Applications. 
 
@@ -124,9 +123,9 @@ matlab_installer () {
   symlink_matlab
 }
 
-###################
-#### Launch-r ####
-###################
+#=========
+# Launch-r
+#=========
 
 # Launch Matlab from terminal. This is for visual confirmation, you may comment this function in main. 
 
