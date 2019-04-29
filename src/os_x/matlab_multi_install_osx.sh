@@ -1,14 +1,13 @@
 #!/bin/bash
 # mjk235 [at] nyu [dot] edu --2017.02.10
-# v.0.2
 
-############################################################################################
-#### Menu-based installer for various versions of MATLAB on OS X. 		        ####
-#### Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,     ####
-#### and Department of Psychology.                                                      ####
-#### Requires: root privileges; access to Meyer network; adequate free disk space.      ####
-#### Note: Use on machines WITH at least one previous version of MATLAB installed.      ####
-############################################################################################
+#===============================================================================
+# Menu-based installer for various versions of MATLAB on OS X. 		        
+# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,    
+# and Department of Psychology.                                                      
+# Requires: root privileges; access to Meyer network; adequate free disk space.     
+# Note: Use on machines WITH at least one previous version of MATLAB installed.    
+#===============================================================================
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
 
@@ -92,9 +91,9 @@ MATLAB9.5.app
 _9.5
 )
 
-#######################
-#### Sanity Checks ####
-#######################
+#==============
+# Sanity Checks
+#==============
 
 # Is current UID 0? If not, exit.
 
@@ -145,9 +144,9 @@ sanity_checks() {
   local_web_check
 }
 
-######################
-#### Display Menu ####
-######################
+#=============
+# Display Menu 
+#=============
 
 # Display pause prompt.
 # Suspend processing of script; display message prompting user to press [Enter] key to continue.
@@ -179,9 +178,9 @@ function show_menu() {
     printf "%s\\n" "  12. EXIT"
 }
 
-##########################
-#### Matlab Install-r ####
-##########################
+#=================
+# Matlab Install-r 
+#=================
 
 # Download tarball to /Applications. 
 
@@ -232,11 +231,11 @@ matlab_installer () {
   symlink_matlab "$@"
 }
 
-####################
-#### User Input ####
-####################
+#===========
+# User Input
+#===========
 
-#### Get input via the keyboard and make a decision using case...esac ####
+# Get input via the keyboard and make a decision using case...esac 
 
 read_input() {
     local c
@@ -261,9 +260,9 @@ read_input() {
     esac
 }
 
-###################
-#### Launch-r ####
-###################
+#=========
+# Launch-r 
+#=========
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
 
@@ -291,4 +290,5 @@ sanity_checks
     pause
   done
 }
+
 main "$@"
