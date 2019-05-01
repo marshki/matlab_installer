@@ -152,7 +152,7 @@ sanity_checks() {
 # Suspend processing of script; display message prompting user to press [Enter] key to continue.
 # $1-> Message (optional).
 
-function pause() {
+pause() {
     local message="$*"
     [ -z "$message" ] && message="INSTALL DONE. PRESS [Enter] KEY TO CONTINUE:  "
     read -rp "$message" 
@@ -160,7 +160,7 @@ function pause() {
 
 # Display on-screen menu. 
 
-function show_menu() {
+show_menu() {
     printf "%s\\n" "---------------------------------"
     printf "%s\\n" "   MATLAB INSTALLER MAIN MENU    "
     printf "%s\\n" "---------------------------------"
