@@ -270,11 +270,8 @@ read_input() {
 launch_matlab () {
   printf "%s\\n" "LAUNCHING $1..."
 
-<<<<<<< HEAD
   # this doesn't work!!! need to fix <--
 
-=======
->>>>>>> e3ff2562e19e87fb2d4132d911ce3db2bcd46126
   matlab"$4" -nodesktop
 
 }
