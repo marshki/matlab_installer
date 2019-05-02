@@ -269,7 +269,7 @@ read_input() {
 launch_matlab () {
   printf "%s\\n" "LAUNCHING $1..."
 
-  # this doesn't work!!! need to fix 
+  # this doesn't work!!! need to fix <--
 
   matlab"$4" -nodesktop
 
