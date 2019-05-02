@@ -216,6 +216,7 @@ fi
 }
 
 # Create symbolic link for Matlab
+# this doesn't do what it should need to fix <--
 
 symlink_matlab () {
   printf "%s\\n" "CREATING SYMLINK FOR $1..."
@@ -269,8 +270,11 @@ read_input() {
 launch_matlab () {
   printf "%s\\n" "LAUNCHING $1..."
 
+<<<<<<< HEAD
   # this doesn't work!!! need to fix <--
 
+=======
+>>>>>>> e3ff2562e19e87fb2d4132d911ce3db2bcd46126
   matlab"$4" -nodesktop
 
 }
