@@ -225,10 +225,10 @@ symlink_matlab () {
 }
 
 matlab_installer () {
-  get_matlab "$@"
-  untar_matlab "$@"
-  remove_matlab_tar "$@"
-  local_bin_check "$@"
+  #get_matlab "$@"
+  #untar_matlab "$@"
+  #remove_matlab_tar "$@"
+  #local_bin_check "$@"
   symlink_matlab "$@"
 }
 
@@ -272,7 +272,7 @@ launch_matlab () {
 
   # this doesn't work!!! need to fix <--
 
-  matlab"$4" -nodesktop
+  matlab$4 -nodesktop
 
 }
 
