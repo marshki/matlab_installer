@@ -19,11 +19,11 @@ get_matlab () {
 }
 
 launch_matlab () {
-  printf "%s\\n" "LAUNCHING '${MATLAB_9_4[0]}'..."
+  printf "%s\\n" "LAUNCHING ${MATLAB_9_4[2]}..."
 
   # this doesn't work!!! need to fix <--
 
-  printf "%s\n" matlab'${MATLAB_9_4[3]}'
+  matlab${MATLAB_9_4[3]}
 }
 
 get_matlab
