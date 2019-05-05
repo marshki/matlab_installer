@@ -187,7 +187,7 @@ show_menu() {
 get_matlab () {
   printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
-  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
+  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
 
 # Unpack tarball to /Applications, which installs Matlab. 
@@ -195,7 +195,7 @@ get_matlab () {
 untar_matlab () {
   printf "%s\\n" "UNTARRING $1 PACKAGE TO /Applications..."
 
-  #tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
+  tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
 
 # Remove tarball from /Applications.
@@ -216,12 +216,19 @@ fi
 }
 
 # Create symbolic link for Matlab
-# this doesn't do what it should need to fix <--
 
 symlink_matlab () {
   printf "%s\\n" "CREATING SYMLINK FOR $1..."
 
   ln -s /Applications/"$3"/bin/matlab /usr/local/bin/matlab"$4"
+}
+
+# Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
+
+launch_matlab () {
+  printf "%s\\n" "LAUNCHING $1 ..."
+
+  matlab$4 -nodesktop
 }
 
 matlab_installer () {
@@ -230,6 +237,7 @@ matlab_installer () {
   remove_matlab_tar "$@"
   local_bin_check "$@"
   symlink_matlab "$@"
+  launch_matlab "$@"
 }
 
 #===========
@@ -261,22 +269,6 @@ read_input() {
     esac
 }
 
-#=========
-# Launch-r 
-#=========
-
-# Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
-
-launch_matlab () {
-  printf "%s\\n" "LAUNCHING $1 ..."
-  printf "%s\\n" "RETRIEVING $1 INSTALLER..."
-
-  # this doesn't work!!! need to fix <--
-
-  #matlab$4 -nodesktop
-
-}
-
 # Main. 
 
 main () {
@@ -288,7 +280,6 @@ sanity_checks
     clear
     show_menu 
     read_input "$@"
-    launch_matlab "$@"
     pause
   done
 }
