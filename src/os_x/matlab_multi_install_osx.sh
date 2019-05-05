@@ -268,7 +268,8 @@ read_input() {
 # Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
 
 launch_matlab () {
-  printf "%s\\n" "LAUNCHING $1..."
+  printf "%s\\n" "LAUNCHING $1 ..."
+  printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
   # this doesn't work!!! need to fix <--
 
