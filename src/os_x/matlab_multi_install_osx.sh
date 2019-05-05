@@ -187,7 +187,7 @@ show_menu() {
 get_matlab () {
   printf "%s\\n" "RETRIEVING $1 INSTALLER..."
 
-  curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
+  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
 
 # Unpack tarball to /Applications, which installs Matlab. 
@@ -195,7 +195,7 @@ get_matlab () {
 untar_matlab () {
   printf "%s\\n" "UNTARRING $1 PACKAGE TO /Applications..."
 
-  tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
+  #tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
 
 # Remove tarball from /Applications.
@@ -225,10 +225,10 @@ symlink_matlab () {
 }
 
 matlab_installer () {
-  #get_matlab "$@"
-  #untar_matlab "$@"
-  #remove_matlab_tar "$@"
-  #local_bin_check "$@"
+  get_matlab "$@"
+  untar_matlab "$@"
+  remove_matlab_tar "$@"
+  local_bin_check "$@"
   symlink_matlab "$@"
 }
 
@@ -272,7 +272,7 @@ launch_matlab () {
 
   # this doesn't work!!! need to fix <--
 
-  matlab$4 -nodesktop
+  #matlab$4 -nodesktop
 
 }
 
