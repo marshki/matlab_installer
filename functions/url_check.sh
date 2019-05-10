@@ -15,7 +15,11 @@
 # curl -Is http://citi.net |head -n 1
 # HTTP/1.1 301 Moved Permanently
 
-url="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+
+#url="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+#url="https://www.google.com" 
+url="https://geekberg.info" 
+#url="https://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg" 
 
 url_check(){ 
   # curl to check HTTP status code; error message if it fails  
