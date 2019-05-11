@@ -7,3 +7,5 @@ curl_check () {
     apt-get install curl
 fi
 }
+
+curl_check
