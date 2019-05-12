@@ -39,24 +39,24 @@ check_disk_space () {
 fi
 }
 
-# Is curl installed? If not, install it.
+# Is wget installed? If not, install it.
 
-curl_check () {
-  if [ "$(dpkg-query --show --showformat='${Status}' curl 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
-    printf "%s\\n" "CURL IS NOT INSTALLED. LET'S INSTALL IT..."
-    apt-get install curl
+wget_check () {
+  if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
+    printf "%s\\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
+    apt-get install wget
 fi
 }
 
-# Is CNS local web available? If not, exit. 
+# Is CNS local web available? If not, exit.
 
-local_web_check(){
+local_web_check() {
   local status_code
-  status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' "$LOCAL_WEB")
+  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
   if [ "$status_code" -ne "200" ] ; then
     printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1 
+    exit 1
 
   else
     printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
@@ -66,7 +66,7 @@ fi
 sanity_checks () {
   root_check 
   check_disk_space
-  curl_check 
+  wget_check 
   local_web_check
 } 
 
