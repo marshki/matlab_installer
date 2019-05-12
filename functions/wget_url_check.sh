@@ -17,9 +17,10 @@ url="https://www.google.com"
 #url="https://geekberg.info" 
 #url="https://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg" 
 
+# wget to check HTTP status code; error message if it fails
+
 wget_check() { 
-  # wget to check HTTP status code; error message if it fails
-  
+    
   status_code=$(wget --spider --server-response $url 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)  
 
   printf "%s\\n" "$status_code"
