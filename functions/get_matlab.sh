@@ -1,5 +1,12 @@
-#!/bin/bash 
+#!/bin/bash
+
+# Retrieve tarball via curl or wget
+ 
 # Download tarball to /usr/local. 
+# Show progress bar -> retry 3 times -> wait 5 seconds between retries 
+# (curl) keep connections alive for 60 secs [wget does this be default]
+# output download to /usr/local as "matlab.tgz"
+
 
 MATLAB=(
 Matlab9.5
