@@ -21,9 +21,10 @@
 url="https://geekberg.info" 
 #url="https://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg://www.nyu.edu/its/software/vpn/anyconnect-macos-4.4.00243-predeploy-k9.dmg" 
 
-url_check(){ 
-  # curl to check HTTP status code; error message if it fails  
+# curl to check HTTP status code; error message if it fails  
 
+url_check(){ 
+  
   status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' $url)
 
   if [ $status_code -ne "200" ] ; then 
