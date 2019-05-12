@@ -39,4 +39,3 @@ fi
 }
 
 ping_url
-
