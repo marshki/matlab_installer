@@ -14,8 +14,6 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-PCT=100
-
 LOCAL_WEB="128.122.112.23"
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
