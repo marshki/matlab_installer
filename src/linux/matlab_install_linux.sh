@@ -63,6 +63,8 @@ local_web_check() {
 fi
 }
 
+# Wrapper
+
 sanity_checks () {
   root_check 
   check_disk_space
@@ -116,6 +118,8 @@ symlink_matlab () {
 
   ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
+
+# Wrapper
 
 matlab_installer () {
   get_matlab 
