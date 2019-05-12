@@ -1,4 +1,7 @@
 #!/bin/bash
+# Thoroughly unscientific progress bar using "Dialog"
+
+# Stuff for Dialog
 
 script=$(basename "$0")
 program="PINGDOM"
