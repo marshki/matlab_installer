@@ -14,8 +14,6 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-PCT=100
-
 LOCAL_WEB="128.122.112.23"
 
 MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
@@ -81,16 +79,30 @@ pv_check () {
 fi
 }
 
-# --> Add wget http code check to replace ping test <-- 
-
 # Is CNS local web available? If not, exit. 
+
+local_web_check() {
+  local status_code
+  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
+
+  if [ "$status_code" -ne "200" ] ; then
+    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    exit 1
+
+  else
+    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+fi
+}
+
+
+# Wrapper
 
 sanity_checks () {
   root_check 
   check_disk_space
   pv_check
   wget_check 
-  ping_local_web
+  local_web_check
 } 
 
 #=================
@@ -147,6 +159,8 @@ symlink_matlab () {
 install_complete () {
    dialog --backtitle "$script" --title "$program" --msgbox "${MATLAB[0]} installed successfully!" 10 40
 }
+
+# Wrapper
 
 matlab_installer () {
   get_matlab 
