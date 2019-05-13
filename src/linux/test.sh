@@ -78,6 +78,8 @@ fi
 }
 
 # Is CNS local web available? If not, exit. 
+# Add dialog box for this function.
+
 
 local_web_check() {
   local status_code
