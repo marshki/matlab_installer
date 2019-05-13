@@ -60,22 +60,20 @@ fi
 }
 
 # Is wget installed? It should be, but if not, install it.
-# --> add silent install so it doesn't break the dialog box <--
 
 wget_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "WGET IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
-    apt-get install wget --yes
+    apt-get --quiet install wget --yes
 fi
 }
 
 # Is pv installed? If not, install it.
-# --> add silent install so it doesn't break the dialog box? <-- 
 
 pv_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' pv 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "PV IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
-    apt-get install pv --yes 
+    apt-get --quiet install pv --yes 
 fi
 }
 
@@ -94,12 +92,11 @@ local_web_check() {
 fi
 }
 
-
 # Wrapper
 
 sanity_checks () {
   root_check 
-  check_disk_space
+  #check_disk_space
   pv_check
   wget_check 
   local_web_check
@@ -178,7 +175,7 @@ matlab_installer () {
 main () {
   dialog_check 
   sanity_checks
-  matlab_installer
+  #matlab_installer
 }
 
 main "$@"
