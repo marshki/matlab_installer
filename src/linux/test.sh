@@ -109,7 +109,7 @@ sanity_checks () {
 
 get_matlab () {
 
-  wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue $MATLAB_INSTALLER 2>&1 | \
+  wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue ${MATLAB[1]} 2>&1 | \
     grep "%" |\
     sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" |
     dialog --backtitle "$script" --title "$program" --gauge "RETRIEVING ${MATLAB[0]} INSTALLER..." 10 40 
@@ -173,7 +173,7 @@ matlab_installer () {
 main () {
   dialog_check 
   sanity_checks
-  #matlab_installer
+  matlab_installer
 }
 
 main "$@"
