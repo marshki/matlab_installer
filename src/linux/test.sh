@@ -14,9 +14,7 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-LOCAL_WEB="128.122.112.23"
-
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
 
 MATLAB=(
 Matlab9.5
@@ -78,8 +76,6 @@ fi
 }
 
 # Is CNS local web available? If not, exit. 
-# Add dialog box for this function.
-
 
 local_web_check() {
   local status_code
