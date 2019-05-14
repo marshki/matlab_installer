@@ -70,11 +70,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ## TODO
 
-- [ ] add `wget` URL check for Linux similar to `local_web_check` function for `matlab_linux_tui.sh`  
-
-- [ ] software checks in Linux scripts should do silent `apt-get` 
-
-- [ ] unit tests? 
+- [ ] Update README to reflect recent changes (2019.05.14)
 
 ## History 
 v.0.2 20180211
