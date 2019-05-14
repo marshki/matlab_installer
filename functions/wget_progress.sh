@@ -3,8 +3,6 @@
 # Download tarball to /usr/local. 
 # Progress bar built off of gist from: https://gist.github.com/Gregsen/7822421
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
-
 MATLAB=(
 Matlab9.5
 "http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
