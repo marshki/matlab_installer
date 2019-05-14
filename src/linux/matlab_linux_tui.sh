@@ -14,11 +14,7 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-PCT=100
-
-LOCAL_WEB="128.122.112.23"
-
-MATLAB_INSTALLER="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
 
 MATLAB=(
 Matlab9.5
@@ -37,17 +33,6 @@ dialog_check () {
     printf "%s\\n" "DIALOG IS NOT INSTALLED. EXITING." 
     exit 1
 fi
-}
-
-#===============
-# Progress meter
-#=============== 
-
-progress_meter () {
-  for ((i=1;i<=PCT;i++)); do
-  echo $i; 
-  sleep 0.1; 
-  done
 }
 
 #==============
@@ -73,47 +58,46 @@ fi
 }
 
 # Is wget installed? It should be, but if not, install it.
-# --> add silent install so it doesn't break the dialog box <--
 
 wget_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "WGET IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
-    apt-get install wget --yes
+    apt-get --quiet install wget --yes
 fi
 }
 
 # Is pv installed? If not, install it.
-# --> add silent install so it doesn't break the dialog box? <-- 
 
 pv_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' pv 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "PV IS NOT INSTALLED. LET'S INSTALL IT..." >&2 10 40
-    apt-get install pv --yes 
+    apt-get --quiet install pv --yes 
 fi
 }
-
-# --> Add wget http code check to replace ping test <-- 
 
 # Is CNS local web available? If not, exit. 
 
-ping_local_web () {
- 
-  progress_meter | dialog --backtitle "$script" --title "$program" --gauge "PINGING CNS LOCAL WEB..." 10 40 
+local_web_check() {
+  local status_code
+  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
-  if ping -c 1 "$LOCAL_WEB" &> /dev/null; then
-    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING..." 10 40 
-  else
-    dialog --backtitle "$script" --title "$program" --msgbox "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2 10 40
+  if [ "$status_code" -ne "200" ] ; then
+    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1
+
+  else
+    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
 fi
 }
+
+# Wrapper
 
 sanity_checks () {
   root_check 
   check_disk_space
   pv_check
   wget_check 
-  ping_local_web
+  local_web_check
 } 
 
 #=================
@@ -125,7 +109,7 @@ sanity_checks () {
 
 get_matlab () {
 
-  wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue $MATLAB_INSTALLER 2>&1 | \
+  wget --progress=dot --output-document=/usr/local/matlab.tgz --tries=3 --continue ${MATLAB[1]} 2>&1 | \
     grep "%" |\
     sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" |
     dialog --backtitle "$script" --title "$program" --gauge "RETRIEVING ${MATLAB[0]} INSTALLER..." 10 40 
@@ -170,6 +154,8 @@ symlink_matlab () {
 install_complete () {
    dialog --backtitle "$script" --title "$program" --msgbox "${MATLAB[0]} installed successfully!" 10 40
 }
+
+# Wrapper
 
 matlab_installer () {
   get_matlab 
