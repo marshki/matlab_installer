@@ -82,11 +82,11 @@ local_web_check() {
   status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
   if [ "$status_code" -ne "200" ] ; then
-    dialog --backtitle "$script" --title "$program" --infobox "ERROR: CNS LOCAL WEB IS NOT REACHABLE." >&2 10 40 ; sleep 2
+    dialog --backtitle "$script" --title "$program" --infobox "ERROR: CNS LOCAL WEB IS NOT REACHABLE." >&2 10 40 
     exit 1
 
   else
-    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING" >&2 10 40 ; sleep 2
+    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING..." >&2 10 40 ; sleep 2
 fi
 }
 
@@ -94,7 +94,7 @@ fi
 
 sanity_checks () {
   root_check 
-  #check_disk_space
+  check_disk_space
   pv_check
   wget_check 
   local_web_check
