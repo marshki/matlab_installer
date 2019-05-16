@@ -66,7 +66,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 * `bash matlab_linux_tui.sh` (Linux) will launch a text-based user interface and do the driving for you: 
 
-![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/ping_cns.png "ping")|![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/retrieve_matlab.png "retrieve")
+![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_result.png "http response")|![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_retrieve.png "retrieve")
 
 ## TODO
 
