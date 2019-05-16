@@ -14,7 +14,7 @@ local_web_check() {
     exit 1
 
   else
-    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING." >&2 10 40
+    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING..." >&2 10 40
 fi
 }
 
