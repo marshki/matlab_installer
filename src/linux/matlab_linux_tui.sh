@@ -137,7 +137,7 @@ local_bin_check () {
 
     dialog --backtitle "$script" --title "$program" --infobox "/usr/local/bin DOES NOT exist; LET'S ADD IT..." 10 40 ; sleep 2 
     
-    #mkdir -pv /usr/local/bin
+    mkdir -pv /usr/local/bin
 fi
 }
 
