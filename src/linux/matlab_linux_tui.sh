@@ -22,7 +22,7 @@ Matlab9.5
 matlab9.5
 )
 
-==================
+#==================
 # Pre-flight check
 #================= 
 
@@ -82,11 +82,11 @@ local_web_check() {
   status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
   if [ "$status_code" -ne "200" ] ; then
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    dialog --backtitle "$script" --title "$program" --infobox "ERROR: CNS LOCAL WEB IS NOT REACHABLE." >&2 10 40 ; sleep 2
     exit 1
 
   else
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+    dialog --backtitle "$script" --title "$program" --infobox "CNS LOCAL WEB IS REACHABLE. CONTINUING" >&2 10 40 ; sleep 2
 fi
 }
 
@@ -94,7 +94,7 @@ fi
 
 sanity_checks () {
   root_check 
-  check_disk_space
+  #check_disk_space
   pv_check
   wget_check 
   local_web_check
@@ -135,7 +135,7 @@ remove_matlab_tar () {
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
 
-    dialog --backtitle "$script" --title "$program" --infobox "/usr/local/bin DOES NOT exist; LET'S ADD IT..." 10 40 ; sleep 2 
+    dialog --backtitle "$script" --title "$program" --infobox "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..." 10 40 ; sleep 2 
     
     mkdir -pv /usr/local/bin
 fi
