@@ -68,10 +68,6 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_result.png "http response")|![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_retrieve.png "retrieve")
 
-## TODO
-
-- [ ] Update README to reflect recent changes (2019.05.14)
-
 ## History 
 v.0.3 2019.05.16
 
