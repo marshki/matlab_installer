@@ -46,7 +46,7 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 - [ ] adeqaute free disk space (14 GBs); 
 
-- [ ] [curl](https://curl.haxx.se/docs/manpage.html); 
+- [ ] [curl](https://curl.haxx.se/docs/manpage.html) or [wget](https://www.gnu.org/software/wget/); 
 
 - [ ]  access to the the appropriate local network.  
 
@@ -73,7 +73,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 - [ ] Update README to reflect recent changes (2019.05.14)
 
 ## History 
-v.0.2 20180211
+v.0.3 2019.05.16
 
 ## License 
 [LICENSE](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
