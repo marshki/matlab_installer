@@ -9,12 +9,12 @@
 # Note: Use on machines WITHOUT previous version of MATLAB installed on them.     
 #===============================================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 MATLAB=(
-Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
-MATLAB9.5.app
+Matlab9.6
+"http://localweb.cns.nyu.edu/mac/matlab.tgz"
+MATLAB9.6.app
 )
 
 #==============
