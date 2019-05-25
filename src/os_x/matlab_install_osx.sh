@@ -127,7 +127,7 @@ matlab_installer () {
 # Launch-r
 #=========
 
-# Launch Matlab from terminal. This is for visual confirmation, you may comment this function in main. 
+# Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main. 
 
 launch_matlab () {
   printf "%s\\n" "LAUNCHING ${MATLAB[0]}..."
