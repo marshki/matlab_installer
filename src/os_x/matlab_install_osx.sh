@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2017.02.10
+# mjk235 [at] nyu [dot] edu --2019.05.25
 
 #===============================================================================
 # Auto-install latest version of Matlab on OS X. 		                    
