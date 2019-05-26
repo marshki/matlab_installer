@@ -5,7 +5,7 @@
 # MATLAB ARRAY 
 #=================
 
-MATLAB_VERSION=( matlab{9.{5..0},8.{6,5,3,0},{7.5,}} )
+MATLAB_VERSION=( matlab{9.{5..0},8.{6,5,3,0},{7.5}} )
 
 #=================
 # Sanity checks  
