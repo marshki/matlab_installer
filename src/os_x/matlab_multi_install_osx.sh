@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2017.02.10
+# mjk235 [at] nyu [dot] edu --2019.05.25
 
 #===============================================================================
 # Menu-based installer for various versions of MATLAB on OS X. 		        
@@ -9,86 +9,93 @@
 # Note: Use on machines WITH at least one previous version of MATLAB installed.    
 #===============================================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 # Arrays follow this structure: 		
 # MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
 
 MATLAB_7_5=(
 Matlab7.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB7.5.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB7.5.app.tgz"
 MATLAB7.5.app
 _7.5
 )
 
 MATLAB_8_0=(
 Matlab8.0
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.0.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB8.0.app.tgz"
 MATLAB8.0.app
 _8.0
 )
 
 MATLAB_8_3=(
 Matlab8.3
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.3.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB8.3.app.tgz"
 MATLAB8.3.app
 _8.3
 )
 
 MATLAB_8_5=(
 Matlab8.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.5.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB8.5.app.tgz"
 MATLAB8.5.app
 _8.5
 )
 
 MATLAB_8_6=(
 Matlab8.6
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB8.6.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB8.6.app.tgz"
 MATLAB8.6.app
 _8.6
 )
 
 MATLAB_9_0=(
 Matlab9.0
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.0.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.0.app.tgz"
 MATLAB9.0.app
 _9.0
 )
 
 MATLAB_9_1=(
 Matlab9.1
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.1.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.1.app.tgz"
 MATLAB9.1.app
 _9.1
 )
 
 MATLAB_9_2=(
 Matlab9.2
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.2.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.2.app.tgz"
 MATLAB9.2.app
 _9.2
 )
 
 MATLAB_9_3=(
 Matlab9.3
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.3.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.3.app.tgz"
 MATLAB9.3.app
 _9.3
 )
 
 MATLAB_9_4=(
 Matlab9.4
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.4.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.4.app.tgz"
 MATLAB9.4.app
 _9.4
 )
 
 MATLAB_9_5=(
 Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/MATLAB9.5.app.tgz"
+"http://localweb.cns.nyu.edu/macdistros/MATLAB9.5.app.tgz"
 MATLAB9.5.app
 _9.5
+)
+
+MATLAB_9_6=(
+Matlab9.6
+"http://localweb.cns.nyu.edu/mac/matlab.tgz"
+MATLAB9.6.app
+_9.6
 )
 
 #==============
@@ -175,7 +182,8 @@ show_menu() {
     printf "%s\\n" "  9.  INSTALL MATLAB 9.3 (R2017b)"
     printf "%s\\n" "  10. INSTALL MATLAB 9.4 (R2018a)"
     printf "%s\\n" "  11. INSTALL MATLAB 9.5 (R2018b)"
-    printf "%s\\n" "  12. EXIT"
+    printf "%s\\n" "  12. INSTALL MATLAB 9.6 (R2019a)"
+    printf "%s\\n" "  13. EXIT"
 }
 
 #=================
@@ -248,7 +256,7 @@ matlab_installer () {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-12 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-13 ]:  " c
     case $c in
         1) matlab_installer "${MATLAB_7_5[@]}" ;;
         2) matlab_installer "${MATLAB_8_0[@]}" ;;
@@ -261,9 +269,10 @@ read_input() {
         9) matlab_installer "${MATLAB_9_3[@]}" ;;
         10) matlab_installer "${MATLAB_9_4[@]}" ;;
         11) matlab_installer "${MATLAB_9_5[@]}" ;;
-        12) printf "%s\\n" "CIAO!"; exit 0 ;;
+        12) matlab_installer "${MATLAB_9_6[@]}" ;;
+        13) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\\n" "SELECT AN OPTION (1 to 12):  "
+           printf "%s\\n" "SELECT AN OPTION (1 to 13):  "
 
            pause "$@"
     esac
