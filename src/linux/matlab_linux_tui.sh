@@ -14,12 +14,12 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/linuxdistros/current-matlab.tgz"
 
 MATLAB=(
-Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
-matlab9.5
+Matlab9.6
+"http://localweb.cns.nyu.edu/linuxdistros/current-matlab.tgz" 
+matlab9.6
 )
 
 #==================
