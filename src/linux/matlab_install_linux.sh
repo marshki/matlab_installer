@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2017.02.10
+# mjk235 [at] nyu [dot] edu --2019.05.28
 
 #===============================================================================
 # Auto-install latest version of Matlab on Linux (Debian-based). 		     
@@ -9,12 +9,12 @@
 # Note: Use on machines WITHOUT previous version of MATLAB installed on them.   
 #===============================================================================  
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+LOCAL_WEB="http://localweb.cns.nyu.edu/linuxdistros/current-matlab.tgz"
 
 MATLAB=(
-Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
-matlab9.5
+Matlab9.6
+http://localweb.cns.nyu.edu/linuxdistros/current-matlab.tgz
+matlab9.6
 )
 
 #==============
