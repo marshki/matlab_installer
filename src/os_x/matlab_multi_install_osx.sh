@@ -9,91 +9,91 @@
 # Note: Use on machines WITH at least one previous version of MATLAB installed.    
 #===============================================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/mac/matlab.tgz"
+LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 # Arrays follow this structure: 		
 # MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
 
 MATLAB_7_5=(
 Matlab7.5
-"http://localweb.cns.nyu.edu/macdistros/MATLAB7.5.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB7.5.app.tgz"
 MATLAB7.5.app
 _7.5
 )
 
 MATLAB_8_0=(
 Matlab8.0
-"http://localweb.cns.nyu.edu/macdistros/MATLAB8.0.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB8.0.app.tgz"
 MATLAB8.0.app
 _8.0
 )
 
 MATLAB_8_3=(
 Matlab8.3
-"http://localweb.cns.nyu.edu/macdistros/MATLAB8.3.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB8.3.app.tgz"
 MATLAB8.3.app
 _8.3
 )
 
 MATLAB_8_5=(
 Matlab8.5
-"http://localweb.cns.nyu.edu/macdistros/MATLAB8.5.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB8.5.app.tgz"
 MATLAB8.5.app
 _8.5
 )
 
 MATLAB_8_6=(
 Matlab8.6
-"http://localweb.cns.nyu.edu/macdistros/MATLAB8.6.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB8.6.app.tgz"
 MATLAB8.6.app
 _8.6
 )
 
 MATLAB_9_0=(
 Matlab9.0
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.0.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.0.app.tgz"
 MATLAB9.0.app
 _9.0
 )
 
 MATLAB_9_1=(
 Matlab9.1
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.1.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.1.app.tgz"
 MATLAB9.1.app
 _9.1
 )
 
 MATLAB_9_2=(
 Matlab9.2
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.2.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.2.app.tgz"
 MATLAB9.2.app
 _9.2
 )
 
 MATLAB_9_3=(
 Matlab9.3
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.3.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.3.app.tgz"
 MATLAB9.3.app
 _9.3
 )
 
 MATLAB_9_4=(
 Matlab9.4
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.4.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.4.app.tgz"
 MATLAB9.4.app
 _9.4
 )
 
 MATLAB_9_5=(
 Matlab9.5
-"http://localweb.cns.nyu.edu/macdistros/MATLAB9.5.app.tgz"
+"https://localweb.cns.nyu.edu/macdistros/MATLAB9.5.app.tgz"
 MATLAB9.5.app
 _9.5
 )
 
 MATLAB_9_6=(
 Matlab9.6
-"http://localweb.cns.nyu.edu/mac/matlab.tgz"
+"https://localweb.cns.nyu.edu/mac/matlab.tgz"
 MATLAB9.6.app
 _9.6
 )
@@ -133,7 +133,7 @@ fi
 
 local_web_check(){
   local status_code
-  status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' "$LOCAL_WEB")
+  status_code=$(curl --output /dev/null --silent --head --write-out '%{https_code}\n' "$LOCAL_WEB")
 
   if [ "$status_code" -ne "200" ] ; then
     printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
