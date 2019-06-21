@@ -9,11 +9,11 @@
 # Note: Use on machines WITHOUT previous version of MATLAB installed on them.     
 #===============================================================================
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/mac/matlab.tgz"
+LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 MATLAB=(
 Matlab9.6
-"http://localweb.cns.nyu.edu/mac/matlab.tgz"
+"https://localweb.cns.nyu.edu/mac/matlab.tgz"
 MATLAB9.6.app
 )
 
