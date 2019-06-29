@@ -45,7 +45,7 @@ __Pre-flight checklist__ (the script will check for the following conditions):
  
 - [ ] root privileges;   
 
-- [ ] adeqaute free disk space (14 GBs); 
+- [ ] adequate free disk space (30 GBs); 
 
 - [ ] [curl](https://curl.haxx.se/docs/manpage.html) or [wget](https://www.gnu.org/software/wget/); 
 
