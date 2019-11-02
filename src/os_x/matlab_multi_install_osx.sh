@@ -16,77 +16,77 @@ LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 MATLAB_7_5=(
 Matlab7.5
-"https://localweb.cns.nyu.edu/macdistros/MATLAB7.5.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB7.5.app.tgz"
 MATLAB7.5.app
 _7.5
 )
 
 MATLAB_8_0=(
 Matlab8.0
-"https://localweb.cns.nyu.edu/macdistros/MATLAB8.0.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB8.0.app.tgz"
 MATLAB8.0.app
 _8.0
 )
 
 MATLAB_8_3=(
 Matlab8.3
-"https://localweb.cns.nyu.edu/macdistros/MATLAB8.3.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB8.3.app.tgz"
 MATLAB8.3.app
 _8.3
 )
 
 MATLAB_8_5=(
 Matlab8.5
-"https://localweb.cns.nyu.edu/macdistros/MATLAB8.5.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB8.5.app.tgz"
 MATLAB8.5.app
 _8.5
 )
 
 MATLAB_8_6=(
 Matlab8.6
-"https://localweb.cns.nyu.edu/macdistros/MATLAB8.6.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB8.6.app.tgz"
 MATLAB8.6.app
 _8.6
 )
 
 MATLAB_9_0=(
 Matlab9.0
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.0.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.0.app.tgz"
 MATLAB9.0.app
 _9.0
 )
 
 MATLAB_9_1=(
 Matlab9.1
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.1.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.1.app.tgz"
 MATLAB9.1.app
 _9.1
 )
 
 MATLAB_9_2=(
 Matlab9.2
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.2.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.2.app.tgz"
 MATLAB9.2.app
 _9.2
 )
 
 MATLAB_9_3=(
 Matlab9.3
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.3.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.3.app.tgz"
 MATLAB9.3.app
 _9.3
 )
 
 MATLAB_9_4=(
 Matlab9.4
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.4.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.4.app.tgz"
 MATLAB9.4.app
 _9.4
 )
 
 MATLAB_9_5=(
 Matlab9.5
-"https://localweb.cns.nyu.edu/macdistros/MATLAB9.5.app.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.5.app.tgz"
 MATLAB9.5.app
 _9.5
 )
