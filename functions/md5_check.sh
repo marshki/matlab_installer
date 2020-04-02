@@ -14,9 +14,6 @@ source="22ea13c9a8b64b5defefa545f7374617"
 
 destination="$(md5sum /usr/local/matlab_tui.sh |awk '{print $1}')"
 
-printf "%s\\n" "${source}" 
-printf "%s\\n" "${destination}"
-
 md5_check () { 
   printf "%s\\n" "Comparing hashes..."
 
@@ -28,4 +25,4 @@ md5_check () {
 fi	
 } 
 
-#md5_check	
+md5_check	
