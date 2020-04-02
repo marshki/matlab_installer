@@ -7,8 +7,12 @@
 #file1=$(md5sum "$1")
 #file2=$(md5sum "$2")
 
-source=$(md5sum "$1")
-destination=$(md5sum "$2")
+# the known hash
+source=$(md5sum "test.txt")
+
+# the hash of the downloaded file
+
+destination=$(md5sum "test_copy.txt")
 
 md5_check () { 
   printf "%s\\n" "Comparing hashes..."
