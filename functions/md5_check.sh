@@ -8,11 +8,11 @@
 #file2=$(md5sum "$2")
 
 # the known hash
-source="8b137892cf8ca48fae9d48801453d439"
+source="22ea13c9a8b64b5defefa545f7374617"
 
 # the hash of the downloaded file
 
-destination="8b137892cf8ca48fae9d48801453d439"
+destination=$"md5sum /usr/local/matlab_tui.sh |awk '{print $1}'"
 
 md5_check () { 
   printf "%s\\n" "Comparing hashes..."
