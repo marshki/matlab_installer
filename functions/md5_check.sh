@@ -6,7 +6,8 @@
 # Step 1:
 # The source file's md5 hash.
 
-SOURCE_HASH="22ea13c9a8b64b5defefa545f7374617"
+#SOURCE_HASH="22ea13c9a8b64b5defefa545f7374617"
+SOURCE_HASH="861cb132f3833936211e0df59b53c511" 
 
 # Step 2: 
 # Download source file. 
@@ -26,13 +27,15 @@ get_destination_hash () {
   
   printf "%s\\n" "Retrieving hash..."
   DESTINATION_HASH="$(md5sum /usr/local/matlab_linux_tui.sh |awk '{print $1}')"
-} 
+}
 
 # Step 4: 
 # Compare hashes.
 
 md5_check () { 
   printf "%s\\n" "Comparing hashes..."
+  printf "%s\\n" "$SOURCE_HASH"
+  printf "%s\\n" "$DESTINATION_HASH"
 
   if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]
     then
