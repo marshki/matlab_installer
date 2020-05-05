@@ -53,4 +53,8 @@ main () {
   md5_check
 }
 
-main "$@" 	
+main "$@" 
+
+
+# TODO: 
+# Get ducks in a row re: md5 hashes 	
