@@ -22,10 +22,10 @@ get_source_file () {
 # Step 3: 
 # Generate md5 hash for downloaded file.
 
-get_download_hash () { 
+get_destination_hash () { 
   
   printf "%s\\n" "Retrieving hash..."
-  DOWNLOAD_HASH="$(md5sum /usr/local/matlab_tui.sh |awk '{print $1}')"
+  DESTINATION_HASH="$(md5sum /usr/local/matlab_linux_tui.sh |awk '{print $1}')"
 } 
 
 # Step 4: 
@@ -34,7 +34,7 @@ get_download_hash () {
 md5_check () { 
   printf "%s\\n" "Comparing hashes..."
 
-  if [ "$source" = "$destination" ]
+  if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]
     then
       printf "%s\\n" "Same."
   else
@@ -42,4 +42,12 @@ md5_check () {
 fi	
 } 
 
-md5_check	
+# Wrapper 
+
+main () { 
+  get_source_file
+  get_destination_hash
+  md5_check
+}
+
+main "$@" 	
