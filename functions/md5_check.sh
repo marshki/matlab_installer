@@ -6,18 +6,17 @@
 # Step 1:
 # The source file's md5 hash.
 
-#SOURCE_HASH="22ea13c9a8b64b5defefa545f7374617"
-SOURCE_HASH="861cb132f3833936211e0df59b53c511" 
+SOURCE_HASH=8e2dc3b7c652fe284ea556ea9c478297
 
 # Step 2: 
 # Download source file. 
 
-SOURCE_FILE="https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/matlab_install_linux.sh"
+SOURCE_FILE="https://gist.githubusercontent.com/marshki/25306338cc74d38fa1f99ad7a3e90578/raw/c8acfd61c9c3ca142e03d376bbeafbc9f82cfc7e/nyu_hpc_sshfs.md"
 
 get_source_file () {
   printf "%s\\n" "Retrieving source file..."
 
-  wget --progress=bar --tries=3 --wait=5 --continue $SOURCE_FILE --output-document=/usr/local/matlab_linux_tui.sh
+  wget --progress=bar --tries=3 --wait=5 --continue $SOURCE_FILE --output-document=/usr/local/nyu_hpc_sshfs.sh
 }
 
 # Step 3: 
@@ -26,7 +25,7 @@ get_source_file () {
 get_destination_hash () { 
   
   printf "%s\\n" "Retrieving hash..."
-  DESTINATION_HASH="$(md5sum /usr/local/matlab_linux_tui.sh |awk '{print $1}')"
+  DESTINATION_HASH="$(md5sum /usr/local/nyu_hpc_sshfs.sh |awk '{print $1}')"
 }
 
 # Step 4: 
@@ -54,7 +53,3 @@ main () {
 }
 
 main "$@" 
-
-
-# TODO: 
-# Get ducks in a row re: md5 hashes 	
