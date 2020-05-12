@@ -12,9 +12,9 @@
 LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
 MATLAB=(
-Matlab9.6
+Matlab9.7
 http://localweb.cns.nyu.edu/linux/current-matlab.tgz
-matlab9.6
+matlab9.7
 )
 
 #==============
