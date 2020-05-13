@@ -37,7 +37,7 @@ get_source_file () {
 
 get_destination_hash () { 
   
-  printf "%s\\n" "Retrieving hash..."
+  printf "%s\\n" "Calculating hash..."
 
   # GNU/Linux
   #DESTINATION_HASH="$(md5sum /usr/local/nyu_hpc_sshfs.md |awk '{print $1}')"
