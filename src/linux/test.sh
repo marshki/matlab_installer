@@ -86,8 +86,28 @@ get_matlab () {
   wget --progress=bar --tries=3 --wait=5 --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
 }
 
-######PLACEHOLDER
 # md5 check to confirm integerity of download.
+
+get_destination_hash () {
+
+  printf "%s\\n" "Retrieving hash..."
+
+  DESTINATION_HASH="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
+
+}
+
+md5_check () {
+  printf "%s\\n" "Comparing hashes..."
+  printf "%s\\n" "$SOURCE_HASH"
+  printf "%s\\n" "$DESTINATION_HASH"
+
+  if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]
+    then
+      printf "%s\\n" "Same."
+  else
+      printf "%s\\n" "Different."
+fi
+}
 
 # Unpack tarball to /usr/local, which installs Matlab.  
 
@@ -127,7 +147,9 @@ symlink_matlab () {
 # Wrapper
 
 matlab_installer () {
-  get_matlab 
+  get_matlab
+  get_destination_hash
+  md5_check
   untar_matlab
   remove_matlab_tar
   local_bin_check
