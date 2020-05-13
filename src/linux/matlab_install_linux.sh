@@ -93,7 +93,6 @@ get_destination_hash () {
   printf "%s\\n" "CALCULATING HASH..."
 
   DESTINATION_HASH="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
-
 }
 
 # Compare hashes. Exit if different.
