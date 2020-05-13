@@ -1,20 +1,22 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2019.05.28
+# mjk235 [at] nyu [dot] edu --2020.05.13
 
 #===============================================================================
-# Auto-install latest version of Matlab on Linux (Debian-based). 		     
-# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science, 
-# and Department of Psychology                                                    
-# Requires: root privileges; access to Meyer network; adequate free disk space.      
-# Note: Use on machines WITHOUT previous version of MATLAB installed on them.   
-#===============================================================================  
+# Auto-install latest version of Matlab on Linux (Debian-based). 	
+# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,
+# and Department of Psychology                                                 
+# Requires: root privileges; access to Meyer network; adequate free disk space.
+# Note: Use on machines WITHOUT previous version of MATLAB installed on them.
+#=============================================================================== 
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
+SOURCE_HASH="89491051a194deb02769aeadc2aac9d3"
+
 MATLAB=(
-Matlab9.7
+Matlab9.6
 http://localweb.cns.nyu.edu/linux/current-matlab.tgz
-matlab9.7
+matlab9.6
 )
 
 #==============
@@ -84,6 +86,33 @@ get_matlab () {
   wget --progress=bar --tries=3 --wait=5 --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
 }
 
+# Calculate md5 hash for downloaded file.
+
+get_destination_hash () {
+
+  printf "%s\\n" "CALCULATING HASH..."
+
+  DESTINATION_HASH="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
+
+}
+
+# Compare hashes. Exit if different.
+
+md5_check () {
+  printf "%s\\n" "COMPARING HASHES..."
+  printf "%s\\n" "$SOURCE_HASH"
+  printf "%s\\n" "$DESTINATION_HASH"
+
+  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
+    then
+      printf "%s\\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+      exit 1
+
+  else
+      printf "%s\\n" "HASHES MATCH. CONTINUING..."
+fi
+}
+
 # Unpack tarball to /usr/local, which installs Matlab.  
 
 untar_matlab () {
@@ -122,7 +151,9 @@ symlink_matlab () {
 # Wrapper
 
 matlab_installer () {
-  get_matlab 
+  get_matlab
+  get_destination_hash
+  md5_check
   untar_matlab
   remove_matlab_tar
   local_bin_check
