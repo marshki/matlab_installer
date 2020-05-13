@@ -1,5 +1,5 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2019.05.25
+# mjk235 [at] nyu [dot] edu --2020.05.13
 
 #===============================================================================
 # Auto-install latest version of Matlab on OS X. 		                    
@@ -11,10 +11,12 @@
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
+SOURCE_HASH="1cacd3d4cf99fc628f25ffdfe0ad736b"
+
 MATLAB=(
-Matlab9.6
+Matlab9.7
 "https://localweb.cns.nyu.edu/mac/matlab.tgz"
-MATLAB9.6.app
+MATLAB9.7.app
 )
 
 #==============
@@ -82,6 +84,32 @@ get_matlab () {
   curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
 
+# Calculate md5 hash for downloaded file. 
+
+get_destination_hash () {
+
+  printf "%s\\n" "CALCULATING HASH..."
+
+  DESTINATION_HASH="$(md5 -r /Applications/matlab.app.tgz |awk '{print $1}')"
+}
+
+# Compare hashes. Exit if different.
+
+md5_check () {
+  printf "%s\\n" "COMPARING HASHES..."
+  printf "%s\\n" "$SOURCE_HASH"
+  printf "%s\\n" "$DESTINATION_HASH"
+
+  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
+    then
+      printf "%s\\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+      exit 1
+
+  else
+      printf "%s\\n" "HASHES MATCH. CONTINUING..."
+fi
+}
+
 # Unpack tarball to /Applications, which installs Matlab. 
 
 untar_matlab () {
@@ -117,6 +145,8 @@ symlink_matlab () {
 
 matlab_installer () {
   get_matlab
+  get_destination_hash
+  md5_check
   untar_matlab
   remove_matlab_tar
   local_bin_check
