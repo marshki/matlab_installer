@@ -16,6 +16,8 @@ program="MATLAB INSTALLER"
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
+SOURCE_HASH="89491051a194deb02769aeadc2aac9d3"
+
 MATLAB=(
 Matlab9.6
 "http://localweb.cns.nyu.edu/linux/current-matlab.tgz" 
@@ -114,6 +116,10 @@ get_matlab () {
     sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" |
     dialog --backtitle "$script" --title "$program" --gauge "RETRIEVING ${MATLAB[0]} INSTALLER..." 10 40 
 }
+
+# Calculate md5 hash for downloaded file.
+
+# Compare hashes. Exit if different.
 
 # Unpack tarball to /usr/local, which installs Matlab. 
 
