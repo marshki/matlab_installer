@@ -93,14 +93,13 @@ _9.5
 
 MATLAB_9_6=(
 Matlab9.6
-"https://localweb.cns.nyu.edu/mac/MATLAB9.6.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.6.app.tgz"
 MATLAB9.6.app
 _9.6
 )
-
 MATLAB_9_7=(
 Matlab9.7
-"https://localweb.cns.nyu.edu/mac/MATLAB9.7.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.7.app.tgz"
 MATLAB9.7.app
 _9.7
 )
