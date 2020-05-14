@@ -119,7 +119,26 @@ get_matlab () {
 
 # Calculate md5 hash for downloaded file.
 
+get_destination_hash () {
+
+  dialog --backtitle "$script" --title "$program" --infobox "CALCULATING HASH TO VERIFY DOWNLOAD INTEGRITY..." 10 40 ; sleep 2
+
+  DESTINATION_HASH="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
+}
+
 # Compare hashes. Exit if different.
+
+md5_check () {
+
+  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
+    then
+      dialog --backtitle "$script" --title "$program" --infobox "ERROR: HASHES DO NOT MATCH. EXITING." >&2 10 40
+      exit 1
+
+  else
+      dialog --backtitle "$script" --title "$program" --infobox "HASHES MATCH. CONTINUING..." >&2 10 40; sleep 2
+fi
+}
 
 # Unpack tarball to /usr/local, which installs Matlab. 
 
@@ -165,6 +184,8 @@ install_complete () {
 
 matlab_installer () {
   get_matlab 
+  get_destination_hash
+  md5_check
   untar_matlab
   remove_matlab_tar
   local_bin_check
