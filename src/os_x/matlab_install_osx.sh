@@ -15,7 +15,7 @@ SOURCE_HASH="1cacd3d4cf99fc628f25ffdfe0ad736b"
 
 MATLAB=(
 Matlab9.7
-"https://localweb.cns.nyu.edu/mac/matlab.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.7.app.tgz"
 MATLAB9.7.app
 )
 
