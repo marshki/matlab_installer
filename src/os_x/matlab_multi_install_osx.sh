@@ -93,9 +93,16 @@ _9.5
 
 MATLAB_9_6=(
 Matlab9.6
-"https://localweb.cns.nyu.edu/mac/matlab.tgz"
+"https://localweb.cns.nyu.edu/mac/MATLAB9.6.tgz"
 MATLAB9.6.app
 _9.6
+)
+
+MATLAB_9_7=(
+Matlab9.7
+"https://localweb.cns.nyu.edu/mac/MATLAB9.7.tgz"
+MATLAB9.7.app
+_9.7
 )
 
 #==============
@@ -183,7 +190,8 @@ show_menu() {
     printf "%s\\n" "  10. INSTALL MATLAB 9.4 (R2018a)"
     printf "%s\\n" "  11. INSTALL MATLAB 9.5 (R2018b)"
     printf "%s\\n" "  12. INSTALL MATLAB 9.6 (R2019a)"
-    printf "%s\\n" "  13. EXIT"
+    printf "%s\\n" "  13. INSTALL MATLAB 9.7 (R2019b)"
+    printf "%s\\n" "  14. EXIT"
 }
 
 #=================
@@ -270,9 +278,10 @@ read_input() {
         10) matlab_installer "${MATLAB_9_4[@]}" ;;
         11) matlab_installer "${MATLAB_9_5[@]}" ;;
         12) matlab_installer "${MATLAB_9_6[@]}" ;;
-        13) printf "%s\\n" "CIAO!"; exit 0 ;;
+        13) matlab_installer "${MATLAB_9_7[@]}" ;;
+        14) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\\n" "SELECT AN OPTION (1 to 13):  "
+           printf "%s\\n" "SELECT AN OPTION (1 to 14):  "
 
            pause "$@"
     esac
