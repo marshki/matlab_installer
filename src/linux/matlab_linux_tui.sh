@@ -130,10 +130,9 @@ get_destination_hash () {
 
 md5_check () {
 
-  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
-    then
-      dialog --backtitle "$script" --title "$program" --infobox "ERROR: HASHES DO NOT MATCH. EXITING." >&2 10 40
-      exit 1
+  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]; then
+    dialog --backtitle "$script" --title "$program" --infobox "ERROR: HASHES DO NOT MATCH. EXITING." >&2 10 40
+    exit 1
 
   else
       dialog --backtitle "$script" --title "$program" --infobox "HASHES MATCH. CONTINUING..." >&2 10 40; sleep 2
