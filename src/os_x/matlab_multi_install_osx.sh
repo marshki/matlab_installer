@@ -264,7 +264,7 @@ matlab_installer () {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-13 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-14 ]:  " c
     case $c in
         1) matlab_installer "${MATLAB_7_5[@]}" ;;
         2) matlab_installer "${MATLAB_8_0[@]}" ;;
