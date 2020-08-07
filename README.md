@@ -15,10 +15,10 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 ## E-Z Install
 
-**OS X:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/os_x/matlab_install_osx.sh | caffeinate sudo bash`
+**macOS:** `https://raw.githubusercontent.com/marshki/matlab_installer/master/src/macOS/macOS_installer.sh | caffeinate sudo bash`
 
 **LINUX:** 
-`wget https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/matlab_install_linux.sh && sudo bash matlab_install_linux.sh`
+`wget https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/linux_installer.sh && sudo bash linux_installer.sh` 
 
 ## Getting Started
 
