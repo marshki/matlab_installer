@@ -11,7 +11,7 @@
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
-SOURCE_HASH="1cacd3d4cf99fc628f25ffdfe0ad736b"
+SOURCE_HASH="bd9351b0f9686305fd54176394490cda"
 
 MATLAB=(
 Matlab9.7
