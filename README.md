@@ -7,11 +7,11 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
-Also includes script to update stale network license strings (`add_lics.sh`).     
+Also includes script to update stale network license strings.     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of Mac OS X.  
+Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of macOS.  
 
 ## E-Z Install
 
@@ -58,7 +58,7 @@ __Pre-flight checklist__ (the script will check for the following conditions):
 
 __Liftoff:__
 
-Grab the script for your OS from `/src` in this repository, then, with elevated privileges, call the script (*[caffeinate](https://ss64.com/osx/caffeinate.html) will prevent OS X from going to sleep during the installation)*:  
+Grab the script for your OS from `/src` in this repository, then, with elevated privileges, call the script (*[caffeinate](https://ss64.com/osx/caffeinate.html) will prevent macOS from going to sleep during the installation)*:  
 
 * `sudo bash linux_installer.sh (Linux)`, or: `caffeinate -i sudo bash macOS_installer.sh` (macOS) to auto-install the most recent version of Matlab. 
 
