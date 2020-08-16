@@ -16,7 +16,7 @@ program="MATLAB INSTALLER"
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
-SOURCE_HASH="89491051a194deb02769aeadc2aac9d3"
+SOURCE_HASH="292870b20f197bbabce562ef2f4c3473"
 
 MATLAB=(
 Matlab9.7
