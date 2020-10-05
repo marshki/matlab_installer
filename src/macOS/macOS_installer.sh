@@ -1,13 +1,19 @@
-#!/bin/bash
-# mjk235 [at] nyu [dot] edu --2020.05.13
-
-#===============================================================================
-# Auto-install latest version of Matlab on OS X. 		                    
-# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,  
+#!/usr/bin/env bash
+#
+# macOS_installer
+#
+# Install pre-packaged version of MATLAB on macOS.  		                    
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science,  
 # and Department of Psychology.                                                   
-# Requires: root privileges; access to Meyer network; adequate free disk space.   
-# Note: Use on machines WITHOUT previous version of MATLAB installed on them.     
-#===============================================================================
+# Note: Use on machine without a previous version of MATLAB.    
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2020.05.13
+# License: MIT
+
+############
+# Variables
+############
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
@@ -19,9 +25,9 @@ Matlab9.7
 MATLAB9.7.app
 )
 
-#==============
+###############
 # Sanity Checks 
-#==============
+###############
 
 # Is current UID 0? If not, exit.
 
@@ -72,9 +78,9 @@ sanity_checks() {
   local_web_check  
 }
 
-#=================
+##################
 # Matlab Install-r 
-#=================
+##################
 
 # Download tarball to /Applications. 
 
@@ -153,9 +159,9 @@ matlab_installer () {
   symlink_matlab
 }
 
-#=========
+##########
 # Launch-r
-#=========
+##########
 
 # Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main. 
 
