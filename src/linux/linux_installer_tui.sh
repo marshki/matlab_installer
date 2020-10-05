@@ -1,15 +1,21 @@
-#!/bin/bash
-# mjk235 [at] nyu [dot] edu --2017.02.10
-
-#===============================================================================
-# Install latest version of Matlab on Linux (Debian-based) via TUI.               
-# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science, 
+#!/usr/bin/env bash
+#
+# linux_installer_tui
+#
+# Install pre-packaged version of MATLAB on Linux (Debian-based) via TUI.               
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science, 
 # and Department of Psychology                                                   
-# Requires: root privileges; access to Meyer network; adequate free disk space.    
-# Note: Use on machines WITHOUT previous version of MATLAB installed on them.   
-#===============================================================================
-# Script requires dialog. Install it with: sudo apt-get install --yes dialog 
-#===============================================================================
+# Notes: 
+#  - Use on machine without a previous version of MATLAB.
+#  - Script requires dialog. Install it with: sudo apt-get install --yes dialog 
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2020.05.13
+# License: MIT
+
+###########
+# Variables
+###########
 
 script=$(basename "$0")
 program="MATLAB INSTALLER"
@@ -24,9 +30,9 @@ Matlab9.7
 matlab9.7
 )
 
-#==================
+##################
 # Pre-flight check
-#================= 
+################## 
 
 # Is dialog installed? If not, let's add it. 
 
@@ -37,9 +43,9 @@ dialog_check () {
 fi
 }
 
-#==============
+###############
 # Sanity checks
-#==============
+###############
 
 # Is current UID 0? If not, exit.
 
@@ -102,9 +108,9 @@ sanity_checks () {
   local_web_check
 } 
 
-#=================
+##################
 # Matlab Install-r
-#================= 
+################## 
 
 # Download tarball to /usr/local. 
 # Progress bar built off of gist from: https://gist.github.com/Gregsen/7822421
@@ -192,9 +198,9 @@ matlab_installer () {
   install_complete
 } 
 
-#=====
+######
 # Main
-#===== 
+###### 
 
 main () {
   dialog_check 
