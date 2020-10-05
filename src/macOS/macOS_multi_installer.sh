@@ -1,18 +1,27 @@
-#!/bin/bash
-# mjk235 [at] nyu [dot] edu --2019.05.25
-
-#===============================================================================
-# Menu-based installer for various versions of MATLAB on OS X. 		        
-# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,    
+#!/usr/bin/env bash
+#
+# macOS_multi_installer
+# 
+# Menu-based installer for pre-packaged versions of MATLAB on macOs. 		        
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science,    
 # and Department of Psychology.                                                      
-# Requires: root privileges; access to Meyer network; adequate free disk space.     
-# Note: Use on machines WITH at least one previous version of MATLAB installed.    
-#===============================================================================
+# Note: Use on machines with previous version of MATLAB.   
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu> 
+# Date: 2019.05.25
+# License: MIT
+
+############
+# Variables
+############
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
+#########
+# Arrays
 # Arrays follow this structure: 		
 # MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
+#########
 
 MATLAB_7_5=(
 Matlab7.5
@@ -104,9 +113,9 @@ MATLAB9.7.app
 _9.7
 )
 
-#==============
+###############
 # Sanity Checks
-#==============
+###############
 
 # Is current UID 0? If not, exit.
 
@@ -157,9 +166,9 @@ sanity_checks() {
   local_web_check
 }
 
-#=============
+##############
 # Display Menu 
-#=============
+##############
 
 # Display pause prompt.
 # Suspend processing of script; display message prompting user to press [Enter] key to continue.
@@ -193,9 +202,9 @@ show_menu() {
     printf "%s\\n" "  14. EXIT"
 }
 
-#=================
+##################
 # Matlab Install-r 
-#=================
+##################
 
 # Download tarball to /Applications. 
 
@@ -255,9 +264,9 @@ matlab_installer () {
   launch_matlab "$@"
 }
 
-#===========
+############
 # User Input
-#===========
+############
 
 # Get input via the keyboard and make a decision using case...esac 
 
