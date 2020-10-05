@@ -1,13 +1,19 @@
 #!/bin/bash
-# mjk235 [at] nyu [dot] edu --2020.05.13
-
-#===============================================================================
-# Auto-install latest version of Matlab on Linux (Debian-based). 	
-# Open to members of NYU's: Center for Brain Imaging, Center for Neural Science,
+#
+# linux_installer
+#
+# Install pre-packaged version of MATLAB on GNU/Linux (Debian-based). 	
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology                                                 
 # Requires: root privileges; access to Meyer network; adequate free disk space.
-# Note: Use on machines WITHOUT previous version of MATLAB installed on them.
-#=============================================================================== 
+# Note: Use on machine without a previous version of MATLAB installed.
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
+# Date: 2020.05.13
+# License: MIT
+
+###########
+# Variables
+###########
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
@@ -19,9 +25,9 @@ http://localweb.cns.nyu.edu/linux/current-matlab.tgz
 matlab9.7
 )
 
-#==============
+###############
 # Sanity checks
-#==============
+###############
 
 # Is current UID 0? If not, exit.
 
@@ -74,9 +80,9 @@ sanity_checks () {
   local_web_check
 } 
 
-#=================
+##################
 # Matlab Install-r
-#=================
+##################
 
 # Download tarball to /usr/local. 
 
@@ -159,9 +165,9 @@ matlab_installer () {
   symlink_matlab
 } 
 
-#=========
+##########
 # Launch-r
-#========= 
+########## 
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.  
 
@@ -171,9 +177,9 @@ launch_matlab () {
   matlab -nodesktop
 }
 
-#=====
+######
 # Main 
-#=====
+######
 
 main () {
   sanity_checks
