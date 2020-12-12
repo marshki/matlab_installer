@@ -15,7 +15,7 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 ## E-Z Install
 
-**macOS:** `https://raw.githubusercontent.com/marshki/matlab_installer/master/src/macOS/macOS_installer.sh | caffeinate sudo bash`
+**macOS:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/macOS/macOS_installer.sh | caffeinate sudo bash`
 
 **LINUX:** 
 `wget https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/linux_installer.sh && sudo bash linux_installer.sh` 
