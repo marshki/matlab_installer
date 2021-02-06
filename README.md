@@ -6,12 +6,12 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-Bash script to retrieve, install, and symlink various versions of [Matlab](https://www.mathworks.com/products/matlab.html). 
-Also includes script to update stale network license strings.     
+Bash script to retrieve, install, and symlink various versions of [MATLAB](https://www.mathworks.com/products/matlab.html). 
+Also included: script to update stale network license strings.     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
 
-Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of macOS.  
+Tested to run on GNU/Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of macOS.  
 
 ## E-Z Install
 
@@ -30,7 +30,7 @@ Tested to run on Linux ([Debian-based OSs](https://www.debian.org/derivatives/#l
 
 - [ ] can access a networked file server; and   
 
-- [ ] deployed MATLAB locally on a `Mac OS X` and/or `Linux` client. 
+- [ ] deployed MATLAB locally on a `macOS` and/or `GNU/Linux` client. 
 
 On your local client, tar up the MATLAB install with, e.g.: 
 
