@@ -1,4 +1,4 @@
-# Matlab Installer
+# MATLAB Installer
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c7574e6abc1840ab95a0f622170a9af1)](https://www.codacy.com/app/marshki/matlab_installer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marshki/matlab_installer&amp;utm_campaign=Badge_Grade)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
@@ -22,15 +22,15 @@ Tested to run on GNU/Linux ([Debian-based OSs](https://www.debian.org/derivative
 
 ## Getting Started
 
-**For sysadmins who want to replicate this process**, we assume that you: 
+**For sysadmins who want to replicate this process**, we assume the following: 
 
-- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works;  
+- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works
 
-- [ ] may access a network license server to validate local MATLAB installs;  
+- [ ] may access a network license server to validate local MATLAB installs  
 
-- [ ] can access a networked file server; and   
+- [ ] can access a networked file server   
 
-- [ ] deployed MATLAB locally on a `macOS` and/or `GNU/Linux` client. 
+- [ ] deployed MATLAB locally on a `macOS` and/or `GNU/Linux` client 
 
 On your local client, tar up the MATLAB install with, e.g.: 
 
@@ -44,13 +44,13 @@ If needed, modify the installer script(s) to reflect your institution's environm
 
 __Pre-flight checklist__ (the script will check for the following conditions):
  
-- [ ] root privileges;   
+- [ ] root privileges   
 
-- [ ] adequate free disk space (30 GBs); 
+- [ ] adequate free disk space (30 GBs)
 
-- [ ] [curl](https://curl.haxx.se/docs/manpage.html) or [wget](https://www.gnu.org/software/wget/); 
+- [ ] [curl](https://curl.haxx.se/docs/manpage.html) or [wget](https://www.gnu.org/software/wget/)
 
-- [ ]  access to the the appropriate local network.  
+- [ ]  access to the the appropriate local network
 
 **_NOTE:_** If you want the TUI version, you'll need to add the `dialog` package via [Apt](https://wiki.debian.org/Apt) with: 
 
