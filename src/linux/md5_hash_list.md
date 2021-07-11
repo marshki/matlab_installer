@@ -9,3 +9,8 @@
 |43616410394f0fa778283f4437b4f1f0|matlab9.5.tgz |
 |c234759154950f9dc53cbd7e6075d7eb|matlab9.6.tgz |
 |292870b20f197bbabce562ef2f4c3473|matlab9.7.tgz |
+
+
+Update:
+matlab9.6.tgz= 827ad3828a13de8c08fe5a0223b13973
+
