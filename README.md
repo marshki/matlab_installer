@@ -13,16 +13,16 @@ Open to members of New York University's [Center for Brain Imaging](http://cbi.n
 
 Tested to run on GNU/Linux ([Debian-based OSs](https://www.debian.org/derivatives/#list)) and currently-supported versions of macOS.  
 
-## E-Z Install
+## EZ Install
 
 **macOS:** `curl https://raw.githubusercontent.com/marshki/matlab_installer/master/src/macOS/macOS_installer.sh | caffeinate sudo bash`
 
-**LINUX:** 
+**GNU/LINUX (Debian-based distros):** 
 `wget https://raw.githubusercontent.com/marshki/matlab_installer/master/src/linux/linux_installer.sh && sudo bash linux_installer.sh` 
 
 ## Getting Started
 
-**For sysadmins who want to replicate this process**, we assume the following: 
+**For sysadmins who want to replicate this process**, we assume the following of you: 
 
 - [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works
 
