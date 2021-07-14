@@ -17,12 +17,12 @@
 
 LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
-SOURCE_HASH="bd9351b0f9686305fd54176394490cda"
+SOURCE_HASH="10ef32fc34e16ffb788dfb7fc0bd7dc6"
 
 MATLAB=(
-Matlab9.7
-"https://localweb.cns.nyu.edu/mac/MATLAB9.7.app.tgz"
-MATLAB9.7.app
+Matlab9.9
+"https://localweb.cns.nyu.edu/mac/MATLAB9.9.app.tgz"
+MATLAB9.9.app
 )
 
 ###############
