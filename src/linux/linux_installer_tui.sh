@@ -25,9 +25,9 @@ LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 SOURCE_HASH="292870b20f197bbabce562ef2f4c3473"
 
 MATLAB=(
-Matlab9.7
+Matlab9.9
 "http://localweb.cns.nyu.edu/linux/current-matlab.tgz" 
-matlab9.7
+matlab9.9
 )
 
 ##################
