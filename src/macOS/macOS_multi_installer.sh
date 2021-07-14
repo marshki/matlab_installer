@@ -79,22 +79,12 @@ MATLAB9.7.app
 _9.7
 )
 
-MATLAB_9_8=(
-Matlab9.8
-"https://localweb.cns.nyu.edu/mac/MATLAB9.8.app.tgz"
-MATLAB9.8.app
-_9.7
-)
-
 MATLAB_9_9=(
 Matlab9.9
 "https://localweb.cns.nyu.edu/mac/MATLAB9.9.app.tgz"
 MATLAB9.9.app
 _9.9
 )
-
-
-
 
 ###############
 # Sanity Checks
@@ -169,20 +159,16 @@ show_menu() {
     printf "%s\\n" "---------------------------------"
     printf "%s\\n" "   MATLAB INSTALLER MAIN MENU    "
     printf "%s\\n" "---------------------------------"
-    printf "%s\\n" "  1.  INSTALL MATLAB 7.5 (R2007b)"
-    printf "%s\\n" "  2.  INSTALL MATLAB 8.0 (R2012b)"
-    printf "%s\\n" "  3.  INSTALL MATLAB 8.3 (R2014a)"
-    printf "%s\\n" "  4.  INSTALL MATLAB 8.5 (R2015a)" 
-    printf "%s\\n" "  5.  INSTALL MATLAB 8.6 (R2015b)"
-    printf "%s\\n" "  6.  INSTALL MATLAB 9.0 (R2016a)"
-    printf "%s\\n" "  7.  INSTALL MATLAB 9.1 (R2016b)"
-    printf "%s\\n" "  8.  INSTALL MATLAB 9.2 (R2017a)"
-    printf "%s\\n" "  9.  INSTALL MATLAB 9.3 (R2017b)"
-    printf "%s\\n" "  10. INSTALL MATLAB 9.4 (R2018a)"
-    printf "%s\\n" "  11. INSTALL MATLAB 9.5 (R2018b)"
-    printf "%s\\n" "  12. INSTALL MATLAB 9.6 (R2019a)"
-    printf "%s\\n" "  13. INSTALL MATLAB 9.7 (R2019b)"
-    printf "%s\\n" "  14. EXIT"
+    printf "%s\\n" "  1.  INSTALL MATLAB 9.0 (R2016a)"
+    printf "%s\\n" "  2.  INSTALL MATLAB 9.1 (R2016b)"
+    printf "%s\\n" "  3.  INSTALL MATLAB 9.2 (R2017a)"
+    printf "%s\\n" "  4.  INSTALL MATLAB 9.3 (R2017b)"
+    printf "%s\\n" "  5.  INSTALL MATLAB 9.4 (R2018a)"
+    printf "%s\\n" "  6.  INSTALL MATLAB 9.5 (R2018b)"
+    printf "%s\\n" "  7.  INSTALL MATLAB 9.6 (R2019a)"
+    printf "%s\\n" "  8.  INSTALL MATLAB 9.7 (R2019b)"
+    printf "%s\\n" "  9.  INSTALL MATLAB 9.9 (R2020b)"
+    printf "%s\\n" "  10. EXIT"
 }
 
 ##################
@@ -255,24 +241,20 @@ matlab_installer () {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-14 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-10 ]:  " c
     case $c in
-        1) matlab_installer "${MATLAB_7_5[@]}" ;;
-        2) matlab_installer "${MATLAB_8_0[@]}" ;;
-        3) matlab_installer "${MATLAB_8_3[@]}" ;;
-        4) matlab_installer "${MATLAB_8_5[@]}" ;;
-        5) matlab_installer "${MATLAB_8_6[@]}" ;;
-        6) matlab_installer "${MATLAB_9_0[@]}" ;;
-        7) matlab_installer "${MATLAB_9_1[@]}" ;;
-        8) matlab_installer "${MATLAB_9_2[@]}" ;;
-        9) matlab_installer "${MATLAB_9_3[@]}" ;;
-        10) matlab_installer "${MATLAB_9_4[@]}" ;;
-        11) matlab_installer "${MATLAB_9_5[@]}" ;;
-        12) matlab_installer "${MATLAB_9_6[@]}" ;;
-        13) matlab_installer "${MATLAB_9_7[@]}" ;;
-        14) printf "%s\\n" "CIAO!"; exit 0 ;;
+        1) matlab_installer "${MATLAB_9_0[@]}" ;;
+        2) matlab_installer "${MATLAB_9_1[@]}" ;;
+        3) matlab_installer "${MATLAB_9_2[@]}" ;;
+        4) matlab_installer "${MATLAB_9_3[@]}" ;;
+        5) matlab_installer "${MATLAB_9_4[@]}" ;;
+        6) matlab_installer "${MATLAB_9_5[@]}" ;;
+        7) matlab_installer "${MATLAB_9_6[@]}" ;;
+        8) matlab_installer "${MATLAB_9_7[@]}" ;;
+        9) matlab_installer "${MATLAB_9_9[@]}" ;;
+        10) printf "%s\\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\\n" "SELECT AN OPTION (1 to 14):  "
+           printf "%s\\n" "SELECT AN OPTION (1 to 10):  "
 
            pause "$@"
     esac
