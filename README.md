@@ -6,7 +6,20 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-Bash script to retrieve, install, and symlink various versions of [MATLAB](https://www.mathworks.com/products/matlab.html). 
+Bash script to retrieve, install, and symlink various versions of [MATLAB](https://www.mathworks.com/products/matlab.html):
+
+|Version     |Release Name|
+|------------|------------|
+|MATLAB 9.0  |R2016a      |
+|MATLAB 9.1  |R2016b      |
+|MATLAB 9.2  |R2017a      |
+|MATLAB 9.3  |R2017b      |
+|MATLAB 9.4  |R2018a      |
+|MATLAB 9.5  |R2018b      |
+|MATLAB 9.6  |R2019a      |
+|MATLAB 9.7  |R2019b      |
+|MATLAB 9.9  |R2020b      |
+
 Also included: script to update stale network license strings.     
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.   
