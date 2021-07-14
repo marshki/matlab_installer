@@ -1,8 +1,8 @@
 **This directory contains installers for MATLAB on macOS.**  
 
-*matlab_install_osx.sh* &rarr; a text based installer for the most recent version of MATLAB
+*macOS_installer.sh* &rarr; a text based installer for the most recent version of MATLAB
 
-*matlab_multi_install_osx.sh* &rarr; a menu-based installer for all versions of MATLAB
+*macOS_multi_installer.sh* &rarr; a menu-based installer for all versions of MATLAB
 
 Run either from a terminal with: 
 
