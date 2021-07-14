@@ -1,18 +1,16 @@
 ## MD5 Hash Values for MATLAB Tars (macOS)
 ---
-|MD5 Hash Value                  |MATLAB Version|
-|--------------------------------|--------------|
-|3f738bec931e8ae82bbfa4b92f124497|MATLAB8.0	|
-|ebd71400739d9823cd075eee34d007d8|MATLAB8.1	|
-|429ef3b76347fe2b79e4af64dbcafbd7|MATLAB8.2	|
-|545952edfd8239d6e9fefa7a84e93b44|MATLAB8.4     |
-|142fe3177bca96f385b3123e83e8b657|MATLAB8.5     |
-|75c06aa6dc618be78d72eb5ef93cc2d7|MATLAB8.6	|
-|d21205c04d649725f87323d015e21696|MATLAB9.0     |
-|fe7ceb6bde39196f86d660fd1c6163c7|MATLAB9.1	|
-|bac6fac1f44fdf46b5107b6e1a46b89c|MATLAB9.2     |
-|20a6511382a6388152e224355e08f4a7|MATLAB9.3     |
-|55b097af7f4eaa7b40ad84b154849eed|MATLAB9.4     |
-|5d90ed5ace80f95c934900883a9477ae|MATLAB9.5	|
-|66c6f2dbc849ad63218e35545b31c2f3|MATLAB9.6     |
-|bd9351b0f9686305fd54176394490cda|MATLAB9.7	|
+|MATLAB Version |MD5 Hash Value                  |
+|---------------|--------------------------------|
+|MATLAB9.0      |c0376acc3511253dae4d49604b05bcbe|
+|MATLAB9.1      |a1b5e47db19dd3de6a20d0e51fd17517|
+|MATLAB9.2      |cab1488ee5e78ae5ec0a675845a3aee2|
+|MATLAB9.3      |9fc0f0eeaa11863fd328b6db6ee34e21|
+|MATLAB9.4      |c8667358ff9ff9f2e1aa6c19a8d1f619|
+|MATLAB9.5      |d6fc9adc85d47a4f3fc2b4f823894558|
+|MATLAB9.6      |b3179264b6259069a38851b6bc5853b7|
+|MATLAB9.7      |176554d289145915bac4cd781a79b854|
+|MATLAB9.9      |10ef32fc34e16ffb788dfb7fc0bd7dc6|
+
+To generate hashes: 
+`for file in MATLAB9.{0..9}.app.tgz; do openssl md5 $file; done`
