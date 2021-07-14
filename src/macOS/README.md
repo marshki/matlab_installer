@@ -1,4 +1,4 @@
-**This directory contains installers for MATLAB on OS X.**  
+**This directory contains installers for MATLAB on macOS.**  
 
 *matlab_install_osx.sh* &rarr; a text based installer for the most recent version of MATLAB
 
