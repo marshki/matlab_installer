@@ -46,11 +46,10 @@ md5_check () {
   printf "%s\\n" "$SOURCE_HASH"
   printf "%s\\n" "$DESTINATION_HASH"
 
-  if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]
-    then
-      printf "%s\\n" "Same."
+  if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]; then
+    printf "%s\\n" "Same."
   else
-      printf "%s\\n" "Different."
+    printf "%s\\n" "Different."
 fi	
 } 
 
