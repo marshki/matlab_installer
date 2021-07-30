@@ -108,12 +108,11 @@ md5_check () {
   printf "%s\\n" "$SOURCE_HASH"
   printf "%s\\n" "$DESTINATION_HASH"
 
-  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
-    then
-      printf "%s\\n" "ERROR: HASHES DO NOT MATCH. EXITING."
-      exit 1
+  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]; then
+    printf "%s\\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+    exit 1
 
-  else
+    else
       printf "%s\\n" "HASHES MATCH. CONTINUING..."
 fi
 }
