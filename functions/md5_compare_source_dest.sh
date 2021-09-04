@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
+
 # Confirm that destination file matches the source file using checksum via md5.
-# GNU/Linux AND macOS
-# For reference: https://stackoverflow.com/questions/17988090/what-are-the-differences-between-md5-binary-mode-and-text-mode
+# GNU/Linux AND macOS.
+# For reference: https://stackoverflow.com/questions/17988090/what-are-the-differences-between-md5-binary-mode-and-text-mode.
 
 # Step 1:
 # The source file's md5 hash.
 
-SOURCE_HASH="8e2dc3b7c652fe284ea556ea9c478297"
+source_hash="8e2dc3b7c652fe284ea556ea9c478297"
 
 # Step 2: 
 # Download source file. 
 
-SOURCE_FILE="https://gist.githubusercontent.com/marshki/25306338cc74d38fa1f99ad7a3e90578/raw/c8acfd61c9c3ca142e03d376bbeafbc9f82cfc7e/nyu_hpc_sshfs.md"
+source_file="https://gist.githubusercontent.com/marshki/25306338cc74d38fa1f99ad7a3e90578/raw/c8acfd61c9c3ca142e03d376bbeafbc9f82cfc7e/nyu_hpc_sshfs.md"
 
 get_source_file () {
 
-  printf "%s\\n" "Retrieving source file..."
+  printf "%s\n" "Retrieving source file..."
 
   # GNU/Linux
-  wget --progress=bar --tries=3 --wait=5 --continue $SOURCE_FILE --output-document=/usr/local/nyu_hpc_sshfs.md
+  wget --progress=bar --tries=3 --wait=5 --continue $source_file --output-document=/usr/local/nyu_hpc_sshfs.md
 
   # macOS
-  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$SOURCE_FILE" --output /usr/local/nyu_hpc.sshfd.md
+  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$source_file" --output /usr/local/nyu_hpc.sshfd.md
 }
 
 # Step 3: 
@@ -29,27 +30,27 @@ get_source_file () {
 
 get_destination_hash () { 
   
-  printf "%s\\n" "Calculating hash..."
+  printf "%s\n" "Calculating hash..."
 
   # GNU/Linux
-  DESTINATION_HASH="$(md5sum /usr/local/nyu_hpc_sshfs.md |awk '{print $1}')"
+  destination_hash="$(md5sum /usr/local/nyu_hpc_sshfs.md |awk '{print $1}')"
 
   # macOS
-  #DESTINATION_HASH="$(md5 -r /usr/local/nyu_hpc_sshfs.md |awk '{print $1}')"
+  #destination_hash="$(md5 -r /usr/local/nyu_hpc_sshfs.md |awk '{print $1}')"
 }
 
 # Step 4: 
 # Compare hashes.
 
 md5_check () { 
-  printf "%s\\n" "Comparing hashes..."
-  printf "%s\\n" "$SOURCE_HASH"
-  printf "%s\\n" "$DESTINATION_HASH"
+  printf "%s\n" "Comparing hashes..."
+  printf "%s\n" "$source_hash"
+  printf "%s\n" "$destination_hash"
 
-  if [ "$SOURCE_HASH" = "$DESTINATION_HASH" ]; then
-    printf "%s\\n" "Same."
+  if [ "$source_hash" = "$destination_hash" ]; then
+    printf "%s\n" "Same."
   else
-    printf "%s\\n" "Different."
+    printf "%s\n" "Different."
 fi	
 } 
 
