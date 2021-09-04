@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Download tarball to /usr/local. 
 # Progress bar built off of gist from: https://gist.github.com/Gregsen/7822421
