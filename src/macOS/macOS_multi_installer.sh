@@ -15,7 +15,7 @@
 # Variables
 ############
 
-LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
+local_web="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
 #########
 # Arrays
@@ -93,8 +93,9 @@ _9.9
 # Is current UID 0? If not, exit.
 
 root_check () {
+
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
+    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
@@ -102,8 +103,9 @@ fi
 # Is there adequate disk space in "/Applications"? If not, exit.
 
 check_disk_space () {
+
   if [ "$(df -lk /Applications |awk 'FNR == 2 {print $4}')" -le "31457280" ]; then
-    printf "%s\\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
+    printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
 }
@@ -111,8 +113,9 @@ fi
 # Is curl installed? If not, exit. (Curl ships with OS X, but let's check).
 
 curl_check () {
+
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
+    printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
     exit 1
 fi
 }
@@ -121,14 +124,14 @@ fi
 
 local_web_check(){
   local status_code
-  status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{https_code}\n' "$LOCAL_WEB")
+  status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{https_code}\n' "$local_web")
 
   if [ "$status_code" -ne "200" ] ; then
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1 
 
   else
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
 fi
 }
 
@@ -148,6 +151,7 @@ sanity_checks() {
 # $1-> Message (optional).
 
 pause() {
+
     local message="$*"
     [ -z "$message" ] && message="INSTALL DONE. PRESS [Enter] KEY TO CONTINUE:  "
     read -rp "$message" 
@@ -156,19 +160,19 @@ pause() {
 # Display on-screen menu. 
 
 show_menu() {
-    printf "%s\\n" "---------------------------------"
-    printf "%s\\n" "   MATLAB INSTALLER MAIN MENU    "
-    printf "%s\\n" "---------------------------------"
-    printf "%s\\n" "  1.  INSTALL MATLAB 9.0 (R2016a)"
-    printf "%s\\n" "  2.  INSTALL MATLAB 9.1 (R2016b)"
-    printf "%s\\n" "  3.  INSTALL MATLAB 9.2 (R2017a)"
-    printf "%s\\n" "  4.  INSTALL MATLAB 9.3 (R2017b)"
-    printf "%s\\n" "  5.  INSTALL MATLAB 9.4 (R2018a)"
-    printf "%s\\n" "  6.  INSTALL MATLAB 9.5 (R2018b)"
-    printf "%s\\n" "  7.  INSTALL MATLAB 9.6 (R2019a)"
-    printf "%s\\n" "  8.  INSTALL MATLAB 9.7 (R2019b)"
-    printf "%s\\n" "  9.  INSTALL MATLAB 9.9 (R2020b)"
-    printf "%s\\n" "  10. EXIT"
+    printf "%s\n" "---------------------------------"
+    printf "%s\n" "   MATLAB INSTALLER MAIN MENU    "
+    printf "%s\n" "---------------------------------"
+    printf "%s\n" "  1.  INSTALL MATLAB 9.0 (R2016a)"
+    printf "%s\n" "  2.  INSTALL MATLAB 9.1 (R2016b)"
+    printf "%s\n" "  3.  INSTALL MATLAB 9.2 (R2017a)"
+    printf "%s\n" "  4.  INSTALL MATLAB 9.3 (R2017b)"
+    printf "%s\n" "  5.  INSTALL MATLAB 9.4 (R2018a)"
+    printf "%s\n" "  6.  INSTALL MATLAB 9.5 (R2018b)"
+    printf "%s\n" "  7.  INSTALL MATLAB 9.6 (R2019a)"
+    printf "%s\n" "  8.  INSTALL MATLAB 9.7 (R2019b)"
+    printf "%s\n" "  9.  INSTALL MATLAB 9.9 (R2020b)"
+    printf "%s\n" "  10. EXIT"
 }
 
 ##################
@@ -178,7 +182,8 @@ show_menu() {
 # Download tarball to /Applications. 
 
 get_matlab () {
-  printf "%s\\n" "RETRIEVING $1 INSTALLER..."
+
+  printf "%s\n" "RETRIEVING $1 INSTALLER..."
 
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
@@ -186,7 +191,8 @@ get_matlab () {
 # Unpack tarball to /Applications, which installs Matlab. 
 
 untar_matlab () {
-  printf "%s\\n" "UNTARRING $1 PACKAGE TO /Applications..."
+
+  printf "%s\n" "UNTARRING $1 PACKAGE TO /Applications..."
 
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
@@ -194,7 +200,8 @@ untar_matlab () {
 # Remove tarball from /Applications.
 
 remove_matlab_tar () {
-  printf "%s\\n" "REMOVING $1 TARBALL..."
+
+  printf "%s\n" "REMOVING $1 TARBALL..."
 
   rm -rv /Applications/matlab.app.tgz
 }
@@ -202,8 +209,9 @@ remove_matlab_tar () {
 # Does /usr/local/bin exist? If not, add it
 
 local_bin_check () {
+
   if [ ! -d "/usr/local/bin" ] ; then
-    printf "%s\\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
+    printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
     mkdir -pv /usr/local/bin
 fi
 }
@@ -211,7 +219,8 @@ fi
 # Create symbolic link for Matlab
 
 symlink_matlab () {
-  printf "%s\\n" "CREATING SYMLINK FOR $1..."
+
+  printf "%s\n" "CREATING SYMLINK FOR $1..."
 
   ln -s /Applications/"$3"/bin/matlab /usr/local/bin/matlab"$4"
 }
@@ -219,7 +228,8 @@ symlink_matlab () {
 # Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
 
 launch_matlab () {
-  printf "%s\\n" "LAUNCHING $1 ..."
+
+  printf "%s\n" "LAUNCHING $1 ..."
 
   matlab$4 -nodesktop
 }
@@ -252,9 +262,9 @@ read_input() {
         7) matlab_installer "${MATLAB_9_6[@]}" ;;
         8) matlab_installer "${MATLAB_9_7[@]}" ;;
         9) matlab_installer "${MATLAB_9_9[@]}" ;;
-        10) printf "%s\\n" "CIAO!"; exit 0 ;;
+        10) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\\n" "SELECT AN OPTION (1 to 10):  "
+           printf "%s\n" "SELECT AN OPTION (1 to 10):  "
 
            pause "$@"
     esac
