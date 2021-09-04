@@ -24,23 +24,26 @@ root_check() {
   # is current UID 0? if not, exit
 
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
+
+    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1 
   fi
 }
 
 matlab_check() {
-  # is there at least 1 occurrence of `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` dir? 
+  # is there at least 1 occurrence of:
+  #   `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` dir? 
   # if yes, continue; if not, exit  
 
   for MATLAB in "${MATLAB_VERSION[@]}"; do
+
       if [ -d "/Applications/${MATLAB}/licenses" ]; then
-          printf "%s\\n" "FOUND A VERSION OF MATLAB (${MATLAB}), CONTINUING..."
+          printf "%s\n" "FOUND A VERSION OF MATLAB (${MATLAB}), CONTINUING..."
           return 0
       fi
   done
     
-  printf "%s\\n" "DID NOT FIND ANY VERSIONS OF MATLAB. EXITING." 
+  printf "%s\n" "DID NOT FIND ANY VERSIONS OF MATLAB. EXITING." 
   return 1
 }
 
@@ -51,7 +54,7 @@ matlab_check() {
 make_cns_lic() { 
   # create 1CNS_NET.lic in `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` 
  
-  printf "%s\\n" "ADDING 1CNS_NET.lic TO /Applications/${MATLAB}/licenses" 
+  printf "%s\n" "ADDING 1CNS_NET.lic TO /Applications/${MATLAB}/licenses" 
  
   cat > /Applications/"${MATLAB}"/licenses/1CNS_NET.lic << EOF 
 # CNS license server - 08.01.2018
@@ -63,7 +66,7 @@ EOF
 make_nyu_lic() { 
   # create 1NYU_NET.lic in `/Applications/MATLAB*.*.app` AND/OR `MATLAB_R20**.app/licenses` 
 
-  printf "%s\\n" "ADDING 1NYU_NET.lic TO /Applications/${MATLAB}/licenses" 
+  printf "%s\n" "ADDING 1NYU_NET.lic TO /Applications/${MATLAB}/licenses" 
  
   cat > /Applications/"${MATLAB}"/licenses/1NYU_NET.lic << EOF
 # NYU ITS matlab license servers - 09.09.2020
