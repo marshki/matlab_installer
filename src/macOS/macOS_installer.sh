@@ -15,9 +15,9 @@
 # Variables
 ############
 
-LOCAL_WEB="https://localweb.cns.nyu.edu/mac/matlab.tgz"
+local_web="https://localweb.cns.nyu.edu/mac/matlab.tgz"
 
-SOURCE_HASH="10ef32fc34e16ffb788dfb7fc0bd7dc6"
+source_hash="10ef32fc34e16ffb788dfb7fc0bd7dc6"
 
 MATLAB=(
 Matlab9.9
@@ -32,8 +32,9 @@ MATLAB9.9.app
 # Is current UID 0? If not, exit.
 
 root_check () {
+
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
+    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
 fi
 }
@@ -41,8 +42,9 @@ fi
 # Is there adequate disk space in "/Applications"? If not, exit.
 
 check_disk_space () {
+
   if [ "$(df -lk /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//')" -le "31457280" ]; then
-    printf "%s\\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
+    printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
 fi
 }
@@ -50,8 +52,9 @@ fi
 # Is curl installed? If not, exit. (Curl ships with OS X, but let's check).
 
 curl_check () {
+
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
-    printf "%s\\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
+    printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
     exit 1
 fi
 }
@@ -60,14 +63,14 @@ fi
 
 local_web_check(){
   local status_code
-  status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{http_code}\n' "$LOCAL_WEB")
+  status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{http_code}\n' "$local_web")
 
   if [ "$status_code" -ne "200" ] ; then
-    printf "%s\\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
+    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1 
 
   else
-    printf "%s\\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
+    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
 fi
 }
 
@@ -85,7 +88,7 @@ sanity_checks() {
 # Download tarball to /Applications. 
 
 get_matlab () {
-  printf "%s\\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
@@ -94,32 +97,32 @@ get_matlab () {
 
 get_destination_hash () {
 
-  printf "%s\\n" "CALCULATING HASH..."
+  printf "%s\n" "CALCULATING HASH..."
 
-  DESTINATION_HASH="$(md5 -r /Applications/matlab.app.tgz |awk '{print $1}')"
+  destination_hash="$(md5 -r /Applications/matlab.app.tgz |awk '{print $1}')"
 }
 
 # Compare hashes. Exit if different.
 
 md5_check () {
-  printf "%s\\n" "COMPARING HASHES..."
-  printf "%s\\n" "$SOURCE_HASH"
-  printf "%s\\n" "$DESTINATION_HASH"
+  printf "%s\n" "COMPARING HASHES..."
+  printf "%s\n" "$source_hash"
+  printf "%s\n" "$destination_hash"
 
-  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]
+  if [ "$source_hash" != "$destination_hash" ]
     then
-      printf "%s\\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+      printf "%s\n" "ERROR: HASHES DO NOT MATCH. EXITING."
       exit 1
 
   else
-      printf "%s\\n" "HASHES MATCH. CONTINUING..."
+      printf "%s\n" "HASHES MATCH. CONTINUING..."
 fi
 }
 
 # Unpack tarball to /Applications, which installs Matlab. 
 
 untar_matlab () {
-  printf "%s\\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
+  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
 
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
@@ -127,7 +130,7 @@ untar_matlab () {
 # Remove tarball from /Applications.
 
 remove_matlab_tar () {
-  printf "%s\\n" "REMOVING ${MATLAB[0]} TARBALL..."
+  printf "%s\n" "REMOVING ${MATLAB[0]} TARBALL..."
 
   rm -rv /Applications/matlab.app.tgz
 }
@@ -136,7 +139,7 @@ remove_matlab_tar () {
 
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
-    printf "%s\\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
+    printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
     mkdir -pv /usr/local/bin
 fi
 }
@@ -144,7 +147,7 @@ fi
 # Create symbolic link for Matlab. 
 
 symlink_matlab () {
-  printf "%s\\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
+  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln -s /Applications/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
@@ -166,7 +169,7 @@ matlab_installer () {
 # Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main. 
 
 launch_matlab () {
-  printf "%s\\n" "LAUNCHING ${MATLAB[0]}..."
+  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
   matlab -nodesktop
 }
