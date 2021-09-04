@@ -85,7 +85,7 @@ Grab the script for your OS from `/src` in this repository, then, with elevated 
 ![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_result.png "http response")|![Alt text](https://github.com/marshki/matlab_installer/blob/master/docs/wget_retrieve.png "retrieve")
 
 ## History 
-v.0.3 2019.05.16
+v.0.4 04 SEPT 2021
 
 ## License 
 [LICENSE](https://github.com/marshki/matlab_installer/blob/master/LICENSE). 
