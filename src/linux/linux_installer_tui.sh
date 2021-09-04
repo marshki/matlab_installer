@@ -20,9 +20,9 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
+local_web="http://localweb.cns.nyu.edu/linux/current-matlab.tgz"
 
-SOURCE_HASH="292870b20f197bbabce562ef2f4c3473"
+source_hash="292870b20f197bbabce562ef2f4c3473"
 
 MATLAB=(
 Matlab9.9
@@ -38,7 +38,7 @@ matlab9.9
 
 dialog_check () {
   if [ "$(dpkg-query --show --showformat='${Status}' dialog 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
-    printf "%s\\n" "DIALOG IS NOT INSTALLED. EXITING." 
+    printf "%s\n" "DIALOG IS NOT INSTALLED. EXITING." 
     exit 1
 fi
 }
@@ -87,7 +87,7 @@ fi
 
 local_web_check() {
   local status_code
-  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
+  status_code=$(wget --spider --server-response "$local_web" 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
   if [ "$status_code" -ne "200" ] ; then
     dialog --backtitle "$script" --title "$program" --infobox "ERROR: CNS LOCAL WEB IS NOT REACHABLE." >&2 10 40 
@@ -129,14 +129,14 @@ get_destination_hash () {
 
   dialog --backtitle "$script" --title "$program" --infobox "CALCULATING HASH TO VERIFY DOWNLOAD INTEGRITY..." 10 40 ; sleep 2
 
-  DESTINATION_HASH="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
+  destination_hash="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
 }
 
 # Compare hashes. Exit if different.
 
 md5_check () {
 
-  if [ "$SOURCE_HASH" != "$DESTINATION_HASH" ]; then
+  if [ "$source_hash" != "$destination_hash" ]; then
     dialog --backtitle "$script" --title "$program" --infobox "ERROR: HASHES DO NOT MATCH. EXITING." >&2 10 40
     exit 1
 
