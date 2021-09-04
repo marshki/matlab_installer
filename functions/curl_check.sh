@@ -9,7 +9,7 @@ curl_check () {
     | grep --count "ok installed")" -eq "0" ]; then
 
     printf "%s\n" "CURL IS NOT INSTALLED. LET'S INSTALL IT..."
-    apt-get install --yes curl
+    apt-get --yes install curl
 fi
 }
 
