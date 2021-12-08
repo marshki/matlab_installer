@@ -110,7 +110,7 @@ check_disk_space () {
 fi
 }
 
-# Is curl installed? If not, exit. (Curl ships with OS X, but let's check).
+# Is curl installed? If not, exit. (Curl ships with macOS, but let's check).
 
 curl_check () {
 
