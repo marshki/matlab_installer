@@ -5,7 +5,7 @@
 # Menu-based installer for pre-packaged versions of MATLAB on macOs. 		        
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,    
 # and Department of Psychology.                                                      
-# Note: Use on machines with previous version of MATLAB.   
+# Note: Does not add symoblic link to MATLAB binary.   
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu> 
 # Date: 2019.05.25
