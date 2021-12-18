@@ -6,6 +6,7 @@
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology                                                 
 # Requires: root privileges; access to Meyer network; adequate free disk space.
+# Creates symbolic link to launch MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2020.05.13
