@@ -6,7 +6,7 @@
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science, 
 # and Department of Psychology                                                   
 # Notes: 
-#  - Use on machine without a previous version of MATLAB.
+#  - Creates symbolic link to launch MATLAB binary.
 #  - Script requires dialog. Install it with: sudo apt-get install --yes dialog 
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
