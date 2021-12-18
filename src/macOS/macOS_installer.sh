@@ -5,7 +5,7 @@
 # Install pre-packaged version of MATLAB on macOS.  		                    
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,  
 # and Department of Psychology.                                                   
-# Note: Use on machine without a previous version of MATLAB.    
+# Note: Creates a symbolic link to MATLAB binary.    
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2020.05.13
