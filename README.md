@@ -19,6 +19,7 @@ Bash script to retrieve, install, and symlink various versions of [MATLAB](https
 |MATLAB 9.6  |R2019a      |
 |MATLAB 9.7  |R2019b      |
 |MATLAB 9.9  |R2020b      |
+|MATLAB 9.11 |R2021b      |
 
 Also included: script to update stale network license strings.     
 
