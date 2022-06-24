@@ -12,7 +12,8 @@
 # awk '/HTTP\/1.1/{print $2}' |head -1
 # 302
 
-url="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
+url="www.cns.nyu.edu/mac/matlab9.11.tgz"
+#url="https://geekberg.info"
 
 # wget to check HTTP status code; error message if it fails
 
