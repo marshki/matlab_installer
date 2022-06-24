@@ -4,7 +4,7 @@
 #### Test around header response code, e.g.: #### 
 
 # GOOD: 
-# curl -Is www.cns.nyu.edu/mac/matlab9.9.tgz|head -n 1
+# curl -Is www.cns.nyu.edu/mac/matlab9.11.tgz|head -n 1
 # HTTP/1.1 200 OK
 
 # BAD: 
@@ -15,8 +15,8 @@
 # curl -Is http://citi.net |head -n 1
 # HTTP/1.1 301 Moved Permanently
 
-url="https://geekberg.info" 
-#url="www.cns.nyu.edu/mac/matlab9.11.tgz"
+# url="https://geekberg.info" 
+url="www.cns.nyu.edu/mac/matlab9.11.tgz"
 
 # curl to check HTTP status code; error message if it fails  
 
