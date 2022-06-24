@@ -3,7 +3,7 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-local_web="http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
+local_web="www.cns.nyu.edu/mac/matlab9.11.tgz"
 
 local_web_check() {
   local status_code
