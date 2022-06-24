@@ -7,9 +7,9 @@
 # output download to /usr/local as "matlab.tgz".
 
 MATLAB=(
-Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/linux/matlab9.5.tgz"
-matlab9.5
+Matlab9.11
+"www.cns.nyu.edu/mac/matlab9.11.tgz"  
+matlab9.11
 )
 
 get_matlab () {
