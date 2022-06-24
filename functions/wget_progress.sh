@@ -4,9 +4,9 @@
 # Progress bar built off of gist from: https://gist.github.com/Gregsen/7822421
 
 MATLAB=(
-Matlab9.5
-"http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz"
-MATLAB9.5.app
+Matlab9.11
+"www.cns.nyu.edu/mac/matlab9.11.tgz"
+MATLAB9.11.app
 )
 
 get_matlab () {
