@@ -86,6 +86,13 @@ MATLAB9.9.app
 _9.9
 )
 
+MATLAB_9_11=(
+Matlab9.11
+"https://localweb.cns.nyu.edu/mac/MATLAB9.11.app.tgz"
+MATLAB9.11.app
+_9.11
+)
+
 ###############
 # Sanity Checks
 ###############
