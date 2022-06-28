@@ -179,7 +179,7 @@ show_menu() {
     printf "%s\n" "  7.  INSTALL MATLAB 9.6 (R2019a)"
     printf "%s\n" "  8.  INSTALL MATLAB 9.7 (R2019b)"
     printf "%s\n" "  9.  INSTALL MATLAB 9.9 (R2020b)"
-    printf "%s\n" "  10.  INSTALL MATLAB 9.11 (R2021b)"
+    printf "%s\n" "  10. INSTALL MATLAB 9.11 (R2021b)"
     printf "%s\n" "  11. EXIT"
 }
 
