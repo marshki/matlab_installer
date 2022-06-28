@@ -12,8 +12,8 @@
 # awk '/HTTP\/1.1/{print $2}' |head -1
 # 302
 
-url="www.cns.nyu.edu/mac/matlab9.11.tgz"
-#url="https://geekberg.info"
+#url="www.cns.nyu.edu/mac/matlab9.11.tgz"
+url="www.cns.nyu.edu/linux/matlab9.9.tgz"
 
 # wget to check HTTP status code; error message if it fails
 
