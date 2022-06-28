@@ -16,8 +16,7 @@
 ############
 
 local_web="www.cns.nyu.edu/mac/matlab9.11.tgz"
-
-source_hash="10ef32fc34e16ffb788dfb7fc0bd7dc6"
+source_hash="b1637929b1249a17d04802ea61ae311b"
 
 MATLAB=(
 Matlab9.11
