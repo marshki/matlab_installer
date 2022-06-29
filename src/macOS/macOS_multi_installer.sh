@@ -270,10 +270,10 @@ read_input() {
         7) matlab_installer "${MATLAB_9_6[@]}" ;;
         8) matlab_installer "${MATLAB_9_7[@]}" ;;
         9) matlab_installer "${MATLAB_9_9[@]}" ;;
-        10) matlab_installer "${MATLAB_9_9[@]}" ;;
+        10) matlab_installer "${MATLAB_9_11[@]}" ;;
         11) printf "%s\n" "CIAO!"; exit 0 ;;
         *)
-           printf "%s\n" "SELECT AN OPTION (1 to 10):  "
+           printf "%s\n" "SELECT AN OPTION (1 to 11):  "
 
            pause "$@"
     esac
