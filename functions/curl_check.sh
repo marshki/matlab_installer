@@ -1,7 +1,8 @@
 #!/usr/bin/env bash 
-# Install curl if not present (Debian-based OSs) 
 
-# Query dpkg as to status of package. If count equals zero (0), install via apt.
+# Install 'curl' if not present (Debian-based OSs).
+# Query 'dpkg' as to status of package,
+#   - if count equals zero (0), install via apt.
 
 curl_check () {
 
