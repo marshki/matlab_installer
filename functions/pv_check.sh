@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-# Is pv installed? If not, install it.
-# Add silent install so it doesn't break the dialog box.
+# Is `pv` installed? If not, use silent install so we don't break `dialog` box.
 
 script=$(basename "$0")
 program="MATLAB INSTALLER"
