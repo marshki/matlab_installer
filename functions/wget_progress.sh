@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Progress bar for downloading tarball to: /usr/local. 
+# Progress bar for downloading tarball to: /usr/local via `dialog`. 
 # - built off of gist from: https://gist.github.com/Gregsen/7822421.
 
 MATLAB=(
