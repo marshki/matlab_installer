@@ -1,4 +1,6 @@
 #!/urs/bin/env bash
+# `wget` HTTP response code check for `dialog` TUI.
+#  - `200` is only acceptalbe response code.
 
 script=$(basename "$0")
 program="MATLAB INSTALLER"
