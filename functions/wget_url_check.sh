@@ -1,33 +1,31 @@
 #!/usr/bin/env bash 
-# quick and dirty HTTP status code of URL  
+# A quick and dirty test of a URL's HTTP status code via `wget`.
 
-#### Test around header response code, e.g.: #### 
+# Sample URLs + header response codes:
 
 # GOOD: 
-# wget --spider --server-response https://geekberg.info 2>&1 | awk '/HTTP\/1.1/{print $2}'|head -1 
-# 200
+#  - wget --spider --server-response https://geekberg.info 2>&1 | awk '/HTTP\/1.1/{print $2}'|head -1
+#  - 200
 
 # BAD: 
-# wget --spider --server-response http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz 2>&1 \ 
-# awk '/HTTP\/1.1/{print $2}' |head -1
-# 302
+#  - wget --spider --server-response http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz 2>&1 \
+#      awk '/HTTP\/1.1/{print $2}' |head -1
+#  - 302
 
-#url="www.cns.nyu.edu/mac/matlab9.11.tgz"
+# url="www.cns.nyu.edu/mac/matlab9.11.tgz"
 url="www.cns.nyu.edu/linux/matlab9.9.tgz"
 
-# wget to check HTTP status code; error message if it fails
-
-wget_check() { 
+wget_check() {
     
-  status_code=$(wget --spider --server-response $url 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)  
+  status_code=$(wget --spider --server-response $url 2>&1 | awk '/HTTP\/1.1/{print $2}' | head -1)
 
   printf "%s\n" "$status_code"
 
-  if [ "$status_code" -ne "200" ] ; then 
-    printf "%s\n" "BAD URL" 
-  else 
-    printf "%s\n" "GOOD URL" 
-fi 
-} 
+  if [ "$status_code" -ne "200" ] ; then
+    printf "%s\n" "BAD URL"
+  else
+    printf "%s\n" "GOOD URL"
+fi
+}
 
 wget_check
