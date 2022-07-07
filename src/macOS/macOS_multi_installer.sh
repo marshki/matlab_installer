@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
 # macOS_multi_installer
-# 
-# Menu-based installer for pre-packaged versions of MATLAB on macOs. 		        
-# For use by NYU's: Center for Brain Imaging, Center for Neural Science,    
-# and Department of Psychology.                                                      
-# Note: Does not add symoblic link to MATLAB binary.   
 #
-# Author: M. Krinitz <mjk235 [at] nyu [dot] edu> 
+# Menu-based installer for pre-packaged versions of MATLAB on macOs.
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science,
+# and Department of Psychology.
+# Note: Does not add symoblic link to MATLAB binary.
+#
+# Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2019.05.25
 # License: MIT
 
@@ -19,8 +19,8 @@ local_web="https://cns.nyu.edu/mac/matlab.tgz"
 
 #########
 # Arrays
-# Arrays follow this structure: 		
-# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app) 
+# Arrays follow this structure:
+# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app)
 #########
 
 MATLAB_9_0=(
@@ -135,7 +135,7 @@ local_web_check(){
 
   if [ "$status_code" -ne "200" ] ; then
     printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1 
+    exit 1
 
   else
     printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
@@ -150,7 +150,7 @@ sanity_checks() {
 }
 
 ##############
-# Display Menu 
+# Display Menu
 ##############
 
 # Display pause prompt.
@@ -161,10 +161,10 @@ pause() {
 
     local message="$*"
     [ -z "$message" ] && message="INSTALL DONE. PRESS [Enter] KEY TO CONTINUE:  "
-    read -rp "$message" 
+    read -rp "$message"
 }
 
-# Display on-screen menu. 
+# Display on-screen menu.
 
 show_menu() {
     printf "%s\n" "---------------------------------"
@@ -184,10 +184,10 @@ show_menu() {
 }
 
 ##################
-# Matlab Install-r 
+# Matlab Install-r
 ##################
 
-# Download tarball to /Applications. 
+# Download tarball to /Applications.
 
 get_matlab () {
 
@@ -196,7 +196,7 @@ get_matlab () {
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
 
-# Unpack tarball to /Applications, which installs Matlab. 
+# Unpack tarball to /Applications, which installs Matlab.
 
 untar_matlab () {
 
@@ -233,7 +233,7 @@ symlink_matlab () {
   ln -s /Applications/"$3"/bin/matlab /usr/local/bin/matlab"$4"
 }
 
-# Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main. 
+# Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main.
 
 launch_matlab () {
 
@@ -255,7 +255,7 @@ matlab_installer () {
 # User Input
 ############
 
-# Get input via the keyboard and make a decision using case...esac 
+# Get input via the keyboard and make a decision using case...esac
 
 read_input() {
     local c
@@ -279,7 +279,7 @@ read_input() {
     esac
 }
 
-# Main. 
+# Main.
 
 main () {
 
@@ -288,7 +288,7 @@ sanity_checks
   while true
   do
     clear
-    show_menu 
+    show_menu
     read_input "$@"
     pause
   done
