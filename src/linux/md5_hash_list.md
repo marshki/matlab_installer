@@ -8,5 +8,5 @@
 |33f0b8ee1cecf3aab9e19097b74d7676|matlab9.7.tgz |
 |bfb9e0037907fb6cf81038a1d07ceb9b|matlab9.9.tgz |
 
-To generate hashes: 
+To generate hashes:
 `for file in matlab9.{4..9}.tgz; do openssl md5 $file; done`
