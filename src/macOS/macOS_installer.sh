@@ -2,10 +2,10 @@
 #
 # macOS_installer
 #
-# Install pre-packaged version of MATLAB on macOS.  		                    
-# For use by NYU's: Center for Brain Imaging, Center for Neural Science,  
-# and Department of Psychology.                                                   
-# Note: Creates a symbolic link to MATLAB binary.    
+# Install pre-packaged version of MATLAB on macOS.
+# For use by NYU's: Center for Brain Imaging, Center for Neural Science,
+# and Department of Psychology.
+# Note: Creates a symbolic link to MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2020.05.13
@@ -25,7 +25,7 @@ MATLAB9.11.app
 )
 
 ###############
-# Sanity Checks 
+# Sanity Checks
 ###############
 
 # Is current UID 0? If not, exit.
@@ -66,7 +66,7 @@ local_web_check(){
 
   if [ "$status_code" -ne "200" ] ; then
     printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1 
+    exit 1
 
   else
     printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
@@ -77,14 +77,14 @@ sanity_checks() {
   root_check
   check_disk_space
   curl_check
-  local_web_check  
+  local_web_check
 }
 
 ##################
-# Matlab Install-r 
+# Matlab Install-r
 ##################
 
-# Download tarball to /Applications. 
+# Download tarball to /Applications.
 
 get_matlab () {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
@@ -92,7 +92,7 @@ get_matlab () {
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "${MATLAB[1]}" --output /Applications/matlab.app.tgz
 }
 
-# Calculate md5 hash for downloaded file. 
+# Calculate md5 hash for downloaded file.
 
 get_destination_hash () {
 
@@ -118,7 +118,7 @@ md5_check () {
 fi
 }
 
-# Unpack tarball to /Applications, which installs Matlab. 
+# Unpack tarball to /Applications, which installs Matlab.
 
 untar_matlab () {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
@@ -134,7 +134,7 @@ remove_matlab_tar () {
   rm -rv /Applications/matlab.app.tgz
 }
 
-# Does /usr/local/bin exist? If not, add it. 
+# Does /usr/local/bin exist? If not, add it.
 
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
@@ -143,7 +143,7 @@ local_bin_check () {
 fi
 }
 
-# Create symbolic link for Matlab. 
+# Create symbolic link for Matlab.
 
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
@@ -165,7 +165,7 @@ matlab_installer () {
 # Launch-r
 ##########
 
-# Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main. 
+# Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main.
 
 launch_matlab () {
   printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
