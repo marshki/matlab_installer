@@ -2,9 +2,9 @@
 #
 # linux_installer
 #
-# Install pre-packaged version of MATLAB on GNU/Linux (Debian-based). 	
+# Install pre-packaged version of MATLAB on GNU/Linux (Debian-based).
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
-# and Department of Psychology                                                 
+# and Department of Psychology
 # Requires: root privileges; access to Meyer network; adequate free disk space.
 # Creates symbolic link to launch MATLAB binary.
 #
@@ -75,17 +75,17 @@ fi
 # Wrapper
 
 sanity_checks () {
-  root_check 
+  root_check
   check_disk_space
-  wget_check 
+  wget_check
   local_web_check
-} 
+}
 
 ##################
 # Matlab Install-r
 ##################
 
-# Download tarball to /usr/local. 
+# Download tarball to /usr/local.
 
 get_matlab () {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
@@ -117,7 +117,7 @@ md5_check () {
 fi
 }
 
-# Unpack tarball to /usr/local, which installs Matlab.  
+# Unpack tarball to /usr/local, which installs Matlab.
 
 untar_matlab () {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
@@ -125,7 +125,7 @@ untar_matlab () {
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
 }
 
-# Remove tarball. 
+# Remove tarball.
 
 remove_matlab_tar () {
   printf "%s\n" "REMOVING ${MATLAB[0]} INSTALLER..."
@@ -133,7 +133,7 @@ remove_matlab_tar () {
   rm --recursive --verbose /usr/local/matlab.tgz
 }
 
-# Does /usr/local/bin exist? If not, add it. 
+# Does /usr/local/bin exist? If not, add it.
 
 local_bin_check () {
   if [ ! -d "/usr/local/bin" ] ; then
@@ -144,7 +144,7 @@ local_bin_check () {
 fi
 }
 
-# Create symbolic link for Matlab. 
+# Create symbolic link for Matlab.
 
 symlink_matlab () {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
@@ -162,13 +162,13 @@ matlab_installer () {
   remove_matlab_tar
   local_bin_check
   symlink_matlab
-} 
+}
 
 ##########
 # Launch-r
-########## 
+##########
 
-# Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.  
+# Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.
 
 launch_matlab () {
   printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
@@ -177,7 +177,7 @@ launch_matlab () {
 }
 
 ######
-# Main 
+# Main
 ######
 
 main () {
