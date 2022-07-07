@@ -4,6 +4,6 @@
 
 *matlab_linux_tui.sh* &rarr; a text-based user interface for the most recent version of MATLAB
 
-Run either from a terminal with: 
+Run either from a terminal with:
 
-`sudo bash scriptname.sh`  
+`sudo bash scriptname.sh`
