@@ -13,5 +13,5 @@
 |MATLAB9.9      |10ef32fc34e16ffb788dfb7fc0bd7dc6|
 |MATLAB9.11     |b1637929b1249a17d04802ea61ae311b|
 
-To generate hashes: 
+To generate hashes:
 `for file in MATLAB9.{0..9}.app.tgz; do openssl md5 $file; done`
