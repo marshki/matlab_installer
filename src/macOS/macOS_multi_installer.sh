@@ -15,7 +15,7 @@
 # Variables
 ############
 
-local_web="https://cns.nyu.edu/mac/matlab.tgz"
+local_web="https://www.cns.nyu.edu/mac/matlab.tgz"
 
 #########
 # Arrays
@@ -25,70 +25,70 @@ local_web="https://cns.nyu.edu/mac/matlab.tgz"
 
 MATLAB_9_0=(
 Matlab9.0
-"https://cns.nyu.edu/mac/MATLAB9.0.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.0.app.tgz"
 MATLAB9.0.app
 _9.0
 )
 
 MATLAB_9_1=(
 Matlab9.1
-"https://cns.nyu.edu/mac/MATLAB9.1.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.1.app.tgz"
 MATLAB9.1.app
 _9.1
 )
 
 MATLAB_9_2=(
 Matlab9.2
-"https://cns.nyu.edu/mac/MATLAB9.2.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.2.app.tgz"
 MATLAB9.2.app
 _9.2
 )
 
 MATLAB_9_3=(
 Matlab9.3
-"https://cns.nyu.edu/mac/MATLAB9.3.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.3.app.tgz"
 MATLAB9.3.app
 _9.3
 )
 
 MATLAB_9_4=(
 Matlab9.4
-"https://cns.nyu.edu/mac/MATLAB9.4.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.4.app.tgz"
 MATLAB9.4.app
 _9.4
 )
 
 MATLAB_9_5=(
 Matlab9.5
-"https://cns.nyu.edu/mac/MATLAB9.5.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.5.app.tgz"
 MATLAB9.5.app
 _9.5
 )
 
 MATLAB_9_6=(
 Matlab9.6
-"https://cns.nyu.edu/mac/MATLAB9.6.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.6.app.tgz"
 MATLAB9.6.app
 _9.6
 )
 
 MATLAB_9_7=(
 Matlab9.7
-"https://cns.nyu.edu/mac/MATLAB9.7.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.7.app.tgz"
 MATLAB9.7.app
 _9.7
 )
 
 MATLAB_9_9=(
 Matlab9.9
-"https://cns.nyu.edu/mac/MATLAB9.9.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.9.app.tgz"
 MATLAB9.9.app
 _9.9
 )
 
 MATLAB_9_11=(
 Matlab9.11
-"https://cns.nyu.edu/mac/MATLAB9.11.app.tgz"
+"https://www.cns.nyu.edu/mac/MATLAB9.11.app.tgz"
 MATLAB9.11.app
 _9.11
 )

@@ -16,13 +16,13 @@
 # Variables
 ###########
 
-LOCAL_WEB="http://cns.nyu.edu/linux/current-matlab.tgz"
+LOCAL_WEB="http://www.cns.nyu.edu/linux/current-matlab.tgz"
 
 source_hash="bfb9e0037907fb6cf81038a1d07ceb9b"
 
 MATLAB=(
 Matlab9.9
-http://cns.nyu.edu/linux/current-matlab.tgz
+http://www.cns.nyu.edu/linux/current-matlab.tgz
 matlab9.9
 )
 
