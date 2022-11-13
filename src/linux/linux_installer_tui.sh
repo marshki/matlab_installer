@@ -20,13 +20,13 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-local_web="http://cns.nyu.edu/linux/current-matlab.tgz"
+local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
 source_hash="292870b20f197bbabce562ef2f4c3473"
 
 MATLAB=(
 Matlab9.11
-"http://cns.nyu.edu/linux/current-matlab.tgz"
+"http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 matlab9.11
 )
 
