@@ -18,7 +18,7 @@
 
 LOCAL_WEB="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
-source_hash="bfb9e0037907fb6cf81038a1d07ceb9b"
+source_hash="c6fb756db7b5ca397f3aefe3df331261"
 
 MATLAB=(
 Matlab9.11
