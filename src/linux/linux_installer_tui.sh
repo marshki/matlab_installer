@@ -22,7 +22,7 @@ program="MATLAB INSTALLER"
 
 local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
-source_hash="292870b20f197bbabce562ef2f4c3473"
+source_hash="c6fb756db7b5ca397f3aefe3df331261"
 
 MATLAB=(
 Matlab9.11
