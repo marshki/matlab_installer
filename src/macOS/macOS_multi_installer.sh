@@ -15,7 +15,7 @@
 # Variables
 ############
 
-local_web="https://cns.nyu.edu/mac/matlab.tgz"
+local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
 #########
 # Arrays
