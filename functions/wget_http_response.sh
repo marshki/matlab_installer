@@ -5,7 +5,9 @@
 script=$(basename "$0")
 program="MATLAB INSTALLER"
 
-local_web="www.cns.nyu.edu/mac/matlab9.11.tgz"
+
+
+local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
 local_web_check() {
   local status_code
