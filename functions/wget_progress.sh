@@ -4,7 +4,7 @@
 
 MATLAB=(
 Matlab9.11
-"www.cns.nyu.edu/mac/matlab9.11.tgz"
+"http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 MATLAB9.11.app
 )
 
