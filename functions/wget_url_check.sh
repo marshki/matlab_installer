@@ -12,8 +12,7 @@
 #      awk '/HTTP\/1.1/{print $2}' |head -1
 #  - 302
 
-# url="www.cns.nyu.edu/mac/matlab9.11.tgz"
-url="www.cns.nyu.edu/linux/matlab9.9.tgz"
+url="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
 wget_check() {
     
