@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
-# sysOS_multi_installer
+# macOS_multi_installer
 #
-# Menu-based installer for pre-packaged versions of MATLAB on sysOs.
+# Menu-based installer for pre-packaged versions of MATLAB on macOS.
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology.
 # Note: Does not add symoblic link to MATLAB binary.
