@@ -74,6 +74,7 @@ fi
 }
 
 sanity_checks() {
+
   root_check
   check_disk_space
   curl_check
@@ -103,6 +104,7 @@ get_destination_hash() {
 # Compare hashes. Exit if different.
 
 md5_check() {
+
   printf "%s\n" "COMPARING HASHES..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
@@ -118,6 +120,7 @@ fi
 # Unpack tarball to /Applications, which installs Matlab.
 
 untar_matlab() {
+
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
@@ -125,6 +128,7 @@ untar_matlab() {
 # Remove tarball from /Applications.
 
 remove_matlab_tar() {
+
   printf "%s\n" "REMOVING ${MATLAB[0]} TARBALL..."
   rm -rv /Applications/matlab.app.tgz
 }
@@ -132,6 +136,7 @@ remove_matlab_tar() {
 # Does /usr/local/bin exist? If not, add it.
 
 local_bin_check() {
+
   if [ ! -d "/usr/local/bin" ] ; then
     printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
     mkdir -pv /usr/local/bin
@@ -141,12 +146,14 @@ fi
 # Create symbolic link for Matlab.
 
 symlink_matlab() {
+
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln -s /Applications/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
 
 matlab_installer() {
+
   get_matlab
   get_destination_hash
   md5_check
@@ -163,14 +170,15 @@ matlab_installer() {
 # Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main.
 
 launch_matlab() {
-  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
+  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
   matlab -nodesktop
 }
 
 # Main
 
 main() {
+
   sanity_checks
   matlab_installer
   launch_matlab
