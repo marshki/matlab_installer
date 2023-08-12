@@ -5,7 +5,7 @@
 # Install pre-packaged version of MATLAB on macOS.
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology.
-# Note: Creates a symbolic link to MATLAB binary.
+# NOTE: Creates a symbolic link to MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2020.05.13
@@ -30,7 +30,7 @@ MATLAB9.11.app
 
 # Is current UID 0? If not, exit.
 
-root_check () {
+root_check() {
 
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
@@ -40,7 +40,7 @@ fi
 
 # Is there adequate disk space in "/Applications"? If not, exit.
 
-check_disk_space () {
+check_disk_space() {
 
   if [ "$(df -lk /Applications |awk 'FNR == 2 {print $4}' |sed 's/G//')" -le "31457280" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
@@ -50,7 +50,7 @@ fi
 
 # Is curl installed? If not, exit. (Curl ships with macOS, but let's check).
 
-curl_check () {
+curl_check() {
 
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
     printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
@@ -60,7 +60,8 @@ fi
 
 # Is CNS local web available? If not, exit.
 
-local_web_check(){
+local_web_check() {
+
   local status_code
   status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{http_code}\n' "$local_web")
 
@@ -86,7 +87,8 @@ sanity_checks() {
 
 # Download tarball to /Applications.
 
-get_matlab () {
+get_matlab() {
+
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "${MATLAB[1]}" --output /Applications/matlab.app.tgz
@@ -94,7 +96,7 @@ get_matlab () {
 
 # Calculate md5 hash for downloaded file.
 
-get_destination_hash () {
+get_destination_hash() {
 
   printf "%s\n" "CALCULATING HASH..."
 
@@ -103,7 +105,7 @@ get_destination_hash () {
 
 # Compare hashes. Exit if different.
 
-md5_check () {
+md5_check() {
   printf "%s\n" "COMPARING HASHES..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
@@ -120,7 +122,7 @@ fi
 
 # Unpack tarball to /Applications, which installs Matlab.
 
-untar_matlab () {
+untar_matlab() {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /Applications..."
 
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
@@ -128,7 +130,7 @@ untar_matlab () {
 
 # Remove tarball from /Applications.
 
-remove_matlab_tar () {
+remove_matlab_tar() {
   printf "%s\n" "REMOVING ${MATLAB[0]} TARBALL..."
 
   rm -rv /Applications/matlab.app.tgz
@@ -136,7 +138,7 @@ remove_matlab_tar () {
 
 # Does /usr/local/bin exist? If not, add it.
 
-local_bin_check () {
+local_bin_check() {
   if [ ! -d "/usr/local/bin" ] ; then
     printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
     mkdir -pv /usr/local/bin
@@ -145,13 +147,13 @@ fi
 
 # Create symbolic link for Matlab.
 
-symlink_matlab () {
+symlink_matlab() {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln -s /Applications/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
 
-matlab_installer () {
+matlab_installer() {
   get_matlab
   get_destination_hash
   md5_check
@@ -167,7 +169,7 @@ matlab_installer () {
 
 # Launch Matlab from terminal. Provides visual confirmation; you may comment this function in main.
 
-launch_matlab () {
+launch_matlab() {
   printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
   matlab -nodesktop
@@ -175,7 +177,7 @@ launch_matlab () {
 
 # Main
 
-main () {
+main() {
   sanity_checks
   matlab_installer
   launch_matlab
