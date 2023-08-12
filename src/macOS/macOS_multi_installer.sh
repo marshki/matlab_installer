@@ -5,23 +5,23 @@
 # Menu-based installer for pre-packaged versions of MATLAB on macOS.
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology.
-# Note: Does not add symoblic link to MATLAB binary.
+# NOTE: Does not add symoblic link to MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
 # Date: 2023.08.12
 # License: MIT
 
-############
+###########
 # Variables
-############
+###########
 
 local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
-#########
+########
 # Arrays
-# Arrays follow this structure:
-# MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app)
-#########
+########
+
+# Arrays follow this structure: MATLAB_x.y=(Matlabx.y "URL" MATLABX.Y.app)
 
 MATLAB_9_0=(
 Matlab9.0
@@ -99,7 +99,7 @@ _9.11
 
 # Is current UID 0? If not, exit.
 
-root_check () {
+root_check() {
 
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
@@ -109,7 +109,7 @@ fi
 
 # Is there adequate disk space in "/Applications"? If not, exit.
 
-check_disk_space () {
+check_disk_space() {
 
   if [ "$(df -lk /Applications |awk 'FNR == 2 {print $4}')" -le "31457280" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
@@ -119,7 +119,7 @@ fi
 
 # Is curl installed? If not, exit. (Curl ships with sysOS, but let's check).
 
-curl_check () {
+curl_check() {
 
   if ! [ -x "$(command -v curl 2>/dev/null)" ]; then
     printf "%s\n" "ERROR: CURL IS NOT INSTALLED. EXITING."  >&2
@@ -129,20 +129,21 @@ fi
 
 # Is CNS local web available? If not, exit.
 
-local_web_check(){
+local_web_check() {
+
   local status_code
   status_code=$(curl --output /dev/null --silent --insecure --head --write-out '%{https_code}\n' "$local_web")
 
   if [ "$status_code" -ne "200" ] ; then
     printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
     exit 1
-
   else
     printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
 fi
 }
 
 sanity_checks() {
+
   root_check
   check_disk_space
   curl_check
@@ -189,34 +190,31 @@ show_menu() {
 
 # Download tarball to /Applications.
 
-get_matlab () {
+get_matlab() {
 
   printf "%s\n" "RETRIEVING $1 INSTALLER..."
-
   curl --insecure --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$2" --output /Applications/matlab.app.tgz
 }
 
 # Unpack tarball to /Applications, which installs Matlab.
 
-untar_matlab () {
+untar_matlab() {
 
   printf "%s\n" "UNTARRING $1 PACKAGE TO /Applications..."
-
   tar --extract --gzip -v --file=/Applications/matlab.app.tgz --directory=/Applications
 }
 
 # Remove tarball from /Applications.
 
-remove_matlab_tar () {
+remove_matlab_tar() {
 
   printf "%s\n" "REMOVING $1 TARBALL..."
-
   rm -rv /Applications/matlab.app.tgz
 }
 
 # Does /usr/local/bin exist? If not, add it
 
-local_bin_check () {
+local_bin_check() {
 
   if [ ! -d "/usr/local/bin" ] ; then
     printf "%s\n" "/usr/local/bin DOES NOT EXIST; LET'S ADD IT..."
@@ -226,23 +224,22 @@ fi
 
 # Create symbolic link for Matlab
 
-symlink_matlab () {
+symlink_matlab() {
 
   printf "%s\n" "CREATING SYMLINK FOR $1..."
-
   ln -s /Applications/"$3"/bin/matlab /usr/local/bin/matlab"$4"
 }
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment out this function in main.
 
-launch_matlab () {
+launch_matlab() {
 
   printf "%s\n" "LAUNCHING $1 ..."
-
   matlab$4 -nodesktop
 }
 
-matlab_installer () {
+matlab_installer() {
+
   get_matlab "$@"
   untar_matlab "$@"
   remove_matlab_tar "$@"
@@ -281,7 +278,7 @@ read_input() {
 
 # Main.
 
-main () {
+main() {
 
 sanity_checks
 
