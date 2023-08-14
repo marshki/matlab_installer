@@ -5,11 +5,13 @@
 # Install pre-packaged version of MATLAB on GNU/Linux (Debian-based).
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
 # and Department of Psychology
-# Requires: root privileges; access to Meyer network; adequate free disk space.
-# Creates symbolic link to launch MATLAB binary.
+#
+# NOTES: 
+# - Require root privilege; access to Meyer net; adequate free disk space.
+# - Creates symbolic link to launch MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
-# Date: 2020.05.13
+# Date: 2023.08.13
 # License: MIT
 
 ###########
@@ -32,7 +34,7 @@ matlab9.11
 
 # Is current UID 0? If not, exit.
 
-root_check () {
+root_check() {
   if [ "$EUID" -ne "0" ] ; then
     printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
     exit 1
@@ -41,7 +43,7 @@ fi
 
 # Is there adequate disk space in /usr/local directory? If not, exit.
 
-check_disk_space () {
+check_disk_space() {
   if [ "$(df --local -k --output=avail /usr/local |awk 'FNR == 2 {print $1}')" -le "14680064" ]; then
     printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
     exit 1
@@ -50,7 +52,7 @@ fi
 
 # Is wget installed? If not, install it.
 
-wget_check () {
+wget_check() {
   if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null | grep --count "ok installed")" -eq "0" ]; then
     printf "%s\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
     apt-get install wget
@@ -74,7 +76,7 @@ fi
 
 # Wrapper
 
-sanity_checks () {
+sanity_checks() {
   root_check
   check_disk_space
   wget_check
@@ -87,7 +89,7 @@ sanity_checks () {
 
 # Download tarball to /usr/local.
 
-get_matlab () {
+get_matlab() {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
   wget --progress=bar --tries=3 --wait=5 --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
@@ -95,7 +97,7 @@ get_matlab () {
 
 # Calculate md5 hash for downloaded file.
 
-get_destination_hash () {
+get_destination_hash() {
   printf "%s\n" "CALCULATING HASH..."
 
   destination_hash="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
@@ -103,7 +105,7 @@ get_destination_hash () {
 
 # Compare hashes. Exit if different.
 
-md5_check () {
+md5_check() {
   printf "%s\n" "COMPARING HASHES..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
@@ -119,7 +121,7 @@ fi
 
 # Unpack tarball to /usr/local, which installs Matlab.
 
-untar_matlab () {
+untar_matlab() {
   printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
 
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
@@ -127,7 +129,7 @@ untar_matlab () {
 
 # Remove tarball.
 
-remove_matlab_tar () {
+remove_matlab_tar() {
   printf "%s\n" "REMOVING ${MATLAB[0]} INSTALLER..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
@@ -135,7 +137,7 @@ remove_matlab_tar () {
 
 # Does /usr/local/bin exist? If not, add it.
 
-local_bin_check () {
+local_bin_check() {
   if [ ! -d "/usr/local/bin" ] ; then
 
     printf "%s\n" "/usr/local/bin DOES NOT exist; LET'S ADD IT..."
@@ -146,7 +148,7 @@ fi
 
 # Create symbolic link for Matlab.
 
-symlink_matlab () {
+symlink_matlab() {
   printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
 
   ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
@@ -154,7 +156,7 @@ symlink_matlab () {
 
 # Wrapper
 
-matlab_installer () {
+matlab_installer() {
   get_matlab
   get_destination_hash
   md5_check
@@ -170,7 +172,7 @@ matlab_installer () {
 
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.
 
-launch_matlab () {
+launch_matlab() {
   printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
 
   matlab -nodesktop
@@ -180,7 +182,7 @@ launch_matlab () {
 # Main
 ######
 
-main () {
+main() {
   sanity_checks
   matlab_installer
   launch_matlab
