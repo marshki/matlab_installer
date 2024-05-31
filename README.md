@@ -21,6 +21,7 @@ Bash script to retrieve, install, and symlink various versions of [MATLAB](https
 |MATLAB 9.9  |R2020b      |
 |MATLAB 9.11 |R2021b      |
 |MATLAB 9.13 |R2022b      |
+
 Also included: script to update stale network license strings.
 
 Open to members of New York University's [Center for Brain Imaging](http://cbi.nyu.edu/), [Center for Neural Science](http://www.cns.nyu.edu/), and [Department of Psychology](http://www.psych.nyu.edu/psychology.html) on the Meyer network.
