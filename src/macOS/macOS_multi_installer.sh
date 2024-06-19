@@ -15,7 +15,7 @@
 # Variables
 ###########
 
-local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
+local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.13.app.tgz"
 
 ########
 # Arrays
@@ -264,7 +264,7 @@ matlab_installer() {
 
 read_input() {
     local c
-    read -rp "ENTER YOUR CHOICE [ 1-11 ]:  " c
+    read -rp "ENTER YOUR CHOICE [ 1-12 ]:  " c
     case $c in
         1) matlab_installer "${MATLAB_9_0[@]}" ;;
         2) matlab_installer "${MATLAB_9_1[@]}" ;;
