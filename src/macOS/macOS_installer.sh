@@ -15,13 +15,13 @@
 # Variables
 ###########
 
-local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
+local_web="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.13.app.tgz"
 source_hash="a61af47ea55fefa2e7e27a0faf74a834"
 
 MATLAB=(
-Matlab9.11
-"http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
-MATLAB9.11.app
+Matlab9.13
+"http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.13.app.tgz"
+MATLAB9.13.app
 )
 
 ###############
