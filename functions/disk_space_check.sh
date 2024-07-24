@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Available disk space check.
 # df on locally-mounted file systems (kbs) | awk to get 2nd line, 1st field
-# available space  
+# if available space is less than required space, exit
 
 check_disk_space() {
   local required_space=14680064
