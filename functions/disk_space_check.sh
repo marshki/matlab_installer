@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Available disk space check.
+# Available disk space check
 # df on locally-mounted file systems (kbs) | awk to get 2nd line, 1st field
 # if available space is less than required space, exit
 
