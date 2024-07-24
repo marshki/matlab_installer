@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install `pv` if not present (Debian-based OSs)
 # Query `dpkg` for `pv`, installing if via apt if not available
-# Use silent install (--quiet/ -qq) so we don't break `dialog` box? 
+# Note to self: can we use silent install (--quiet/ -qq) so we don't break `dialog` box?
 
 script=$(basename "$0")
 program="MATLAB INSTALLER"
