@@ -4,10 +4,10 @@
 #
 # Install pre-packaged version of MATLAB on GNU/Linux (Debian-based).
 # For use by NYU's: Center for Brain Imaging, Center for Neural Science,
-# and Department of Psychology
+# and Department of Psychology.
 #
 # NOTES: 
-# - Require root privilege; access to Meyer net; adequate free disk space.
+# - Requires: root privilege; access to Meyer NET; adequate free disk space.
 # - Creates symbolic link to launch MATLAB binary.
 #
 # Author: M. Krinitz <mjk235 [at] nyu [dot] edu>
@@ -36,17 +36,20 @@ matlab9.11
 
 root_check() {
   if [ "$EUID" -ne "0" ] ; then
-    printf "%s\n" "ERROR: ROOT PRIVILEGES ARE REQUIRED TO CONTINUE. EXITING." >&2
+    printf "%s\n" "Error: Root privileges are requried to continue. Exiting." >&2
     exit 1
-fi
+  fi
 }
 
 # Is there adequate disk space in /usr/local directory? If not, exit.
 
 check_disk_space() {
-  if [ "$(df --local -k --output=avail /usr/local \
-  |awk 'FNR == 2 {print $1}')" -le "14680064" ]; then
-    printf "%s\n" "ERROR: NOT ENOUGH FREE DISK SPACE. EXITING." >&2
+  local required_space=14680064
+  local available_space=$(df --local -k --output=avail /usr/local \
+  |awk 'FNR == 2 {print $1}')
+
+  if [ "$available_space" -lt "$required_space" ]; then
+    printf "%s\n" "ERROR: Not enough free disk space. Exiting." >&2
     exit 1
 fi
 }
