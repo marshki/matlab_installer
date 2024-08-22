@@ -49,7 +49,7 @@ check_disk_space() {
   |awk 'FNR == 2 {print $1}')
 
   if [ "$available_space" -lt "$required_space" ]; then
-    printf "%s\n" "ERROR: Not enough free disk space. Exiting." >&2
+    printf "%s\n" "Error: Not enough free disk space. Exiting." >&2
     exit 1
 fi
 }
@@ -59,7 +59,7 @@ fi
 wget_check() {
   if [ "$(dpkg-query --show --showformat='${Status}' \
   wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
-    printf "%s\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
+    printf "%s\n" "WGET is NOT installed. Let's install it..."
     apt-get install wget
 fi
 }
