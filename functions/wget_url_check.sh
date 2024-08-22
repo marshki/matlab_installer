@@ -12,7 +12,7 @@
 #      awk '/HTTP\/1.1/{print $2}' |head -1
 #  - 302
 
-url="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
+url="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
 wget_check() {
     
@@ -20,7 +20,7 @@ wget_check() {
 
   printf "%s\n" "$status_code"
 
-  if [ "$status_code" -ne "200" ] ; then
+  if [[ "$status_code" -ne "200" ]] ; then
     printf "%s\n" "BAD URL"
   else
     printf "%s\n" "GOOD URL"
