@@ -54,7 +54,8 @@ fi
 # Is wget installed? If not, install it.
 
 wget_check() {
-  if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
+  if [ "$(dpkg-query --show --showformat='${Status}' \
+  wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
     printf "%s\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
     apt-get install wget
 fi
@@ -94,7 +95,8 @@ sanity_checks() {
 get_matlab() {
   printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
 
-  wget --progress=bar --tries=3 --wait=5 --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
+  wget --progress=bar --tries=3 --wait=5 \
+  --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
 }
 
 # Calculate md5 hash for downloaded file.
