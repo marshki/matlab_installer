@@ -5,7 +5,7 @@
 
 url="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
 
-wget_check() {
+wget_workaround() {
   # Capture the connection status
   connection_status=$(wget --spider --server-response --no-check-certificate "$url" 2>&1 \
   | awk '/:443.../ {print $5}')
@@ -18,4 +18,4 @@ wget_check() {
   fi
 }
 
-wget_check
+wget_workaround
