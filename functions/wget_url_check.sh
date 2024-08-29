@@ -8,11 +8,12 @@
 #  - 200
 
 # BAD: 
-#  - wget --spider --server-response http://localweb.cns.nyu.edu/unixadmin/mat-distro-12-2014/macos/current-MATLAB.app.tgz 2>&1 \
+#  - wget --spider --server-response https://badurl.xyz:443 2>&1 \
 #      awk '/HTTP\/1.1/{print $2}' |head -1
 #  - 302
 
-url="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
+#url="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/macos/MATLAB9.11.app.tgz"
+url="https://geekberg.info"
 
 wget_check() {
     
