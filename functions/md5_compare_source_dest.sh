@@ -12,22 +12,21 @@ source_hash="8e2dc3b7c652fe284ea556ea9c478297"
 
 source_file="https://gist.githubusercontent.com/marshki/25306338cc74d38fa1f99ad7a3e90578/raw/c8acfd61c9c3ca142e03d376bbeafbc9f82cfc7e/nyu_hpc_sshfs.md"
 
-get_source_file () {
-
+get_source_file() {
   printf "%s\n" "Retrieving source file..."
 
   # GNU/Linux
   wget --progress=bar --tries=3 --wait=5 --continue $source_file --output-document=/usr/local/nyu_hpc_sshfs.md
 
   # macOS
-  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$source_file" --output /usr/local/nyu_hpc.sshfd.md
+  #curl --progress-bar --retry 3 --retry-delay 5 --keepalive-time 60 --continue-at - "$source_file" \
+  #--output /usr/local/nyu_hpc.sshfd.md
 }
 
 # Step 3:
 # Generate md5 hash for downloaded file.
 
-get_destination_hash () {
- 
+get_destination_hash() {
   printf "%s\n" "Calculating hash..."
 
   # GNU/Linux
@@ -40,7 +39,7 @@ get_destination_hash () {
 # Step 4:
 # Compare hashes.
 
-md5_check () {
+md5_check() {
   printf "%s\n" "Comparing hashes..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
@@ -54,7 +53,7 @@ fi
 
 # Wrapper
 
-main () {
+main() {
   get_source_file
   get_destination_hash
   md5_check
