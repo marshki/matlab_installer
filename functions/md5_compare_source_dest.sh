@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Confirm destination file matches source file using md5 checksum (GNU/Linux, macOS).
-# For reference: https://stackoverflow.com/questions/17988090/what-are-the-differences-between-md5-binary-mode-and-text-mode.
+# For reference:
+# https://stackoverflow.com/questions/17988090/what-are-the-differences-between-md5-binary-mode-and-text-mode.
 
 # Step 1:
 # The source file's md5 hash.
