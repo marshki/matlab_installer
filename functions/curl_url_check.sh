@@ -20,7 +20,6 @@
 url="www.cns.nyu.edu/mac/matlab9.11.tgz"
 
 url_check(){
-  
   status_code=$(curl --output /dev/null --silent --head --write-out '%{http_code}\n' $url)
 
   if [ $status_code -ne "200" ] ; then
