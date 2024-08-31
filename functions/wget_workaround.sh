@@ -7,13 +7,13 @@ url="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/macos/MATLAB9.11.ap
 
 wget_workaround() {
   # Capture the connection status
-  connection_status=$(wget --spider --server-response --no-check-certificate "$url" 2>&1 \
+  connection_status=$(wget --spider --server-response "$url" 2>&1 \
   | awk '/:443.../ {print $5}')
 
   if [ "$connection_status" = "connected." ]; then
-    printf "%s\n" "SERVER IS REACHABLE."
+    printf "%s\n" "Server IS reachable."
   else
-    printf "%s\n" "ERROR: SERVER IS NOT REACHABLE."
+    printf "%s\n" "Error: Server is NOT reachable."
     exit 1
   fi
 }
