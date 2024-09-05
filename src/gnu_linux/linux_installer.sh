@@ -64,7 +64,7 @@ wget_check() {
 fi
 }
 
-# Is CNS local web (capture connection status) available? If not, exit.
+# Is CNS local web available (capture connection status)? If not, exit.
 
 lcoal_web_check() {
   local connection_status=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 \
