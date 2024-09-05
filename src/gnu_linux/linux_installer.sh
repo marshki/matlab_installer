@@ -18,13 +18,13 @@
 # Variables
 ###########
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
+LOCAL_WEB="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
 source_hash="c6fb756db7b5ca397f3aefe3df331261"
 
 MATLAB=(
 Matlab9.11
-http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz
+https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz
 matlab9.11
 )
 
