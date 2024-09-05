@@ -60,7 +60,7 @@ wget_check() {
   if [ "$(dpkg-query --show --showformat='${Status}' \
   wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
     printf "%s\n" "WGET is NOT installed. Let's install it..."
-    apt-get install wget
+    apt-get install -y wget
 fi
 }
 
