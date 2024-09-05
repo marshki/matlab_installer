@@ -94,7 +94,7 @@ sanity_checks() {
 # Download tarball to /usr/local.
 
 get_matlab() {
-  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "Retrieving ${MATLAB[0]} installer..."
 
   wget --progress=bar --tries=3 --wait=5 \
   --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
@@ -103,7 +103,7 @@ get_matlab() {
 # Calculate md5 hash for downloaded file.
 
 get_destination_hash() {
-  printf "%s\n" "CALCULATING HASH..."
+  printf "%s\n" "Calculating hash..."
 
   destination_hash="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
 }
@@ -111,23 +111,23 @@ get_destination_hash() {
 # Compare hashes. Exit if different.
 
 md5_check() {
-  printf "%s\n" "COMPARING HASHES..."
+  printf "%s\n" "Comparing hashes..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
 
   if [ "$source_hash" != "$destination_hash" ]; then
-    printf "%s\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+    printf "%s\n" "Error: Hashes do not match. Exiting."
     exit 1
 
     else
-      printf "%s\n" "HASHES MATCH. CONTINUING..."
+      printf "%s\n" "Hashes match. Continuing..."
 fi
 }
 
 # Unpack tarball to /usr/local, which installs Matlab.
 
 untar_matlab() {
-  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
+  printf "%s\n" "Untarring ${MATLAB[0]} package TO /usr/local..."
 
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
 }
@@ -135,7 +135,7 @@ untar_matlab() {
 # Remove tarball.
 
 remove_matlab_tar() {
-  printf "%s\n" "REMOVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "Removing ${MATLAB[0]} installer..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
 }
@@ -145,7 +145,7 @@ remove_matlab_tar() {
 local_bin_check() {
   if [ ! -d "/usr/local/bin" ] ; then
 
-    printf "%s\n" "/usr/local/bin DOES NOT exist; LET'S ADD IT..."
+    printf "%s\n" "/usr/local/bin DOES NOT exist; Let's add it..."
 
     mkdir -pv /usr/local/bin
 fi
@@ -154,7 +154,7 @@ fi
 # Create symbolic link for Matlab.
 
 symlink_matlab() {
-  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
+  printf "%s\n" "Creating symlink for ${MATLAB[0]}..."
 
   ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
@@ -178,7 +178,7 @@ matlab_installer() {
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.
 
 launch_matlab() {
-  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
+  printf "%s\n" "Launching ${MATLAB[0]}..."
 
   matlab -nodesktop
 }
