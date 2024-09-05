@@ -18,7 +18,7 @@
 # Variables
 ###########
 
-LOCAL_WEB="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
+local_web="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
 source_hash="c6fb756db7b5ca397f3aefe3df331261"
 
@@ -46,7 +46,7 @@ root_check() {
 check_disk_space() {
   local required_space=14680064
   local available_space=$(df --local -k --output=avail /usr/local \
-  |awk 'FNR == 2 {print $1}')
+    |awk 'FNR == 2 {print $1}')
 
   if [ "$available_space" -lt "$required_space" ]; then
     printf "%s\n" "Error: Not enough free disk space. Exiting." >&2
@@ -67,8 +67,8 @@ fi
 # Is CNS local web available (capture connection status)? If not, exit.
 
 lcoal_web_check() {
-  local connection_status=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 \
-  | awk '/:443.../ {print $5}')
+  local connection_status=$(wget --spider --server-response "$local_web" 2>&1 \
+    | awk '/:443.../ {print $5}')
 
   if [ "$connection_status" = "connected." ]; then
     printf "%s\n" "Server IS reachable."
@@ -97,7 +97,7 @@ get_matlab() {
   printf "%s\n" "Retrieving ${MATLAB[0]} installer..."
 
   wget --progress=bar --tries=3 --wait=5 \
-  --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
+    --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
 }
 
 # Calculate md5 hash for downloaded file.
@@ -144,8 +144,7 @@ remove_matlab_tar() {
 
 local_bin_check() {
   if [ ! -d "/usr/local/bin" ] ; then
-
-    printf "%s\n" "/usr/local/bin DOES NOT exist; Let's add it..."
+    printf "%s\n" "/usr/local/bin Does NOT exist; Let's add it..."
 
     mkdir -pv /usr/local/bin
 fi
