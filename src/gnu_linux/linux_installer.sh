@@ -64,20 +64,18 @@ wget_check() {
 fi
 }
 
-# Is CNS local web available? If not, exit.
+# Is CNS local web (capture connection status) available? If not, exit.
 
-local_web_check() {
-  local status_code
-  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 \
-  | awk '/HTTP\/1.1/{print $2}' | head -1)
+lcoal_web_check() {
+  local connection_status=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 \
+  | awk '/:443.../ {print $5}')
 
-  if [ "$status_code" -ne "200" ] ; then
-    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1
-
+  if [ "$connection_status" = "connected." ]; then
+    printf "%s\n" "Server IS reachable."
   else
-    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
-fi
+    printf "%s\n" "Error: Server is NOT reachable."
+    exit 1
+  fi
 }
 
 # Wrapper
