@@ -18,13 +18,13 @@
 # Variables
 ###########
 
-LOCAL_WEB="http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
+local_web="https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz"
 
 source_hash="c6fb756db7b5ca397f3aefe3df331261"
 
 MATLAB=(
 Matlab9.11
-http://localweb.cns.nyu.edu/sys/mat-archive-8-2016/unix/matlab9.11.tgz
+https://localweb.cns.nyu.edu:443/sys/mat-archive-8-2016/unix/matlab9.11.tgz
 matlab9.11
 )
 
@@ -46,7 +46,7 @@ root_check() {
 check_disk_space() {
   local required_space=14680064
   local available_space=$(df --local -k --output=avail /usr/local \
-  |awk 'FNR == 2 {print $1}')
+    |awk 'FNR == 2 {print $1}')
 
   if [ "$available_space" -lt "$required_space" ]; then
     printf "%s\n" "Error: Not enough free disk space. Exiting." >&2
@@ -60,24 +60,22 @@ wget_check() {
   if [ "$(dpkg-query --show --showformat='${Status}' \
   wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
     printf "%s\n" "WGET is NOT installed. Let's install it..."
-    apt-get install wget
+    apt-get install -y wget
 fi
 }
 
-# Is CNS local web available? If not, exit.
+# Is CNS local web available (capture connection status)? If not, exit.
 
-local_web_check() {
-  local status_code
-  status_code=$(wget --spider --server-response "$LOCAL_WEB" 2>&1 \
-  | awk '/HTTP\/1.1/{print $2}' | head -1)
+lcoal_web_check() {
+  local connection_status=$(wget --spider --server-response "$local_web" 2>&1 \
+    | awk '/:443.../ {print $5}')
 
-  if [ "$status_code" -ne "200" ] ; then
-    printf "%s\n" "ERROR: CNS LOCAL WEB IS NOT REACHABLE. EXITING." >&2
-    exit 1
-
+  if [ "$connection_status" = "connected." ]; then
+    printf "%s\n" "Server IS reachable."
   else
-    printf "%s\n" "CNS LOCAL WEB IS REACHABLE. CONTINUING..."
-fi
+    printf "%s\n" "Error: Server is NOT reachable."
+    exit 1
+  fi
 }
 
 # Wrapper
@@ -96,16 +94,16 @@ sanity_checks() {
 # Download tarball to /usr/local.
 
 get_matlab() {
-  printf "%s\n" "RETRIEVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "Retrieving ${MATLAB[0]} installer..."
 
   wget --progress=bar --tries=3 --wait=5 \
-  --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
+    --continue "${MATLAB[1]}" --output-document=/usr/local/matlab.tgz
 }
 
 # Calculate md5 hash for downloaded file.
 
 get_destination_hash() {
-  printf "%s\n" "CALCULATING HASH..."
+  printf "%s\n" "Calculating hash..."
 
   destination_hash="$(md5sum /usr/local/matlab.tgz |awk '{print $1}')"
 }
@@ -113,23 +111,23 @@ get_destination_hash() {
 # Compare hashes. Exit if different.
 
 md5_check() {
-  printf "%s\n" "COMPARING HASHES..."
+  printf "%s\n" "Comparing hashes..."
   printf "%s\n" "$source_hash"
   printf "%s\n" "$destination_hash"
 
   if [ "$source_hash" != "$destination_hash" ]; then
-    printf "%s\n" "ERROR: HASHES DO NOT MATCH. EXITING."
+    printf "%s\n" "Error: Hashes do not match. Exiting."
     exit 1
 
     else
-      printf "%s\n" "HASHES MATCH. CONTINUING..."
+      printf "%s\n" "Hashes match. Continuing..."
 fi
 }
 
 # Unpack tarball to /usr/local, which installs Matlab.
 
 untar_matlab() {
-  printf "%s\n" "UNTARRING ${MATLAB[0]} PACKAGE TO /usr/local..."
+  printf "%s\n" "Untarring ${MATLAB[0]} package TO /usr/local..."
 
   tar --extract --gzip --verbose --file=/usr/local/matlab.tgz --directory=/usr/local
 }
@@ -137,7 +135,7 @@ untar_matlab() {
 # Remove tarball.
 
 remove_matlab_tar() {
-  printf "%s\n" "REMOVING ${MATLAB[0]} INSTALLER..."
+  printf "%s\n" "Removing ${MATLAB[0]} installer..."
 
   rm --recursive --verbose /usr/local/matlab.tgz
 }
@@ -146,8 +144,7 @@ remove_matlab_tar() {
 
 local_bin_check() {
   if [ ! -d "/usr/local/bin" ] ; then
-
-    printf "%s\n" "/usr/local/bin DOES NOT exist; LET'S ADD IT..."
+    printf "%s\n" "/usr/local/bin Does NOT exist; Let's add it..."
 
     mkdir -pv /usr/local/bin
 fi
@@ -156,7 +153,7 @@ fi
 # Create symbolic link for Matlab.
 
 symlink_matlab() {
-  printf "%s\n" "CREATING SYMLINK FOR ${MATLAB[0]}..."
+  printf "%s\n" "Creating symlink for ${MATLAB[0]}..."
 
   ln --symbolic /usr/local/"${MATLAB[2]}"/bin/matlab /usr/local/bin/matlab
 }
@@ -180,7 +177,7 @@ matlab_installer() {
 # Launch Matlab from terminal. This is for visual confirmation; you may comment this function in main.
 
 launch_matlab() {
-  printf "%s\n" "LAUNCHING ${MATLAB[0]}..."
+  printf "%s\n" "Launching ${MATLAB[0]}..."
 
   matlab -nodesktop
 }
