@@ -3,12 +3,9 @@
 # Query `dpkg` for `wget`, installing it via apt if not available
 
 wget_check() {
-  if ! dpkg-query --show --showformat='${Status}' wget 2>/dev/null \
-  | grep --quiet "ok installed"; then
-    printf "%s\\n" "Wget is NOT installed. Let's install it..."
-
-    apt-get install --yes wget
+  if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null \
+    | grep --count "ok installed")" -eq "0" ]; then
+    printf "%s\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
+    apt-get install wget
 fi
 }
-
-wget_check
