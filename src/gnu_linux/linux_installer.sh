@@ -57,16 +57,16 @@ fi
 # Is wget installed? If not, install it.
 
 wget_check() {
-  if [ "$(dpkg-query --show --showformat='${Status}' \
-  wget 2>/dev/null grep --count "ok installed")" -eq "0" ]; then
-    printf "%s\n" "WGET is NOT installed. Let's install it..."
-    apt-get install -y wget
+  if [ "$(dpkg-query --show --showformat='${Status}' wget 2>/dev/null \
+    | grep --count "ok installed")" -eq "0" ]; then
+    printf "%s\n" "WGET IS NOT INSTALLED. LET'S INSTALL IT..."
+    apt-get install wget
 fi
 }
 
 # Is CNS local web available (capture connection status)? If not, exit.
 
-lcoal_web_check() {
+local_web_check() {
   local connection_status=$(wget --spider --server-response "$local_web" 2>&1 \
     | awk '/:443.../ {print $5}')
 
@@ -188,8 +188,8 @@ launch_matlab() {
 
 main() {
   sanity_checks
-  matlab_installer
-  launch_matlab
+  #matlab_installer
+  #launch_matlab
 }
 
 main "$@"
