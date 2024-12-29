@@ -93,3 +93,9 @@ v.0.4 04-SEPT-2021
 
 ## Acknowledgments
 `wget` + `dialog` progress bar built off of gist from [here](https://gist.github.com/Gregsen/7822421).
+
+## TODO
+
+- [ ] Reduce overhead (# of Images)
+- [ ] Move ISOs to read-protected Google Drive?
+- [ ] Refactor.
