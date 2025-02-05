@@ -39,7 +39,7 @@ Tested to run on GNU/Linux ([Debian-based OSs](https://www.debian.org/derivative
 
 **For sysadmins who want to replicate this process**, we assume the following of you:
 
-- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with Math Works
+- [ ] are affiliated with an institution that has a valid `Total Academic Headcount License` agreement with MathWorks
 
 - [ ] may access a network license server to validate local MATLAB installs
 
@@ -96,6 +96,6 @@ v.0.4 04-SEPT-2021
 
 ## TODO
 
-- [ ] Reduce overhead (# of Images)
+- [ ] Reduce overhead (# of Images).
 - [ ] Move ISOs to read-protected Google Drive?
 - [ ] Refactor.
