@@ -8,6 +8,8 @@
 
 **This repository is for archival purposes only.**
 
+**Note:** NYU transitioned to an individual user license via the MATLAB Portal where authetication is done via one's NYU NetID.
+
 Bash script to retrieve, install, and symlink various versions of [MATLAB](https://www.mathworks.com/products/matlab.html):
 
 |Version     |Release Name|
