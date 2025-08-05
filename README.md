@@ -6,6 +6,8 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
+**This repository is for archival purposes only.**
+
 Bash script to retrieve, install, and symlink various versions of [MATLAB](https://www.mathworks.com/products/matlab.html):
 
 |Version     |Release Name|
